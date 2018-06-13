@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/dist/css/bootstrap.min.css";
+$fa-font-path: "../../../node_modules/font-awesome/fonts";
+@import '~font-awesome/scss/font-awesome.scss';
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+
+@import "./helpers/_variables";
+@import "./helpers/_mixin";
+@import "./helpers/_placeholder";
+@import "./base/_reset";
+@import "./base/_typography";
+@import "./component/_sight";
+@import "./component/_button";
+@import "./component/_icon";
+@import "./layout/_danhSachPhim";
+@import "./layout/_main-menu";
+
+
+
+
+
+

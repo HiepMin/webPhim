@@ -1,0 +1,88 @@
+<div class="container">
+    <div class="row">
+      <div class="col-8 mx-auto">
+        <form action="" #registerForm="ngForm" (ngSubmit)="DangKy(registerForm.value)">
+          <div class="form-group">
+            <label for="">First Name</label>
+            <input 
+              type="text" 
+              name="FirstName"  
+              #FirstName="ngModel" 
+              class="form-control"
+              ngModel>
+          </div>
+          <div class="form-group">
+              <label for="">Last Name</label>
+              <input 
+                type="text" 
+                name="LastName"  
+                #LastName="ngModel" 
+                class="form-control" ngModel>
+            </div>
+            <div class="form-group">
+                <label for="">User Name</label>
+                <input 
+                  type="text" 
+                  name="UserName"  
+                  #UserName="ngModel" 
+                  class="form-control"
+                  ngModel>
+              </div>
+  
+              <div class="form-group">
+                  <label for="">Password</label>
+                  <input 
+                    type="password" 
+                    name="Password"  
+                    #Password="ngModel" 
+                    class="form-control"
+                    ngModel>
+                </div>
+                <div class="form-group">
+                    <label for="">Confirm Password</label>
+                    <input 
+                      type="password" 
+                      name="ConfPass"  
+                      #ConfPass="ngModel" 
+                      class="form-control"
+                      ngModel>
+                  </div>
+                  <div class="form-group">
+                      <label for="">Email</label>
+                      <input 
+                        type="text" 
+                        name="Email"  
+                        #Email="ngModel" 
+                        class="form-control"
+                        ngModel>
+                    </div>
+                    <div class="form-group">
+                        <label for="">Phone</label>
+                        <input 
+                          type="number" 
+                          name="Phone"  
+                          #Phone="ngModel" 
+                          class="form-control" ngModel>
+                      </div>
+  
+                      <div class="form-group">
+                          <select name="GroupID" #GroupID="ngModel" ngModel id="">
+                            <option *ngFor="let group of Groups" [value]="group.Id">
+                              {{ group.Name }}
+                            </option>
+                          </select>
+                        </div>
+                        
+                      <my-date-picker name="DateOfBirth" #DateOfBirth="ngModel" ngModel></my-date-picker>
+                      <!-- <mat-form-field  name="DateOfBirth">
+                        <input matInput [matDatepicker]="picker" placeholder="Choose a date">
+                        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker></mat-datepicker>
+                      </mat-form-field> -->
+          
+          <button class="btn btn-danger" type="submit">Đăng Ký</button>
+        </form>
+      </div>
+    </div>
+  </div>
+

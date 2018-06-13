@@ -1,0 +1,44 @@
+<div class="row">
+  <div class="col-md-3 col-12" *ngFor="let phim of DanhSachPhimServices | paginate: { itemsPerPage:  entryMovie  , currentPage: p }">
+    <div class="OneBlockMovie">
+      <div class="OneBlockMovie__thumbnail">
+        <img [src]="urlImages + phim.Image" class="img-fluid" alt="">
+      </div>
+      <div class="OneBlockMovie__overlay" href="#">
+      </div>
+
+      <div class="star">
+        <span>{{ phim.Rating | number}}</span>
+        <i class="fa fa-star"></i>
+      </div>
+      <div class="OneBlockMovie__content">
+        <div class="header">
+          <div class="realeseDate">
+            <h5>{{ phim.ReleaseDate | date}}</h5>
+          </div>
+
+        </div>
+        <button class="fa fa-play text-primary btnTrailer" data-toggle="modal" data-target=".modalTrailer" (click)="showTrailer(phim.TrailerURI)">
+        </button>
+        <div class="data">
+          <div class="data__text">
+            <div class="author">
+              <h5>{{ phim.Director }}</h5>
+            </div>
+            <div class="detail">
+              <h2 class="movieName">{{ phim.Title }}</h2>
+              <p class="Desc">
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="btnLink">
+        <button class="btn-primary btn btnDetail w-100" [routerLink]="['/chi-tiet-phim']" [queryParams]="{id:phim.ID, groupID:MaNhom}">
+          <span> Đặt Vé</span>
+        </button>
+      </div>
+    </div>
+  </div>
+  <pagination-controls (pageChange)="p = $event" class="my-pagination" autoHide="{{ hidePagiControl }}"></pagination-controls>
+</div>

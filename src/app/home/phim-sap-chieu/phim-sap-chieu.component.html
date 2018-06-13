@@ -1,0 +1,135 @@
+<div class="row">
+    <div class="col-md-3 col-12" *ngFor="let phim of DSPhimSapChieu | paginate: { itemsPerPage: 4, currentPage: p }">
+      <div class="OneBlockMovie">
+          <div class="OneBlockMovie__thumbnail">
+            <img [src]="phim.image" class="img-fluid" alt="">
+          </div>
+          <div class="OneBlockMovie__overlay" href="#">
+          </div>
+          
+          <div class="star danhGia">
+            <span>{{ phim.IMDB | number}}</span>
+            <span class="imdb">IMDB</span>
+          </div>
+          <div class="OneBlockMovie__content">
+            <div class="header">
+              <div class="realeseDate">
+                <h5>{{ phim.date }}</h5>
+              </div>
+            
+            </div>
+            <button class="fa fa-play text-primary btnTrailer" data-toggle="modal" data-target=".modalTrailer" (click)="showTrailer(phim.TrailerURI)">
+              </button>
+            <div class="data">
+              <div class="data__text">
+                  <div class="author">
+                    <h5>{{ phim.director }}</h5>
+                  </div>
+                  <div class="detail">
+                    <h2 class="movieName">{{ phim.name }}</h2>
+                    <p class="Desc">
+                    </p>
+                  </div>
+              </div>
+            </div>
+          </div>
+            <div class="btnLink">
+      <button  class="btn-primary btn btnDetail w-100"><span> Đặt Vé</span> 
+      </button>
+            </div>
+        </div>
+      </div>
+  <pagination-controls (pageChange)="p = $event"  class="my-pagination"></pagination-controls>
+</div>
+
+
+<!-- <div class="container danhSachPhimContent mx-auto">
+    <div class="row">
+      <div class="col-12 text-center">
+        <div class="linkContent d-flex justify-content-center my-5">
+            <a href="#" class="linkHeading" [ngClass]="{'active' : listShow === 'phimDangChieu'}" #DSPhimDangChieu data-show="phimDangChieu" (click)="showContent(DSPhimDangChieu)">
+                <span>Phim Đang Chiếu</span>
+              </a>
+              <a href="#" class="linkHeading" [ngClass]="{'active' : listShow === 'phimSapChieu'}"  #DSPhimSapChieu (click)="showContent(DSPhimSapChieu)" data-show="phimSapChieu">
+                <span>Phim Sắp Chiếu</span>
+              </a>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <ng-container *ngIf="listShow == 'phimDangChieu'; then DanhSachPhimDangChieu else DanhSachPhimSapChieu "></ng-container>
+      <ng-template #DanhSachPhimDangChieu>
+          <div class="col-md-3 col-12" *ngFor="let phim of DanhSachPhimServices | paginate: { itemsPerPage: 4, currentPage: p }">
+              <div class="OneBlockMovie">
+                  <div class="OneBlockMovie__thumbnail">
+                    <img [src]="urlImages + phim.Image" class="img-fluid" alt="">
+                  </div>
+                  <div class="OneBlockMovie__overlay" href="#">
+                  </div>
+                  
+                  <div class="star">
+                    <span>{{ phim.Rating | number}}</span>
+                    <i class="fa fa-star"></i>
+                  </div>
+                  <div class="OneBlockMovie__content">
+                    <div class="header">
+                      <div class="realeseDate">
+                        <h5>{{ phim.ReleaseDate | date}}</h5>
+                      </div>
+                    
+                    </div>
+                    <button class="fa fa-play text-primary btnTrailer" data-toggle="modal" data-target=".modalTrailer" (click)="showTrailer(phim.TrailerURI)">
+                      </button>
+                    <div class="data">
+                      <div class="data__text">
+                          <div class="author">
+                            <h5>{{ phim.Director }}</h5>
+                          </div>
+                          <div class="detail">
+                            <h2 class="movieName">{{ phim.Title }}</h2>
+                            <p class="Desc">
+                            </p>
+                          </div>
+                      </div>
+                    </div>
+                  </div>
+                    <div class="btnLink">
+              <button  class="btn-primary btn btnDetail w-100" [routerLink]="['/chi-tiet-phim']" [queryParams]="{id:phim.ID, groupID:MaNhom}"><span> Đặt Vé</span> 
+              </button>
+                    </div>
+                </div>
+              </div>
+        <pagination-controls (pageChange)="p = $event"  class="my-pagination"></pagination-controls>
+        
+      </ng-template>
+  
+  
+  
+  
+      
+  </div>
+  <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+  </button>	 -->
+  
+  <!-- <ng-container *ngIf="trailer !==''"> -->
+      <!-- <div class="modal modalTrailer fade" id="exampleModalCenter" tabindex="-1" role="dialog" >
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <i class="fa fa-times"></i>
+          </button>
+          <div class="modal-dialog modal-dialog-centered mx-auto" style="max-width: 600px" role="document">
+            <div class="modal-content">
+            <div class="modal-body" style="background: #000">
+              <iframe width="100%" height="400" class="border-0"
+              [src]="trailer">
+              </iframe>
+            </div>
+            </div>
+          </div>
+        </div> -->
+  <!-- </ng-container> -->
+  <!-- <popup>tda</popup> -->
+  
+  <!-- <button (click)="sendTrailerToModal()">click</button> -->
+  
+  

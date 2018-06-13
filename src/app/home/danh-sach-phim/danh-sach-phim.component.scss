@@ -1,0 +1,113 @@
+// @import "./../../../assets/scss/helpers/_variables";
+// @import "./../../../assets/scss/helpers/_mixin";
+
+// @import "./../../../assets/scss/base/_reset";
+
+// // @import "./../../../assets/scss/base/_typography";
+// .OneBlockMovie{
+//     position: relative;
+//     cursor: pointer;
+//     height: 400px;
+//     width: 95%;
+//     margin: 0 auto 40px;
+//     transition: .2s all;
+//     &:hover{
+//         box-shadow: 3px 1px 5px 2px #0000004d;
+//         .OneBlockMovie__overlay{
+//             background: rgba(0,0,0,.4);
+//         }
+//         .btnTrailer{
+//             opacity: 1;
+//             visibility: visible;
+//             transform:translate(-50%, -50%) scale(1);
+//         }
+//     }
+//     &__thumbnail{
+//         @include size(100%, 100%);
+//         img{
+//             min-width: 100%;
+//             height: 100%;
+//         }
+//     }
+//     &__overlay{
+//         @include size(100%, 100%);
+//         @include posi-top-left(absolute, 0,0);
+//         transition: .3s all;
+//         z-index: 1;
+//         background: linear-gradient(to bottom, #fff0, 60%, #000000b8);
+//     }
+    
+//     .star{
+//         @include posi-top-right(absolute, 10px, 10px);
+//         padding: 3px 10px;
+//         background: #ff482bcf;
+//         color: #eee;
+//         z-index: 5;
+//         border-radius: 8px;
+//         .fa{
+//             font-size: 8px;
+//             position: relative;
+//             top: -9px;
+//         }
+//     }
+//     &__content{
+//         @include size(100%, 100%);
+//         @include posi-top-left(absolute, 0,0);
+//         @include flex(flex-end, flex-start, column, wrap);
+//         padding: 12px;
+//         z-index: 2;
+//         .header{
+//             @include flex(space-between, center, row, wrap);
+//             width: 100%;
+//             .realeseDate h5{
+//                 font-size: 12px;
+//                 color: #fff;
+//             }
+            
+//         }
+//         .btnTrailer{
+//             @include flex(center, center, row, wrap);
+//             @include size(50px, 50px);
+//             @include posi-top-left(absolute, 50%, 50%);
+//             transform: translate(-50%, -50%) scale(0);
+//             border-radius: 50%;
+//             border: none;
+//             transition: .3s all;
+//             opacity: 0;
+//             visibility: hidden;
+//             z-index: 6;
+//             cursor: pointer;
+//             outline: 0;
+//         }
+//         .data{
+//             &__text{
+//                 @include flex(flex-end, flex-start, column, nowrap);
+//                 color: #fff;
+//                 .author h5{
+//                     font-family: monts-reg;
+//                     font-size: 12px;
+//                     margin: 10px 0;
+//                 }
+//                 .detail{
+//                     margin-bottom: 30px;
+//                     h2{
+//                         font-family: monts-reg;
+//                         font-size: 23px;
+//                     }
+//                     p{
+//                         font-family: lato-reg;
+//                         font-size: 14px;
+//                     }
+//                 } 
+//             }
+           
+//         }
+//     }
+//     .btnLink{
+//         @include posi-top-left(absolute, calc(100% - calc(40px / 2)), 50%);
+//         width: 80%;
+//         text-align: center; 
+//         z-index:  4;
+//         transform: translateX(-50%);
+//     }
+// }

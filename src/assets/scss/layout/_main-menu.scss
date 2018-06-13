@@ -1,0 +1,69 @@
+@import "./../../../assets/scss/helpers/_variables";
+@import "./../../../assets/scss/helpers/_mixin";
+@import "./../../../assets/scss/base/_reset";
+@import "./../../../assets/scss/base/_typography";
+
+$bgNav:#000;
+.main-menu{
+    @include size(100%, $menuHeigth);
+    @include posi-top-left(fixed, 0, 0);
+    z-index: $z_index_nav;
+    background: $bgNav;
+    &__content{
+        @include size(70%, 100%);
+        @include flex(space-between, center, row, wrap);
+        margin: auto;
+        .content-left{
+            @include size(20%, 100%);
+            @include flex(center, center, column, wrap);
+            img{
+                @include size(100%, 100%);
+            }
+        }
+        .content-right{
+            @include size(75%, 100%);
+            @include flex(center, center, column, wrap);
+            font-family: trade-bold;
+            li{
+                display: inline-block;
+            }
+            .social-auth{
+                @include size(100%, 50%);
+                @include flex(space-between, center, row, wrap);
+                border-bottom:1px solid #3d3d3d;
+                a{
+                    color: #fff;
+                }
+                .social{
+                    a{
+                        font-size: 17px;
+                        margin-right: 12px;
+                    }
+                }
+                .auth{
+                    a{
+                        margin-right: 12px;
+                    }
+                }
+            }
+            .nav{
+                @include size(100%, 50%);
+                @include flex(flex-start, center, row, wrap);
+                li{
+                    margin-right: 20px;
+                    a{
+                        font-size: 16px;
+                        color: #b5b5b5;
+                        transition: color .15s ease-in-out;
+                        text-transform: uppercase;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+
+
+
