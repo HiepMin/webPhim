@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-
+import {IMyOptions, IMyDate, IMyDateModel, IMyDefaultMonth} from 'mydatepicker';
 
 import { UserService } from "./../../Services/user.service";
 import { UserRegister } from "./../../Models/UserRegister.class";
@@ -8,10 +8,11 @@ import { UserRegister } from "./../../Models/UserRegister.class";
 @Component({
   selector: 'app-dang-ky',
   templateUrl: './dang-ky.component.html',
-  styleUrls: ['./dang-ky.component.scss']
+  styleUrls: ['./../../../assets/scss/layout/_DangKy.scss']
 })
 export class DangKyComponent implements OnInit {
 
+  public pickerPlace:string = "Choose Your Birthday..."
   constructor(private _UserService:UserService) { }
 
 
@@ -28,7 +29,6 @@ export class DangKyComponent implements OnInit {
     {Id : "GP08",Name : "nhom 8"},
     {Id : "GP09",Name : "nhom 9"},
   ];
-
   ngOnInit() {
   }
 

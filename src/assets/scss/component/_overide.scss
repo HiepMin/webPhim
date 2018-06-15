@@ -1,0 +1,30 @@
+//my-date-picker    
+:host /deep/ .mydp {
+    transform: skew(-11deg);
+    border: 2px solid;
+    border-radius: 0;
+    .selectiongroup{
+        .selection{
+            background: #000;
+            color: #fff;
+            font-weight: bold;
+        }
+    }
+    .btnclear, .btndecrease, .btnincrease,.btnpicker, .headertodaybtn{
+        border-radius: 0;
+        background: #000;
+        color: #fff;
+        transition: .3s all;
+        &:hover{
+            color: #000;
+        }
+        .icon-mydpcalendar, .icon-mydpremove {
+            transform: skew(11deg);
+            display: block;
+        }
+    }
+    .selector{
+        transform: skew(11deg);
+    }
+    /** My override css properties here **/
+}

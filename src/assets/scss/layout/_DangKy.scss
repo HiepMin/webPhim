@@ -1,0 +1,52 @@
+@import "./../../../assets/scss/helpers/_variables";
+@import "./../../../assets/scss/helpers/_mixin";
+@import "./../../../assets/scss/base/_reset";
+@import "./../../../assets/scss/base/_typography";
+@import "./../../../assets/scss/component/_form";
+@import "./../../../assets/scss/component/_heading";
+@import "./../../../assets/scss/component/_overide";
+.DangKiPage{
+    @include size(100%, 700px);
+    background: url("./../../images/img-rap-phim.jpeg") no-repeat center center;
+    background-size: cover;
+    position: relative;
+    .overlay{
+        @include size(100%, 100%);
+        @include posi-top-left(absolute, 0, 0);
+        background: rgba(0,0,0,.7);
+        z-index: 1;
+    }
+    .divFormDangKy{
+        @include posi-top-left(absolute, 50%, 50%);
+        transform: translate(-50%, -50%);
+        z-index: 2;
+        .formAuth{
+            background: transparent;
+            .form-marvel{
+                &::placeholder{
+                    color: #fff;
+                }
+            }
+            
+        }
+        
+        // .mydp, .mydp .headertodaybtn{
+        //     background: #000;
+        //     .selectiongroup{
+        //         input.selection{
+        //         }
+        //     }
+        // }
+        .divOr{
+            button{
+                transform: skew(0);
+                padding: 7px;
+                font-size: 11px;                
+            }
+        }
+    }
+}
+
+
+
+

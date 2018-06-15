@@ -2,8 +2,9 @@
 @import "./../../../assets/scss/helpers/_mixin";
 @import "./../../../assets/scss/base/_reset";
 @import "./../../../assets/scss/base/_typography";
+@import "./../../../assets/scss/component/_heading";
 
-.formDangNhap{
+.formAuth{
     padding: 2rem 0;
     background: #454545;
     color: #fff;
@@ -12,7 +13,7 @@
         margin-bottom: 20px;
     }
     .form-marvel{
-        background: #454545;
+        background: transparent;
         color: #fff;
         font-weight: bold;
         border: 2px solid #fff;
@@ -26,12 +27,17 @@
             transform: skew(11deg);
         }
     }
-    .btnDangNhap{
+    .btnLogin{
         transform: skew(-11deg);
         span{
             transform: skew(11deg);
             display: block;
         }
+    }
+    .Or{
+        margin: 7px 0;
+        display: block;
+        font-size: 12px;
     }
 }
 

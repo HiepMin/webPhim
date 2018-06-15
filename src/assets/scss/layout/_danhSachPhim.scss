@@ -3,6 +3,7 @@
 @import "./../../../assets/scss/base/_reset";
 @import "./../../../assets/scss/base/_typography";
 @import "./../../../assets/scss/component/_heading";
+@import "./../../../assets/scss/component/_headingSection";
 
 .rowPhimDangChieu{
     position: relative;
@@ -132,16 +133,7 @@
     }
 }
 
-.modalTrailer{
-    .close{
-        @include size(40px, 40px);
-        @include posi-top-right(absolute, 10px,10px);
-        background: #fff;
-        color:#000;
-        font-size: 12px;
-        border-radius: 50%;
-    }   
-}
+
 
 
 .my-pagination /deep/ {

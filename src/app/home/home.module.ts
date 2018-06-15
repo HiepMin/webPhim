@@ -3,6 +3,8 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ModalModule } from "ngx-modal";
+
 // import { PopupModule} from "ng2-opd-popup";
 import {
     MatButtonModule,
@@ -28,6 +30,7 @@ import { DangKyComponent } from './dang-ky/dang-ky.component';
 import { DangNhapComponent } from './dang-nhap/dang-nhap.component';
 import { PhimSapChieuComponent } from './phim-sap-chieu/phim-sap-chieu.component';
 import { PhimDangChieuComponent } from './phim-dang-chieu/phim-dang-chieu.component';
+import { VideoComponent } from './video/video.component';
 //router
 
 const HomeRoutes: Routes = [
@@ -53,10 +56,6 @@ const HomeRoutes: Routes = [
             {
                 path: "dang-ky",
                 component: DangKyComponent
-            },
-            {
-                path: "dang-nhap",
-                component: DangNhapComponent
             }
         ]
     }
@@ -67,6 +66,7 @@ const HomeRoutes: Routes = [
         // BrowserModule,
         CommonModule,
         FormsModule,
+        ModalModule,
         // BrowserAnimationsModule,
         NgxPaginationModule,
         // MatDatepickerModule,
@@ -82,6 +82,6 @@ const HomeRoutes: Routes = [
         TrangChuComponent, DanhSachPhimComponent, MenuComponent, ChiTietPhimComponent
     ],
     providers: [MovieService],
-    declarations: [TrangChuComponent, DanhSachPhimComponent, MenuComponent, ChiTietPhimComponent, DatVeComponent, HomeLayoutComponent, SliderComponent, DangKyComponent, DangNhapComponent, PhimSapChieuComponent, PhimDangChieuComponent]
+    declarations: [TrangChuComponent, DanhSachPhimComponent, MenuComponent, ChiTietPhimComponent, DatVeComponent, HomeLayoutComponent, SliderComponent, DangKyComponent, DangNhapComponent, PhimSapChieuComponent, PhimDangChieuComponent, VideoComponent]
 })
 export class HomeModule { }

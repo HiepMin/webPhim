@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-dang-nhap',
   templateUrl: './dang-nhap.component.html',
-  styleUrls: ['./../../../assets/scss/layout/_form.scss']
+  styleUrls: ['./../../../assets/scss/layout/_DangNhap.scss']
 })
 export class DangNhapComponent implements OnInit, OnDestroy {
   private UserSignUp:UserSignUp;
@@ -35,7 +35,7 @@ export class DangNhapComponent implements OnInit, OnDestroy {
         localStorage.removeItem("user");
       }
       else{
-        console.log(res);
+        console.log(res); 
         alert("dang nhap thanh cong");
         localStorage.setItem("user",JSON.stringify(res))
       }

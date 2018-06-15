@@ -1,7 +1,8 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
 import { Movie } from "./../../Models/Movie.class";
 import { MovieService } from "./../../Services/movie.service";
 import { Subscription } from 'rxjs';
+import { DomSanitizer  } from '@angular/platform-browser';
 
 declare var jquery: any;
 declare var $: any;
@@ -19,6 +20,9 @@ export class PhimDangChieuComponent implements OnInit, OnDestroy {
     private MaNhom: string = "GP07";
     public entryMovie: number = 4;
     public slMovieDangChieu: number;
+    public TrailerURL:string = '';
+    public CallTrailer:boolean = false;
+    public subTrailer:Subscription;
     public entryList: Array<any> = [
         {
             value: 4,
@@ -38,10 +42,10 @@ export class PhimDangChieuComponent implements OnInit, OnDestroy {
         },
     ];
     public hidePagiControl: boolean = false;
-    // trailer:string;
-    constructor(private MovieSer: MovieService) { }
+    constructor(private MovieSer: MovieService, public sanitizer: DomSanitizer) { }
 
     @Output() sendSlPhim = new EventEmitter();
+    @ViewChild("modalTrailer") modalTrailer:ElementRef;
     ngOnInit() {
         this.sub1 = this.MovieSer.layDanhSachPhim()
             .subscribe((res: Array<Movie>) => {
@@ -49,11 +53,16 @@ export class PhimDangChieuComponent implements OnInit, OnDestroy {
             }, error => {
                 this.DanhSachPhimServices = error;
             })
+        
     }
     ngOnDestroy() {
         this.sub1.unsubscribe();
     }
     showTrailer(e) {
+        event.preventDefault();
+        this.CallTrailer = !this.CallTrailer;
+        this.TrailerURL = e + "?autoplay=1";
+        // console.log(this.modalTrailer);
     }
 
     showEntries(e) {
@@ -69,5 +78,9 @@ export class PhimDangChieuComponent implements OnInit, OnDestroy {
     ngOnChanges(){
         
     }
-
+    // hideTrailer(){
+    //     if($('#modalTrailer').modal('hide')){
+    //         this.CallTrailer = false;
+    //     }
+    // }
 }
