@@ -7,7 +7,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-dang-nhap',
   templateUrl: './dang-nhap.component.html',
-  styleUrls: ['./dang-nhap.component.scss']
+  styleUrls: ['./../../../assets/scss/layout/_form.scss']
 })
 export class DangNhapComponent implements OnInit, OnDestroy {
   private UserSignUp:UserSignUp;
@@ -27,9 +27,6 @@ export class DangNhapComponent implements OnInit, OnDestroy {
   ngOnInit() {
   }
   DangNhap(user:UserSignUp){
-    this.unsub = this._UserService.SignUpAccount(user).subscribe((res:any) => {
-      console.log(res);
-    })
     this.unsub = this._UserService.SignUpAccount(user)
     .subscribe((res:any) => {
       if(res === "The account or password is incorrect"){

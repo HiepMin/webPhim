@@ -1,4 +1,12 @@
-<div class="row">
+<div class="row rowPhimDangChieu">
+  <div class="col-3 showEntries">
+      <div class="d-flex align-items-center justify-content-end divEntry">
+        <h5>Show Entries:</h5>
+        <select [(ngModel)]="entryMovie" #selectEntry class="selecEntry linkHeading mx-4" (change)="showEntries(selectEntry.value)">
+            <option value="{{ entry.value }}" *ngFor="let entry of entryList">{{ entry.view }}</option>
+        </select>
+      </div>
+  </div>
   <div class="col-md-3 col-12" *ngFor="let phim of DanhSachPhimServices | paginate: { itemsPerPage:  entryMovie  , currentPage: p }">
     <div class="OneBlockMovie">
       <div class="OneBlockMovie__thumbnail">

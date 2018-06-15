@@ -6,22 +6,15 @@
                     <a href="#" class="linkHeading" [ngClass]="{'active' : listShow === 'phimDangChieu'}" #DSPhimDangChieu data-show="phimDangChieu"
                         (click)="showContent(DSPhimDangChieu)">
                         <span>Phim Đang Chiếu
-                        <i>{{ slMovieDangChieu }}</i>
+                        <!-- <i>{{ slMovieDangChieu }}</i> -->
                         </span>
                     </a>
                     <a href="#" class="linkHeading" [ngClass]="{'active' : listShow === 'phimSapChieu'}" #DSPhimSapChieu (click)="showContent(DSPhimSapChieu)"
                         data-show="phimSapChieu">
                         <span>Phim Sắp Chiếu</span>
+                        <!-- <i>{{ slMovieSapChieu }}</i> -->
                     </a>
                 </div>
-                <!-- <ng-container *ngIf="listShow === 'phimDangChieu'">
-                    <div class="d-flex align-items-center divEntry">
-                        <h5>Show Entries:</h5>
-                        <select [(ngModel)]="entryMovie" #selectEntry class="selecEntry linkHeading mx-4" (change)="showEntries(selectEntry.value)">
-                            <option value="{{ entry.value }}" *ngFor="let entry of entryList">{{ entry.view }}</option>
-                        </select>
-                    </div>
-                </ng-container> -->
             </div>
 
         </div>

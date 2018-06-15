@@ -37,25 +37,4 @@ export class UserService {
       .map((res:Response) => res.json());
     return observe;
   }
-
-  // createAccount(user:User):Observable<User>{
-  //   let header = new Headers();
-  //   header.append("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
-  //   let body = `data=${JSON.stringify(user)}`;
-  //   let obServe = this._http.post(this.apiURLRegister, body, {headers:header})
-  //                           .map((res:Response) => res.json());
-  //   return obServe;
-  // }
-  // SignUp(userLogin:UserLogin){
-  //   let header = new Headers();
-  //   header.append("Content-Type", "application/x-www-form-urlencoded; charset=UTF-8");
-  //   let body = `data=${JSON.stringify(userLogin)}`;
-
-  //   let UserLoginResult:UserLogin = new UserLogin();
-  //   let observe = this._http.post(this.apiURLSignUp, body, {headers : header})
-  //                           .map((res:Response) => res.json());
-  //                           return observe;
-  // }
-
-
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Component, OnInit, OnDestroy, Output, EventEmitter } from '@angular/core';
 import { Movie } from "./../../Models/Movie.class";
 import { MovieService } from "./../../Services/movie.service";
 import { Subscription } from 'rxjs';
@@ -13,12 +13,10 @@ declare var $: any;
 export class PhimDangChieuComponent implements OnInit, OnDestroy {
 
   
-    public listShow: string = "phimDangChieu";
     private DanhSachPhimServices: Array<Movie>;
     public urlImages: string = "http://sv.myclass.vn/Images/Movies/";
     public sub1: Subscription;
-    public trailer: string = "";
-    private MaNhom: string = "GP01";
+    private MaNhom: string = "GP07";
     public entryMovie: number = 4;
     public slMovieDangChieu: number;
     public entryList: Array<any> = [
@@ -43,29 +41,21 @@ export class PhimDangChieuComponent implements OnInit, OnDestroy {
     // trailer:string;
     constructor(private MovieSer: MovieService) { }
 
+    @Output() sendSlPhim = new EventEmitter();
     ngOnInit() {
         this.sub1 = this.MovieSer.layDanhSachPhim()
             .subscribe((res: Array<Movie>) => {
                 this.DanhSachPhimServices = res;
-                this.slMovieDangChieu = this.DanhSachPhimServices.length;
             }, error => {
                 this.DanhSachPhimServices = error;
             })
-        
     }
-
-
-
     ngOnDestroy() {
         this.sub1.unsubscribe();
     }
     showTrailer(e) {
-        this.trailer = e;
     }
-    showContent(e) {
-        event.preventDefault();
-        this.listShow = e.getAttribute("data-show");
-    }
+
     showEntries(e) {
         if (e == "all") {
             this.entryMovie = this.DanhSachPhimServices.length;

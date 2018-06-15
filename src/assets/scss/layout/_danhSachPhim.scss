@@ -4,6 +4,13 @@
 @import "./../../../assets/scss/base/_typography";
 @import "./../../../assets/scss/component/_heading";
 
+.rowPhimDangChieu{
+    position: relative;
+    .showEntries{
+        @include posi-top-right(absolute, -96px, 0);
+    }
+}
+
 .OneBlockMovie{
     position: relative;
     cursor: pointer;

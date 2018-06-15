@@ -1,0 +1,17 @@
+.headingSection{
+    overflow: hidden;
+    display: flex;
+    height: 100%;
+    .big-line{
+        background: #fff;
+        transform: skew(-20deg);
+        @include size(30%, 100%);
+        position: relative;
+        right: 20px;
+    }
+    .title-section{
+        position: relative;
+        color: #fff;
+        font-weight: 900;
+    }
+}
