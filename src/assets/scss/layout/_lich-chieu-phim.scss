@@ -7,9 +7,9 @@
 
 
 
-#divLichChieu{
+#divThongTinChieuPhim{
     padding: 80px 0;   
-
+    background: #000000;   
     .divRapChieu{
         margin: 1rem;
         ul{
@@ -53,6 +53,104 @@
                             opacity: 1;
                             top: 0;
                             visibility: visible;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+
+    .divLichChieu{
+        .container  {
+            display: none;
+            &.active{
+                display: block;
+            }
+            .row{
+                .one-block-rap {
+                    @include flex(flex-start, center, row, wrap);
+                    color: #fff;
+                    padding-left: 15px;
+                    transition: .3s all;
+                    .img-rap{
+                        img{
+                            width: 70px;
+                        }
+                    }
+                    &.active{
+                        // border-left: 3px solid #fff;
+                        background: linear-gradient(to right, #2b2a2a, #060505);
+                    }
+                    &:hover{
+                        background: linear-gradient(to right, #2b2a2a, #060505);
+                    }
+                    .info-rap{
+                        text-align: left;
+                        padding: 0 1rem;
+                        h4.ten-rap {
+                            font-size: 14px;
+                            font-family: monts-reg;
+                        }
+                        .dia-chi-rap {
+                            font-size: 12px;
+                        }
+                        a{
+                            color: red;
+                            font-size: 12px;
+                            font-weight: 900;
+                            text-decoration: underline !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        
+        
+
+        .divGioChieu{
+            padding: 0 20px;
+            border-left: 1px solid #333;
+            .one-block-gio-chieu{
+                padding-bottom: 10px;
+                border-bottom: 1px solid #333;
+                .info-movie {
+                    @include flex(flex-start, flex-start, row, nowrap);
+                    .info-right{
+                        padding: 15px;
+                        padding-top: 0;
+                        .name{
+                            color: #fff;
+                            font-size: 17px;
+                            font-weight: bold;
+                        }
+                        p{
+                            color: #b3b3b3;
+                            font-size: 13px;
+                            font-family: monospace;
+                        }
+                    }
+                }
+                .info-gio-chieu{
+                    @include flex(flex-start, center, row, wrap);
+                    strong.type {
+                        font-size: 26px;
+                        color: #fff;
+                        font-family: trade-bold;
+                        margin: 0 2rem 0 1rem;
+                    }
+                    .gio-chieu{
+                        .time-item{
+                            padding: 4px 10px;
+                            border: 2px solid #fff;
+                            color: #fff;
+                            font-family: trade-bold;
+                            transition: .1s all;
+                            &:hover{
+                                background: #fff;
+                                color: #000;
+                            }
                         }
                     }
                 }

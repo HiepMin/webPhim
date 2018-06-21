@@ -1,26 +1,74 @@
-<div class="container mx-auto" id="divLichChieu">
-    <div class="row">
-        <div class="col-12">
-            <div class="headingSection">
-                <div class="big-line"></div>
-                <h3 class="title-section">Lịch Chiếu-Cụm Rạp</h3>
+<div  id="divThongTinChieuPhim">
+    <div class="container mx-auto">
+        <div class="row">
+            <div class="col-12">
+                <div class="headingSection">
+                    <div class="big-line"></div>
+                    <h3 class="title-section">Lịch Chiếu-Cụm Rạp</h3>
+                </div>
             </div>
         </div>
+    
+    
+        <div class="row divRapChieu">
+            <div class="col-md-8 mx-auto col-12 mt-5">
+                <ul>
+                    <li *ngFor="let rap of RapChieuPhim; let i = index" [ngClass]="i == 0 ? 'active' : ''" (click)="showRapChieu(linkRap.id)">
+                        <a href="#" class="" id="{{ rap.id }}" #linkRap>
+                            <img src="{{ urlImage +  rap.img}}" alt="">
+                            <span>{{ rap.name }}</span>
+                        </a>
+                    </li>
+                </ul>
+            </div> 
+        </div>
+    
+        <!-- <div class="row divLichChieu">
+            <div class="col-md-10 col-12 mx-auto">
+                <div 
+                    class="container" 
+                    *ngFor="let lich of ChiTietLichChieu; let i = index" 
+                    id="rapActive_{{ lich.id }}">
+                    <div class="row">
+                        <div class="col-md-4 col-12 divRap">
+                            <a href="#" class="one-block-rap" >
+                                <div class="img-rap">
+                                    <img src="{{ lich.hinh }}" alt="">
+                                </div>
+                                <div class="info-rap">
+                                    <h4 class="ten-rap">{{ lich.name }}</h4>
+                                    <div class="dia-chi-rap">{{ lich.diachi }}</div>
+                                    <a href="#">Bản Đồ</a>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="col-md-8 col-12 divGioChieu">
+                            <div class="one-block-gio-chieu">
+                                <div class="info-movie">
+                                    <img src="./../../../assets/images/small-movie-1.jpg" alt="">
+                                    <div class="info-right">
+                                        <a href="#" class="name">
+                                                Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom
+                                        </a>
+                                        <p>128 phút - 123Phim 8.2 - IMDb 6.7</p>
+                                    </div>
+                                </div>
+                                <div class="info-gio-chieu">
+                                    <strong class="type">
+                                        2D
+                                    </strong>
+                                    <ul class="gio-chieu">
+                                        <li>
+                                            <a href="#" class="time-item">22:40</a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div> -->
     </div>
-
-
-    <div class="row divRapChieu">
-        <div class="col-md-8 mx-auto col-12 mt-5">
-           <ul>
-               <li *ngFor="let rap of RapChieuPhim; let i = index" [ngClass]="i == 0 ? 'active' : ''">
-                    <a href="#" class="" id="{{ rap.id }}">
-                        <img src="{{ urlImage +  rap.img}}" alt="">
-                        <span>{{ rap.name }}</span>
-                    </a>
-               </li>
-           </ul>
-       </div> 
-    </div>
-
-
 </div>
+

@@ -22,5 +22,8 @@ export class MenuComponent implements OnInit {
 		this.sideBar.nativeElement.classList.toggle("active");
 		console.log(this.sideBar.nativeElement);
 	}
+	onClick(){
+		event.preventDefault();
+	}
 
 }

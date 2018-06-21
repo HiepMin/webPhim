@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { DomSanitizer }  from "@angular/platform-browser";
+import { DomSanitizer, SafeResourceUrl }  from "@angular/platform-browser";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Subscription } from "rxjs";
 import { MovieService } from "./../../Services/movie.service";
@@ -22,10 +22,10 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
   public rate:number;
 
   constructor(
-    private movieDetailSer?:MovieService,
-    private Activated?:ActivatedRoute,
-    private Router?:Router,
-    private DomSanitizer?:DomSanitizer
+    private movieDetailSer:MovieService,
+    private Activated:ActivatedRoute,
+    private Router:Router,
+    private DomSanitizer:DomSanitizer
   ) { 
     
   }
@@ -45,7 +45,7 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
                                         const starPercent = (ratings / rateTotal) * 100;
                                         const starPercentRounded = `${Math.round(starPercent / 10) * 10}%`;
                                         $(".stars-inner").css({"width" : starPercentRounded});
-                                        console.log(starPercentRounded);
+                                        
                                       }, error => {
                                         this.MovieDetail = error;
                                       })
