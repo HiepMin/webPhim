@@ -2,16 +2,16 @@ import { Component, OnInit, OnDestroy, Output, EventEmitter, ViewChild, ElementR
 import { Movie } from "./../../Models/Movie.class";
 import { MovieService } from "./../../Services/movie.service";
 import { Subscription } from 'rxjs';
-import { DomSanitizer  } from '@angular/platform-browser';
+import { DomSanitizer, SafeResourceUrl  } from '@angular/platform-browser';
 
-declare var jquery: any;
-declare var $: any;
+import * as $ from "jquery";
+// declare var $: any;
 @Component({
   selector: 'app-phim-dang-chieu',
   templateUrl: './phim-dang-chieu.component.html',
   styleUrls: ['./../../../assets/scss/layout/_danhSachPhim.scss']
 })
-export class PhimDangChieuComponent implements OnInit, OnDestroy {
+export class PhimDangChieuComponent {
 
   
     private DanhSachPhimServices: Array<Movie>;
@@ -20,7 +20,7 @@ export class PhimDangChieuComponent implements OnInit, OnDestroy {
     private MaNhom: string = "GP07";
     public entryMovie: number = 4;
     public slMovieDangChieu: number;
-    public TrailerURL:string = '';
+    public TrailerURL:SafeResourceUrl;
     public CallTrailer:boolean = false;
     public subTrailer:Subscription;
     public entryList: Array<any> = [
@@ -44,25 +44,23 @@ export class PhimDangChieuComponent implements OnInit, OnDestroy {
     public hidePagiControl: boolean = false;
     constructor(private MovieSer: MovieService, public sanitizer: DomSanitizer) { }
 
-    @Output() sendSlPhim = new EventEmitter();
-    @ViewChild("modalTrailer") modalTrailer:ElementRef;
     ngOnInit() {
         this.sub1 = this.MovieSer.layDanhSachPhim()
             .subscribe((res: Array<Movie>) => {
                 this.DanhSachPhimServices = res;
+                console.log(this.DanhSachPhimServices);
             }, error => {
                 this.DanhSachPhimServices = error;
+                console.log(this.DanhSachPhimServices);
             })
-        
     }
     ngOnDestroy() {
         this.sub1.unsubscribe();
     }
     showTrailer(e) {
         event.preventDefault();
-        this.CallTrailer = !this.CallTrailer;
-        this.TrailerURL = e + "?autoplay=1";
-        // console.log(this.modalTrailer);
+        this.CallTrailer = true;
+        this.TrailerURL = this.sanitizer.bypassSecurityTrustResourceUrl(e + "?autoplay=1");
     }
 
     showEntries(e) {
@@ -78,9 +76,12 @@ export class PhimDangChieuComponent implements OnInit, OnDestroy {
     ngOnChanges(){
         
     }
-    // hideTrailer(){
-    //     if($('#modalTrailer').modal('hide')){
-    //         this.CallTrailer = false;
-    //     }
-    // }
 }
+// $(function(){
+//     const phimDangChieu = new PhimDangChieuComponent();
+//     $("body").delegate("#modalTrailer", "hidden.bs.modal", function(){
+//        phimDangChieu.CallTrailer = false;
+//        phimDangChieu.TrailerURL = "";
+//        $("video").trigger("pause");
+//     })
+// })

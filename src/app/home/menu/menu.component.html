@@ -1,9 +1,18 @@
 <header class="main-menu">
   <div class="container main-menu__content">
-    <a href="#" class="main-menu__logo content-left">
+    <a [routerLink]="['/']" class="main-menu__logo content-left">
       <img src="../../../assets/images/cyber.png" alt="">
     </a>
-    <div class="content-right">
+    <a href="#" #burgerIcon (click)="showSideBar(burgerIcon)" class="burger-icon border-0">
+      <div class="burger"></div>
+    </a>
+    <div class="content-right" #sideBar>
+      <div class="logo-res">
+          <a [routerLink]="['/']">
+            <img src="../../../assets/images/cyber.png" alt="">
+          </a>
+      </div>
+        
       <div class="social-auth">
         <ul class="social">
           <li><a href="#" class="fa fa-facebook-square"></a></li>
@@ -11,37 +20,51 @@
           <li><a href="#" class="fa fa-youtube-square"></a></li>
         </ul>
         <div class="auth">
-          <a href="#" [routerLink]="['/dang-ky']">Register</a>
-          <a href="#" data-toggle="modal" data-target="#modalDangNhap">Sign Up</a>
+          <a href="#" [routerLink]="['/dang-ky']">Đăng Ký</a>
+          <a href="#" data-toggle="modal" data-target="#modalDangNhap">Đăng Nhập</a>
         </div>
       </div>
       <ul class="nav">
-        <li><a href="#">Lich Chieu</a></li>
-        <li><a href="#">Cum Rap</a></li>
-        <li><a href="#">Video</a></li>
-        <li><a href="#">News</a></li>
-        <li><a href="#" class="fa fa-search"></a></li>
+        <li>
+          <a href="#" 
+            [ngx-scroll-to]="'#DSPhim'" 
+            [ngx-scroll-to-duration]="1000"
+            [ngx-scroll-to-easing]="'easeOutCubic'"
+            class="active">
+            <span>Phim</span> 
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span> Lịch Chiếu</span>
+          </a>
+          </li>
+        <li>
+          <a href="#"
+            [ngx-scroll-to]="'#News'" 
+            [ngx-scroll-to-duration]="1000"
+            [ngx-scroll-to-easing]="'easeOutCubic'">
+            <span>Tin Tức</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span>Search</span>
+          </a>
+        </li>
       </ul>
     </div>
   </div>
 </header>
-
-
-<!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
-    Launch demo modal
-  </button>
-  
-  <!-- Modal -->
-  <div class="modal fade" id="modalDangNhap" tabindex="-1" role="dialog">
-    <div class="modal-dialog mx-auto" role="document">
-      <div class="modal-content">
-        <div class="modal-body">
-          <app-dang-nhap></app-dang-nhap>
-        </div>
+<div class="modal fade" id="modalDangNhap" tabindex="-1" role="dialog">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content">
+      <div class="modal-body">
+        <app-dang-nhap></app-dang-nhap>
       </div>
     </div>
   </div>
+</div>
 
 
 

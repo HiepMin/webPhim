@@ -2,7 +2,7 @@ import { Injectable } from '@angular/core';
 
 import { Movie } from "./../Models/Movie.class";
 import { MovieSapChieu } from "./../Models/MovieSapChieu.class";
-import { Http, Response } from "@angular/http";
+import { Http, Response, RequestOptions, Headers } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
 
@@ -89,17 +89,36 @@ export class MovieService {
   }
 
 
+  //quan lí phim
+  private apiCreateMovie:string = `http://sv.myclass.vn/api/movies/createmovie`;
+  private apiUploadFile: string = `http://sv.myclass.vn/api/movies/uploadfile`;
+  private apiEditPhim: string = `http://sv.myclass.vn/api/movies/editmovie`;
 
+  
+  public createMovie(movie: Movie) {
+    console.log(movie);
+    let header: Headers = new Headers();
+    header.append("Content-Type", "application/json")
+    let obServe: Observable<any> = this._http.post(this.apiCreateMovie, movie, { headers: header }).map((result: Response) => result.json());
+    return obServe;
 
-  // private DSPhimSapChieu:Array<MovieSapChieu> = [
-  //   new MovieSapChieu(
-  //     "Jurassic World","J.A. Bayona","https://youtu.be/whixKrf1M_k","08.06.2018","https://s3img.vcdn.vn/mobile/123phim/2018/06/the-gioi-khung-long-vuong-quoc-sup-do-jurassic-world-fallen-kingdom-c13-15283376537341_220x310.jpg","Tất cả những yếu tố kỳ diệu, phiêu lưu, hồi hộp cùng với một trong những thương hiệu nổi tiếng và thành công nhất lịch sự điện ảnh, sự kiện này là một bước chuyển mình về hình ảnh cho thấy sự trở lại của các nhân vật được yêu thích và các loài khủng long đầy cảm hứng và đáng sợ hơn bao giờ hết. Chào mừng đến với Thế Giới Khủng Long: Vương Quốc Sụp Đổ")
-  // ];
-  // layDanhSachPhimSapChieu():Array<MovieSapChieu>{
-    // return this.DSPhimSapChieu;
-  // }
+  }
+  public uploadFile(Files: any) {
+    let header: Headers = new Headers();
+    let options = new RequestOptions({ headers: header });
+    let obServe: Observable<any> = this._http.post(this.apiUploadFile, 
+      Files
+      , options)
+    .map((result: Response) => result.json());
+    return obServe;
 
-
-
-
+  }
+  public EditPhim(Files: any) {
+    let header: Headers = new Headers();
+    header.append('Content-Type', 'application/json');
+    header.append('Accept', 'application/json');
+    let options = new RequestOptions({ headers: header });
+    let obServe: Observable<any> = this._http.put(this.apiEditPhim, Files, options).map((result: Response) => result.json());
+    return obServe;
+  }
 }

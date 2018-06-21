@@ -1,25 +1,91 @@
 <!-- <img  src = "{{ urlImage + MovieDetail.Image }}" alt=""> -->
-<div class="container">
-    <div class="col-3">
-        <mat-card class="example-card">
-            <mat-card-header>
-              <div mat-card-avatar class="example-header-image"></div>
-              <mat-card-title>Shiba Inu</mat-card-title>
-              <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-            </mat-card-header>
-            <img mat-card-image src="{{ urlImage + MovieDetail.Image }}" alt="Photo of a Shiba Inu">
-            <mat-card-content>
-              <p>
-                {{ MovieDetail.Description }}
-              </p>
-            </mat-card-content>
-            <mat-card-actions>
-              <button mat-button>LIKE</button>
-              <button mat-button>SHARE</button>
-            </mat-card-actions>
-          </mat-card>
-        
+<div class="detail-movie">
+  <div class="container mx-auto">
+    <div class="col-md-8 mx-auto col-12">
+        <!-- <mat-card class="example-card">
+          <mat-card-header>
+            <div mat-card-avatar class="example-header-image"></div>
+            <mat-card-title>Shiba Inu</mat-card-title>
+            <mat-card-subtitle>Dog Breed</mat-card-subtitle>
+          </mat-card-header>
+          <img mat-card-image src="{{ urlImage + MovieDetail.Image }}" alt="Photo of a Shiba Inu">
+          <mat-card-content>
+            <p>
+              {{ MovieDetail.Description }}
+            </p>
+          </mat-card-content>
+          <mat-card-actions>
+            <button mat-button>LIKE</button>
+            <button mat-button>SHARE</button>
+          </mat-card-actions>
+        </mat-card> -->
+        <div class="block-detail container">
+          <div class="row image-info-movie">
+            <div class="col-md-5 col-12 divImage">
+                <div class="block-image-movie">
+                  <img mat-card-image src="{{ urlImage + MovieDetail.Image }}" alt="Photo of a {{ MovieDetail.Title }}">
+                </div>
+            </div>
+            <div class="col-md-7 col-12 divInfo">
+              <div class="block-info-movie">
+                <h5 class="date">{{ MovieDetail.ReleaseDate | date }}</h5>
+                <h2 class="nameMovie">{{ MovieDetail.Title }}</h2>
+                <p class="time-type">120 min - 2D/Digital - {{ MovieDetail.GenreName }} </p>
+                
+                <div class="author info-item">
+                  <strong class="au-title title">Director</strong>
+                  <p class="au-detail">{{ MovieDetail.Director }}</p>
+                </div>
+                <div class="writer info-item">
+                  <strong class="writer-title title">Writer</strong>
+                  <p class="writer-detail">{{ MovieDetail.Writer }}</p>
+                </div>
+                <div class="des info-item">
+                  <strong class="des-title title">Description</strong>
+                  <p class="des-detail">{{ MovieDetail.Description }}</p>
+                </div>
+                
+              </div>
+              <div class="block-btn-link d-flex">
+                <button class="linkHeading">
+                  <span>
+                      Đặt Vé
+                    <i class="fa fa-ticket"></i>
+                  </span>
+                </button>
+                <button class="linkHeading"  
+                  [ngx-scroll-to]="'#divTrailer'" 
+                  [ngx-scroll-to-duration]="1000"
+                  [ngx-scroll-to-easing]="'easeOutCubic'">
+                  <span>
+                      Trailer
+                      <i class="fa fa-film"> </i>
+                  </span>
+                </button>
+              </div>
+
+              <div class="rating-star">
+                  <div class="info-item star-outer">
+                    
+                    <div class="stars-inner"></div>
+                    <span class="number-rating">{{ MovieDetail.Rating | number }} Star</span>
+                  </div>
+              </div>
+            </div>
+
+            <div class="col-12 " id="divTrailer">
+              <strong class="title-divTrailer">Trailer</strong>
+              <iframe [src]="DomSanitizer.bypassSecurityTrustResourceUrl(MovieDetail.TrailerURI)" width="100%" height="500" frameborder="2">
+              </iframe>
+            </div>
+          </div>
+          
+         
+          
+        </div>
     </div>
+  </div>
 </div>
+
 
 

@@ -1,9 +1,9 @@
-<div class="container danhSachPhimContent mx-auto mt-4">
+<div class="container danhSachPhimContent" id="DSPhim">
     <div class="row">
         <div class="col-12">
             <div class="headingSection">
                 <div class="big-line"></div>
-                <h3 class="title-section">Lịch Chiếu</h3>
+                <h3 class="title-section">Danh Sách Phim</h3>
             </div>
         </div>
     </div>
@@ -27,7 +27,6 @@
 
         </div>
     </div>
-
     <ng-container *ngIf="listShow == 'phimDangChieu'; then DanhSachPhimDangChieu else DanhSachPhimSapChieu "></ng-container>
     <ng-template #DanhSachPhimDangChieu>
         <app-phim-dang-chieu></app-phim-dang-chieu>

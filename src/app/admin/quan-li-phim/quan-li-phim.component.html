@@ -1,3 +1,206 @@
-<p>
-  quan-li-phim works!
-</p>
+<!-- <div class="container mx-auto mt-5">
+  <div class="row">
+
+    <form class="col-6 mx-auto" #formThemPhim="ngForm" (ngSubmit)="themPhim(formThemPhim.value, img.files,date )">
+
+      <div class="form-group">
+        <div class="label text-white">id</div>
+        <input 
+          type="number" 
+          class="form-control"
+          ngModel
+          name="ma"
+          #ma="ngModel">
+      </div>
+
+      <div class="form-group">
+        <div class="label text-white">Ten</div>
+        <input 
+          type="text" 
+          class="form-control"
+          ngModel
+          name="title"
+          #title="ngModel">
+      </div>
+
+      <div class="form-group">
+        <div class="label text-white">mo ta</div>
+        <input 
+          type="text" 
+          class="form-control"
+          ngModel
+          name="description"
+          #description="ngModel">
+      </div>
+      <div class="form-group">
+        <div class="label text-white">GenreName</div>
+        <input 
+          type="text" 
+          class="form-control"
+          ngModel
+          name="GenreName"
+          #GenreName="ngModel">
+      </div>
+
+      <div class="form-group">
+        <div class="label text-white">Director</div>
+        <input 
+          type="text" 
+          class="form-control"
+          ngModel
+          name="Director"
+          #Director="ngModel">
+      </div>
+
+      <div class="form-group">
+        <div class="label text-white">images</div>
+        <input 
+          type="file" 
+          class="form-control"
+          ngModel
+          name="img"
+          accept=".jpg, .jpeg, .png"
+          #img>
+      </div>
+      <div class="form-group">
+        <my-date-picker name="DateOfBirth" class="" #date ngModel></my-date-picker>
+      </div>
+
+      <div class="form-group">
+        <div class="label text-white">Writer</div>
+        <input 
+          type="text" 
+          class="form-control"
+          ngModel
+          name="Writer"
+          #Writer="ngModel">
+      </div>
+
+      <div class="form-group">
+        <div class="label text-white">Producer</div>
+        <input 
+          type="text" 
+          class="form-control"
+          ngModel
+          name="Producer"
+          #Producer="ngModel">
+      </div>
+      <div class="form-group">
+        <div class="label text-white">Rating</div>
+        <input 
+          type="number" 
+          class="form-control"
+          ngModel
+          name="Rating"
+          #Rating="ngModel">
+      </div>
+
+      <div class="form-group">
+        <div class="label text-white">TrailerURI</div>
+        <input 
+          type="text" 
+          class="form-control"
+          ngModel
+          name="TrailerURI"
+          #TrailerURI="ngModel">
+      </div>
+
+      <button class="btn btn-success" type="submit">Them Phim</button>
+    </form>
+
+  </div>
+
+</div> -->
+
+<div class="container">
+  <form #registerForm="ngForm" (ngSubmit)="CreateMovie(registerForm.value,file.files,date)">
+    <div class="form-group">
+        <label class="control-label">ID</label>
+        <input name="ID" ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="control-label">Title</label>
+        <input name="Title" ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="control-label">Description</label>
+        <input name="Description" ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="control-label">Image</label>
+        <input #file type="file" name="Image" accept=".png, .jpg, .jpeg" ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="control-label">GenreName</label>
+        <input name="GenreName" ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="control-label">Director</label>
+        <input name="Director" ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="control-label">Writer</label>
+        <input name="Writer" ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="control-label">Producer</label>
+        <input name="Producer" ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="control-label">ReleaseDate</label>
+        <input type="date" #date name="ReleaseDate" ngModel class="form-control">
+    </div>
+    <div class="form-group">
+        <label class="control-label">TrailerURI</label>
+        <input name="TrailerURI" ngModel class="form-control">
+    </div>
+    <button type="submit">Create</button>
+    
+    
+  </form>
+</div>
+
+<div class="container mt-5">
+  <div class="row">
+    <div class="col-10 mx-auto">
+      <table class="table table-hover table-stripped">
+        <thead>
+          <tr>
+            <th>id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Director</th>
+            <th>Genre</th>
+            <th>hinh anh</th>
+            <th>Rating</th>
+            <th>ReleaseDate</th>
+            <th>TrailerURI</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr *ngFor="let phim of DanhSachPhimServices | paginate: { itemsPerPage:  entryMovie  , currentPage: p }">
+            <td>{{ phim.ID }}</td>
+            <td>{{ phim.Title }}</td>
+            <td>{{ phim.Description }}</td>
+            <td>{{ phim.Director }}</td>
+            <td>{{ phim.Genre }}</td>
+            <td><img src="{{'http://sv.myclass.vn/Images/Movies/' + phim.Image }}" alt=""></td>
+            <td>{{ phim.Rating | number}}</td>
+            <td>{{ phim.ReleaseDate | date }}</td>
+            <td>{{ phim.TrailerURI }}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<pagination-controls (pageChange)="p = $event" class="my-pagination"></pagination-controls>
+
+
+
+
+
+
+
+

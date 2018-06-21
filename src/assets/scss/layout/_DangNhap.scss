@@ -4,3 +4,12 @@
 @import "./../../../assets/scss/base/_typography";
 @import "./../../../assets/scss/component/_heading";
 @import "./../../../assets/scss/component/_form";
+
+
+.divOr{
+    button{
+        transform: skew(0);
+        padding: 7px;
+        font-size: 11px;                
+    }
+}

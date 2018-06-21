@@ -1,8 +1,14 @@
 //my-date-picker    
+@import "./../helpers/_mixin";
+@import "./../helpers/_variables";
 :host /deep/ .mydp {
     transform: skew(-11deg);
     border: 2px solid;
     border-radius: 0;
+    z-index: 2;
+    @include tablet{
+        transform: skew(0deg);
+    }
     .selectiongroup{
         .selection{
             background: #000;
@@ -25,6 +31,9 @@
     }
     .selector{
         transform: skew(11deg);
+        @include tablet{
+        transform: skew(0deg);
+        }
     }
     /** My override css properties here **/
 }
