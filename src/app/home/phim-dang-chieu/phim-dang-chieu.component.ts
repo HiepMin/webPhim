@@ -60,7 +60,7 @@ export class PhimDangChieuComponent {
     showTrailer(e) {
         event.preventDefault();
         this.CallTrailer = true;
-        this.TrailerURL = this.sanitizer.bypassSecurityTrustResourceUrl(e + "?autoplay=1");
+        this.TrailerURL = this.sanitizer.bypassSecurityTrustResourceUrl(e.replace("watch?v=", "embed/") + "?autoplay=1");
     }
 
     showEntries(e) {
@@ -77,11 +77,4 @@ export class PhimDangChieuComponent {
         
     }
 }
-// $(function(){
-//     const phimDangChieu = new PhimDangChieuComponent();
-//     $("body").delegate("#modalTrailer", "hidden.bs.modal", function(){
-//        phimDangChieu.CallTrailer = false;
-//        phimDangChieu.TrailerURL = "";
-//        $("video").trigger("pause");
-//     })
-// })
+

@@ -1,0 +1,16 @@
+@import "./../../../assets/scss/helpers/_variables";
+@import "./../../../assets/scss/helpers/_mixin";
+@import "./../../../assets/scss/base/_reset";
+@import "./../../../assets/scss/base/_typography";
+@import "./../../../assets/scss/component/_form";
+
+.tim-kiem-phim{
+    background: #000;
+    .form-marvel{
+        transform: skew(0deg);
+        width: 100%;
+        &::placeholder{
+            transform: skew(0deg);
+        }
+    }
+}

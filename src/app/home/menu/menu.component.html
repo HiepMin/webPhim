@@ -29,13 +29,15 @@
           <a href="#" 
             [ngx-scroll-to]="'#DSPhim'" 
             [ngx-scroll-to-duration]="1000"
-            [ngx-scroll-to-easing]="'easeOutCubic'"
-            class="active">
+            [ngx-scroll-to-easing]="'easeOutCubic'">
             <span>Phim</span> 
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#"
+            [ngx-scroll-to]="'#divLichChieu'" 
+            [ngx-scroll-to-duration]="1000"
+            [ngx-scroll-to-easing]="'easeOutCubic'">
             <span> Lịch Chiếu</span>
           </a>
           </li>
@@ -48,7 +50,7 @@
           </a>
         </li>
         <li>
-          <a href="#">
+          <a href="#" data-toggle="modal" data-target="#modalTimKiem">
             <span>Search</span>
           </a>
         </li>
@@ -56,6 +58,7 @@
     </div>
   </div>
 </header>
+
 <div class="modal fade" id="modalDangNhap" tabindex="-1" role="dialog">
   <div class="modal-dialog mx-auto" role="document">
     <div class="modal-content">
@@ -66,6 +69,16 @@
   </div>
 </div>
 
+
+<div class="modal fade" id="modalTimKiem" tabindex="-1" role="dialog">
+  <div class="modal-dialog mx-auto" role="document">
+    <div class="modal-content" style="background: transparent">
+      <div class="modal-body">
+          <app-tim-kiem-phim></app-tim-kiem-phim>
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

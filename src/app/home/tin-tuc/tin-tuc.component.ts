@@ -7,7 +7,7 @@ import { TintucService } from '../../Services/tintuc.service';
   styleUrls: ['./../../../assets/scss/layout/_TinTuc.scss']
 })
 export class TinTucComponent implements OnInit {
-  renderer: any;
+  public needMore:boolean = true;
   public entryNews:number = 3;
   private listNews_1:Array<any>;
   private listNews_2:Array<any>;
@@ -17,26 +17,30 @@ export class TinTucComponent implements OnInit {
   ngOnInit() {
     this.listNews_1 = this._newService.getNews_1();
     this.listNews_2 = this._newService.getNews_2();
-    this.amountNews_2 = this.listNews_2.length; 
   }
-  @ViewChild("btnSeemore") btnSeeMore:ElementRef;
-  @ViewChild("btnSeeless") btnSeeLess:ElementRef;
-  seemore(btnMore, btnLess){
-    if(this.entryNews < this.amountNews_2){
-      
-    }
-    else{
-      // btnSeeMore.clas
-    }
+  seemore(btnMore){
+    // if(this.entryNews < this.amountNews_2){
+    //   this.entryNews  += 3;
+    //   this.needMore = true;
+    // }
+    // setTimeout(() => {
+    //   if(this.entryNews >= this.amountNews_2){
+    //     this.needMore = false;
+    //   }
+    // }, 1);
+    
+    // console.log(this.amountNews_2);
   }
   ngOnChanges(){
-    console.log(this.entryNews);
   }
-
-  seeless(btnMore, btnLess){
-    // if(this.entryNews >= this.amountNews_2){
-    //   this.entryNews -= 2;
+  seeless(btnLess){
+    // if(this.entryNews < this.amountNews_2){
+    //   this.needMore = true;
     // }
-    // console.log(this.entryNews);
+    // setTimeout(() => {
+    //   if(this.entryNews >= this.amountNews_2){
+    //     this.needMore = false;
+    //   }
+    // }, 1);
   }
 }

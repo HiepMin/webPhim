@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 
 import { Movie } from "./../Models/Movie.class";
-import { MovieSapChieu } from "./../Models/MovieSapChieu.class";
 import { Http, Response, RequestOptions, Headers } from "@angular/http";
 import { Observable } from "rxjs/Observable";
 import "rxjs/add/operator/map";
@@ -12,6 +11,40 @@ export class MovieService {
   private urlListMovie:string = "http://sv.myclass.vn/api/movie/getmovie";
   private urlDetailMovie:string = "http://sv.myclass.vn/api/movie/GetMovieDetail";
   private urlDetailMovieByGroup:string = "http://sv.myclass.vn/api/movie/GetMovieDetailByGroup";
+
+  private RapChieuPhim:Array<any> = [
+    {
+      id : "RapBHD",
+      img : "bhd.png",
+      name : "BHD",
+    },
+    {
+      id : "RapDDC",
+      img : "ddc.jpg",
+      name : "DDC",
+    },
+    {
+      id : "RapCGV",
+      img : "cgv.png",
+      name : "CGV",
+    },
+    {
+      id : "RapCINESTAR",
+      img : "cinestart.png",
+      name : "CINESTAR",
+    },
+    {
+      id : "RapBETA",
+      img : "beta.png",
+      name : "BETA",
+    },
+    {
+      id : "RapLOTTE",
+      img : "lotte.png",
+      name : "LOTTE",
+    }
+  ];
+
   public DSPhimSapChieu: Array<any> = [
     {
         name: "Biệt Đội Cún Cưng",
@@ -86,6 +119,9 @@ export class MovieService {
   }
   slPhimSapChieu(){
     return this.layDanhSachPhimSapChieu().length;
+  }
+  GetRapChieuPhim():Array<any>{
+    return this.RapChieuPhim;
   }
 
 

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MovieService } from '../../Services/movie.service';
 
 @Component({
   selector: 'app-lich-chieu',
@@ -7,12 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LichChieuComponent implements OnInit {
 
+  
+  public RapChieuPhim:Array<any>;
+  public urlImage:string = "./../../../assets/images/";
 
 
-
-    constructor() { }
+    constructor(private MovieService:MovieService) { }
 
   ngOnInit() {
+    this.RapChieuPhim = this.MovieService.GetRapChieuPhim();
+    console.log(this.RapChieuPhim);
   }
 
 }

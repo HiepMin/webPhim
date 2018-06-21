@@ -34,6 +34,7 @@ import { TinTucComponent } from './tin-tuc/tin-tuc.component';
 import { FooterComponent } from './footer/footer.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { LichChieuComponent } from './lich-chieu/lich-chieu.component';
+import { TimKiemPhimComponent } from './tim-kiem-phim/tim-kiem-phim.component';
 //router
 
 const HomeRoutes: Routes = [
@@ -86,6 +87,6 @@ const HomeRoutes: Routes = [
         TrangChuComponent, DanhSachPhimComponent, MenuComponent, ChiTietPhimComponent
     ],
     providers: [MovieService],
-    declarations: [TrangChuComponent, DanhSachPhimComponent, MenuComponent, ChiTietPhimComponent, DatVeComponent, HomeLayoutComponent, SliderComponent, DangKyComponent, DangNhapComponent, PhimSapChieuComponent, PhimDangChieuComponent, TinTucComponent, FooterComponent, LichChieuComponent]
+    declarations: [TrangChuComponent, DanhSachPhimComponent, MenuComponent, ChiTietPhimComponent, DatVeComponent, HomeLayoutComponent, SliderComponent, DangKyComponent, DangNhapComponent, PhimSapChieuComponent, PhimDangChieuComponent, TinTucComponent, FooterComponent, LichChieuComponent, TimKiemPhimComponent]
 })
 export class HomeModule { }

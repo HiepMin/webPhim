@@ -17,11 +17,21 @@
             li{
                 display: inline-block;
                 margin: .5rem;
+                &.active{
+                    a{
+                        filter: blur(0);
+                        span{
+                            opacity: 1;
+                            top: 0;
+                            visibility: visible;
+                        }
+                    }
+                }
                 a{
                     @include flex(center, center, column,  wrap);
                     padding: 8px;
                     transition: .3s all;
-                    filter: blur(2px);
+                    filter: blur(1px);
                     img{
                         width: 60px;
                     }
@@ -36,14 +46,7 @@
                         opacity: 0;
                         visibility: hidden;
                     }
-                    &.active{
-                        filter: blur(0);
-                        span{
-                            opacity: 1;
-                            top: 0;
-                            visibility: visible;
-                        }
-                    }
+                    
                     &:hover{
                         filter: blur(0);
                         span{

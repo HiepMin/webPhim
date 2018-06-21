@@ -71,41 +71,41 @@ export class TintucService {
 			title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
 			description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
 		},
-		// {
-		// 	image : "./../../assets/images/news-ww-1.jpg",
-		// 	title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
-		// 	description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
-		// },
-		// {
-		// 	image : "./../../assets/images/news-ww-1.jpg",
-		// 	title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
-		// 	description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
-		// },
-		// {
-		// 	image : "./../../assets/images/news-ww-1.jpg",
-		// 	title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
-		// 	description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
-		// },
-		// {
-		// 	image : "./../../assets/images/news-ww-1.jpg",
-		// 	title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
-		// 	description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
-		// },
-		// {
-		// 	image : "./../../assets/images/news-ww-1.jpg",
-		// 	title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
-		// 	description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
-		// },
-		// {
-		// 	image : "./../../assets/images/news-ww-1.jpg",
-		// 	title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
-		// 	description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
-		// },
-		// {
-		// 	image : "./../../assets/images/news-ww-1.jpg",
-		// 	title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
-		// 	description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
-		// }
+		{
+			image : "./../../assets/images/news-ww-1.jpg",
+			title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
+			description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
+		},
+		{
+			image : "./../../assets/images/news-ww-1.jpg",
+			title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
+			description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
+		},
+		{
+			image : "./../../assets/images/news-ww-1.jpg",
+			title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
+			description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
+		},
+		{
+			image : "./../../assets/images/news-ww-1.jpg",
+			title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
+			description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
+		},
+		{
+			image : "./../../assets/images/news-ww-1.jpg",
+			title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
+			description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
+		},
+		{
+			image : "./../../assets/images/news-ww-1.jpg",
+			title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
+			description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
+		},
+		{
+			image : "./../../assets/images/news-ww-1.jpg",
+			title : "Phi công 'trên trung bình' Chris Pine bất ngờ hồi sinh trong Wonder Woman 2",
+			description: "Nữ đạo diễn Patty Jenkins cũng hé lộ tựa đề chính thức của phần hai - Wonder Woman 1984."
+		}
 	]
 	getNews_1():Array<any>{
 		return this.News_1;

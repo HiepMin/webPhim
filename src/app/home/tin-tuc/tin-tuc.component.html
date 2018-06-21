@@ -22,8 +22,6 @@
                 <div class="card-body">
                   <h5 class="card-title">{{ new.title }}</h5>
                   <p class="card-text">{{ new.description }}.</p>
-                  
-                  <!-- <a href="#" class="btn rounded-0 btnDetail"></a> -->
                   <button mat-raised-button color="primary">Chi Tiết</button>
                   
                 </div>
@@ -63,7 +61,7 @@
 
 
     <div class="row divSmallNews">
-      <div class="col-md-4 col-12" *ngFor="let new of listNews_2 ">
+      <div class="col-md-4 col-12" *ngFor="let new of listNews_2 | paginate: { itemsPerPage:  entryNews  , currentPage: p2, id: 'DanhSachNews'}">
         <a href="#" class="one-small-new card w-100 border-0">
           <div class="card-image">
             <img class="card-img-top img-fluid" src="{{ new.image }}" alt="Card image cap">
@@ -78,14 +76,21 @@
           </div>
         </a>
       </div>
-      <!-- <div class="col-12 text-center" >
-          <button class="linkHeading btnSmallNew mx-auto btn" #btnSeemore (click)="seemore(btnSeemore, btnSeeless)">
-            <span>More</span>
-          </button>
-          <button class="linkHeading btnSmallNew mx-auto btn" #btnSeeless (click)="seeless(btnSeemore,btnSeeless)">
-            <span>Less</span>
-          </button>
-      </div> -->
+      <div class="col-12 text-center">
+        <ng-container *ngIf="needMore; then btnSeeMore else btnSeeLess"></ng-container>
+          <ng-template #btnSeeMore>
+              <button class="linkHeading btnSmallNew mx-auto btn" #btnSeemore (click)="seemore(btnSeemore)">
+                <span>More</span>
+              </button>
+          </ng-template>
+          
+          <ng-template #btnSeeless>
+              <button class="linkHeading btnSmallNew mx-auto btn" #btnSeeless (click)="seeless(btnSeeless)">
+                <span>Less</span>
+              </button>
+          </ng-template>
+      </div> 
+      <!-- <pagination-controls (pageChange)="p2 = $event" id="DanhSachNews"></pagination-controls> -->
     </div>
 
 

@@ -7,7 +7,7 @@
         </select>
       </div>
   </div>
-  <div class="col-md-3 col-12" *ngFor="let phim of DanhSachPhimServices | paginate: { itemsPerPage:  entryMovie  , currentPage: p }">
+  <div class="col-md-3 col-12" *ngFor="let phim of DanhSachPhimServices | paginate: { itemsPerPage:  entryMovie  , currentPage: p1, id: 'DanhSachPhimDangChieu' }">
     <div class="OneBlockMovie">
       <div class="OneBlockMovie__thumbnail">
         <img [src]="urlImages + phim.Image" class="img-fluid" alt="">
@@ -44,7 +44,7 @@
             <button class="btn-primary btn btnDetail w-100 linkHeading" [routerLink]="['/chi-tiet-phim']" [queryParams]="{id:phim.ID, groupid:'GP07'}">
               <span> Đặt Vé</span>
             </button>
-            <button class="btnTrailer" (click)="showTrailer(phim.TrailerURI)">
+            <button class="btnTrailer" (click)="showTrailer(phim.TrailerURI)" data-toggle="modal" data-target="#modalTrailer">
               <i class="fa fa-play"></i>
             </button>
           </div>
@@ -52,19 +52,17 @@
      
     </div>
   </div>
-  <pagination-controls (pageChange)="p = $event" class="my-pagination" autoHide="{{ hidePagiControl }}"></pagination-controls>
+  <pagination-controls (pageChange)="p1 = $event" class="my-pagination"  id="DanhSachPhimDangChieu" autoHide="{{ hidePagiControl }}"></pagination-controls>
 </div>
 
 <!-- Button trigger modal -->
   <!-- Modal -->
-<ng-container *ngIf="CallTrailer">
     <div class="modal fade" #modalTrailer id="modalTrailer" tabindex="-1" role="dialog">
       <div class="modal-dialog mx-auto  modal-dialog-centered" style="max-width: 650px;" role="document">
         <div class="modal-content">
           <div class="modal-body" style="background:#000">
-              <iframe class="border-0" width="100%" height="400" [src]="TrailerURL"></iframe>
+              <iframe class="border-0" width="100%" height="400" [src]="TrailerURL" ></iframe>
           </div>
         </div>
       </div>
     </div>
-</ng-container>
