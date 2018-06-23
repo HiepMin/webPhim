@@ -12,6 +12,7 @@ import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { HomeModule } from "./home/home.module";
 import { AdminModule } from './admin/admin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { LoadingComponent } from './loading/loading.component';
 // import { AuthGuard } from './Services/auth.guard';
 const appRoutes: Routes = [
     {
@@ -31,6 +32,7 @@ const appRoutes: Routes = [
 @NgModule({
     declarations: [
         AppComponent,
+        LoadingComponent,
     ],
     imports: [
         BrowserModule,

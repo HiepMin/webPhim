@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { Router, NavigationEnd }  from "@angular/router";
+
+
 
 @Component({
   selector: 'app-root',
@@ -15,6 +18,20 @@ export class AppComponent {
 //         } else {
 //             window.clearInterval(scrollToTop);
 //         }
-//     }, 1);
+//     }, 1); 
 // }
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    this.router.events.subscribe((evt) => {
+        if (!(evt instanceof NavigationEnd)) {
+            return;
+        }
+        window.scroll({
+          top: 0, 
+          left: 0, 
+          behavior: 'smooth' 
+        });
+    });
+  }
 }

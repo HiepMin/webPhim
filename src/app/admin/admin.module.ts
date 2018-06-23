@@ -9,6 +9,7 @@ import { Routes, RouterModule } from "@angular/router";
 import { BrowserModule } from '@angular/platform-browser';
 import { NgxPaginationModule } from "ngx-pagination";
 import { MyDatePickerModule } from "mydatepicker";
+import { SidebarComponent } from './sidebar/sidebar.component';
 
 
 
@@ -36,6 +37,6 @@ const AdminRoutes:Routes = [
     NgxPaginationModule,
     RouterModule.forChild(AdminRoutes)
   ],
-  declarations: [QuanLiNguoiDungComponent, QuanLiPhimComponent, QuanLiLichChieuComponent, AdminLayoutComponent]
+  declarations: [QuanLiNguoiDungComponent, QuanLiPhimComponent, QuanLiLichChieuComponent, AdminLayoutComponent, SidebarComponent]
 })
 export class AdminModule { }

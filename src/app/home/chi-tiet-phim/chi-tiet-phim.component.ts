@@ -40,6 +40,7 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
     this.movieDetailSer.getDetailMovieByGroup(this.MovieID, this.MaNhom)
                                       .subscribe((res:any) => {
                                         this.MovieDetail = res;
+                                        console.log(this.MovieDetail);
                                         const ratings = this.MovieDetail.Rating;
                                         const rateTotal = 5;
                                         const starPercent = (ratings / rateTotal) * 100;
@@ -48,6 +49,7 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
                                         
                                       }, error => {
                                         this.MovieDetail = error;
+                                        console.log(this.MovieDetail);
                                       })
   }
 
