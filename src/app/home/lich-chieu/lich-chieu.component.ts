@@ -14,6 +14,7 @@ export class LichChieuComponent implements OnInit {
 	public RapChieuPhim: Array<any>;
 	public ChiTietLichChieu:Array<any>;
 	public urlImage: string = "./../../../assets/images/";
+	public urlImagesLichChieu:string = "./../../../assets/images/";
 
 
 	constructor(private MovieService: MovieService) { }
@@ -25,12 +26,21 @@ export class LichChieuComponent implements OnInit {
 
 	showRapChieu(e, item){
 		event.preventDefault();
-		$(this).addClass("active");
+		console.log(e);
 		console.log(item);
 		$(".divRapChieu li").removeClass("active");
 		$(item).addClass("active");
+
+		// $(item).addClass("active");
 		$(".divLichChieu .container").removeClass("active");
-		$(`#rapActive_${e}`).addClass("active");
+		$(`#RapActive_${e}`).addClass("active");
+	}
+	showPhimChieu(item){
+		event.preventDefault();
+		$(".one-block-gio-chieu").removeClass("active");
+		$(`#PhimRap_${item.split("_")[1]}`).addClass("active");
+		$(".one-block-rap").removeClass("active");
+		$(item).addClass("active");
 	}
 
 }

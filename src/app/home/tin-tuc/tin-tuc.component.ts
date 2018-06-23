@@ -21,14 +21,8 @@ export class TinTucComponent implements OnInit {
   seemore(btnMore){
     // if(this.entryNews < this.amountNews_2){
     //   this.entryNews  += 3;
-    //   this.needMore = true;
     // }
-    // setTimeout(() => {
-    //   if(this.entryNews >= this.amountNews_2){
-    //     this.needMore = false;
-    //   }
-    // }, 1);
-    
+    // btnMore.classList.add("d-none");
     // console.log(this.amountNews_2);
   }
   ngOnChanges(){

@@ -19,8 +19,6 @@ export class MovieService {
 			name: "BHD",
 
 		},
-
-
 		{
 			id: "RapDDC",
 			img: "ddc.jpg",
@@ -31,21 +29,11 @@ export class MovieService {
 			img: "cgv.png",
 			name: "CGV",
 		},
-		// {
-		// 	id: "RapCINESTAR",
-		// 	img: "cinestart.png",
-		// 	name: "CINESTAR",
-		// },
-		// {
-		// 	id: "RapBETA",
-		// 	img: "beta.png",
-		// 	name: "BETA",
-		// },
-		// {
-		// 	id: "RapLOTTE",
-		// 	img: "lotte.png",
-		// 	name: "LOTTE",
-		// }
+		{
+			id: "RapLOTTE",
+			img: "lotte.png",
+			name: "LOTTE",
+		}
 	];
 
 	public ChiTietLichChieu = [
@@ -56,47 +44,113 @@ export class MovieService {
 					id : "HBT",
 					name: "Hai Bà Trưng",
 					diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
-					hinh: "./../../../assets/images/rap-01.jpg",
+					hinh: "rap-01.jpg",
 					phimChieus: [
 						{
 							name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
-							hinh: "./../../../assets/images/small-movie-1.jpg",
+							hinh: "small-movie-1.jpg",
 							gioChieu: [
 								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
 							]
-						}
+						},
+						{
+							name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
+							hinh: "phim-41.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30", "6:40"
+							]
+						},
+						{
+							name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+							hinh: "movie-5.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+							]
+						},
 					]
 				},
 				{
 					id : "BITEXCO",
 					name: "Bitexco",
 					diachi: "L3-Bitexco Icon 68, 2 Hải Triều, Q.1",
-					hinh: "./../../../assets/images/rap-02.jpg",
+					hinh: "rap-02.jpg",
 					phimChieus: [
 						{
-							name: "Gia Đình Siêu Nhân 2 - Incredibles 2",
-							hinh: "./../../../assets/images/phim-01.jpg",
+							name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+							hinh: "movie-5.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+							]
+						},
+						{
+							name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
+							hinh: "phim-01.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
+							]
+						},
+						{
+							name: "Ống Kính Sát Nhân",
+							hinh: "phim-02.jpg",
 							gioChieu: [
 								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
 							]
 						},
 						{
 							name: "Gia Đình Siêu Nhân 2 - Incredibles 2",
-							hinh: "./../../../assets/images/phim-01.jpg",
+							hinh: "phim-03.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+							]
+						}
+					]
+				},
+				
+
+			]
+			
+		},
+		{
+			id: "RapDDC",
+			raps : [
+				{
+					id : "HBT",
+					name: "Hai Bà Trưng",
+					diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
+					hinh: "rap-01.jpg",
+					phimChieus: [
+						{
+							name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
+							hinh: "small-movie-1.jpg",
 							gioChieu: [
 								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
 							]
 						},
 						{
-							name: "Gia Đình Siêu Nhân 2 - Incredibles 2",
-							hinh: "./../../../assets/images/phim-01.jpg",
+							name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+							hinh: "movie-5.jpg",
 							gioChieu: [
-								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
+								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+							]
+						},
+					]
+				},
+				{
+					id : "BITEXCO",
+					name: "Bitexco",
+					diachi: "L3-Bitexco Icon 68, 2 Hải Triều, Q.1",
+					hinh: "rap-02.jpg",
+					phimChieus: [
+						{
+							name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+							hinh: "movie-5.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
 							]
 						},
 						{
-							name: "Gia Đình Siêu Nhân 2 - Incredibles 2",
-							hinh: "./../../../assets/images/phim-01.jpg",
+							name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
+							hinh: "phim-01.jpg",
 							gioChieu: [
 								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
 							]
@@ -108,21 +162,35 @@ export class MovieService {
 			]
 			
 		},
-
 		{
-			id: "RapDDC",
+			id: "RapCGV",
 			raps : [
 				{
 					id : "HBT",
 					name: "Hai Bà Trưng",
 					diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
-					hinh: "./../../../assets/images/rap-01.jpg",
+					hinh: "rap-01.jpg",
+					
 					phimChieus: [
 						{
-							name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
-							hinh: "./../../../assets/images/small-movie-1.jpg",
+							name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+							hinh: "movie-5.jpg",
 							gioChieu: [
-								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
+								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+							]
+						},
+						{
+							name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
+							hinh: "phim-01.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30", "6:40",  "5:30", "6:40",
+							]
+						},
+						{
+							name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
+							hinh: "phim-02.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30",
 							]
 						}
 					]
@@ -131,93 +199,421 @@ export class MovieService {
 					id : "BITEXCO",
 					name: "Bitexco",
 					diachi: "L3-Bitexco Icon 68, 2 Hải Triều, Q.1",
-					hinh: "./../../../assets/images/rap-02.jpg",
+					hinh: "rap-02.jpg",
 					phimChieus: [
 						{
-							name: "Gia Đình Siêu Nhân 2 - Incredibles 2",
-							hinh: "./../../../assets/images/phim-01.jpg",
+							name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
+							hinh: "small-movie-1.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
+							]
+						},
+						{
+							name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+							hinh: "movie-5.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+							]
+						},
+					]
+				},
+				
+
+			]
+			
+		},
+		{
+			id: "RapLOTTE",
+			raps : [
+				{
+					id : "HBT",
+					name: "Hai Bà Trưng",
+					diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
+					hinh: "rap-01.jpg",
+					phimChieus: [
+						{
+							name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
+							hinh: "small-movie-1.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
+							]
+						},
+						{
+							name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
+							hinh: "phim-41.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30", "6:40"
+							]
+						},
+						{
+							name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+							hinh: "movie-5.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+							]
+						},
+					]
+				},
+				{
+					id : "BITEXCO",
+					name: "Bitexco",
+					diachi: "L3-Bitexco Icon 68, 2 Hải Triều, Q.1",
+					hinh: "rap-02.jpg",
+					phimChieus: [
+						{
+							name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+							hinh: "movie-5.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+							]
+						},
+						{
+							name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
+							hinh: "phim-01.jpg",
+							gioChieu: [
+								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
+							]
+						},
+						{
+							name: "Ống Kính Sát Nhân",
+							hinh: "phim-02.jpg",
 							gioChieu: [
 								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
 							]
 						},
 						{
 							name: "Gia Đình Siêu Nhân 2 - Incredibles 2",
-							hinh: "./../../../assets/images/phim-01.jpg",
+							hinh: "phim-03.jpg",
 							gioChieu: [
-								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
-							]
-						},
-						{
-							name: "Gia Đình Siêu Nhân 2 - Incredibles 2",
-							hinh: "./../../../assets/images/phim-01.jpg",
-							gioChieu: [
-								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
+								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
 							]
 						}
 					]
 				},
 			]
-		},
-
-		{
-			id: "RapCGV",
-			raps : [
-				{	
-					id : "HBT",
-					name: "Hai Bà Trưng",
-					diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
-					hinh: "./../../../assets/images/rap-01.jpg",
-					phimChieus: [
-						{
-							name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
-							hinh: "./../../../assets/images/small-movie-1.jpg",
-							gioChieu: [
-								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
-							]
-						},
-						{
-							name: "Gia Đình Siêu Nhân 2 - Incredibles 2",
-							hinh: "./../../../assets/images/phim-01.jpg",
-							gioChieu: [
-								"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
-							]
-						}
-					]
-				}
-			]
-		},
+		}
 
 		// {
-		// 	id: "RapBHD",
-		// 	name: "Hai Bà Trưng",
-		// 	diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
-		// 	hinh: "./../../../assets/images/rap-01.jpg",
-		// 	phimChieu: [
+		// 	id: "RapDDC",
+		// 	raps : [
 		// 		{
-		// 			name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
-		// 			hinh: "./../../../assets/images/small-movie-1.jpg",
-		// 			gioChieu: [
-		// 				"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
+		// 			id : "HBT",
+		// 			name: "Hai Bà Trưng",
+		// 			diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
+		// 			hinh: "rap-01.jpg",
+		// 			phimChieus: [
+		// 				{
+		// 					name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
+		// 					hinh: "small-movie-1.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
+		// 					]
+		// 				},
+		// 				{
+		// 					name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
+		// 					hinh: "phim-41.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				},
+		// 				{
+		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+		// 					hinh: "movie-5.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				},
 		// 			]
-		// 		}
-		// 	]
-		// },
+		// 		},
+		// 		{
+		// 			id : "BITEXCO",
+		// 			name: "Bitexco",
+		// 			diachi: "L3-Bitexco Icon 68, 2 Hải Triều, Q.1",
+		// 			hinh: "rap-02.jpg",
+		// 			phimChieus: [
+		// 				{
+		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+		// 					hinh: "movie-5.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				},
+		// 				{
+		// 					name: "Ống Kính Sát Nhân",
+		// 					hinh: "phim-02.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
+		// 					]
+		// 				},
+		// 				{
+		// 					name: "Gia Đình Siêu Nhân 2 - Incredibles 2",
+		// 					hinh: "phim-03.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				}
+		// 			]
+		// 		},
+				
 
-		// {
-		// 	id: "RapBHD",
-		// 	name: "Hai Bà Trưng",
-		// 	diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
-		// 	hinh: "./../../../assets/images/rap-01.jpg",
-		// 	phimChieu: [
-		// 		{
-		// 			name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
-		// 			hinh: "./../../../assets/images/small-movie-1.jpg",
-		// 			gioChieu: [
-		// 				"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
-		// 			]
-		// 		}
 		// 	]
 		// },
+		// {
+		// 	id: "RapCGV",
+		// 	raps : [
+		// 		{
+		// 			id : "HBT",
+		// 			name: "Hai Bà Trưng",
+		// 			diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
+		// 			hinh: "rap-01.jpg",
+		// 			phimChieus: [
+		// 				{
+		// 					name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
+		// 					hinh: "small-movie-1.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
+		// 					]
+		// 				},
+		// 				{
+		// 					name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
+		// 					hinh: "phim-41.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				},
+		// 				{
+		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+		// 					hinh: "movie-5.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				},
+		// 			]
+		// 		},
+		// 		{
+		// 			id : "BITEXCO",
+		// 			name: "Bitexco",
+		// 			diachi: "L3-Bitexco Icon 68, 2 Hải Triều, Q.1",
+		// 			hinh: "rap-02.jpg",
+		// 			phimChieus: [
+		// 				{
+		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+		// 					hinh: "movie-5.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				}
+		// 			]
+		// 		},
+		// 		{
+		// 			id : "DONGDA",
+		// 			name: "Đống Đa",
+		// 			diachi: "890 Trần Hưng Đạo, Q.5",
+		// 			hinh: "rap-05.jpg",
+		// 			phimChieus: [
+		// 				{
+		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+		// 					hinh: "movie-5.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				}
+		// 			]
+		// 		},
+		// 	]
+		// },
+		// {
+		// 	id: "RapCINESTAR",
+		// 	raps : [
+		// 		{
+		// 			id : "HBT",
+		// 			name: "Hai Bà Trưng",
+		// 			diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
+		// 			hinh: "rap-01.jpg",
+		// 			phimChieus: [
+		// 				{
+		// 					name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
+		// 					hinh: "small-movie-1.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
+		// 					]
+		// 				},
+		// 				{
+		// 					name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
+		// 					hinh: "phim-41.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				},
+		// 				{
+		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+		// 					hinh: "movie-5.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				},
+		// 			]
+		// 		},
+		// 		{
+		// 			id : "BITEXCO",
+		// 			name: "Bitexco",
+		// 			diachi: "L3-Bitexco Icon 68, 2 Hải Triều, Q.1",
+		// 			hinh: "rap-02.jpg",
+		// 			phimChieus: [
+		// 				{
+		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+		// 					hinh: "movie-5.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				}
+		// 			]
+		// 		},
+		// 		{
+		// 			id : "DONGDA",
+		// 			name: "Đống Đa",
+		// 			diachi: "890 Trần Hưng Đạo, Q.5",
+		// 			hinh: "rap-05.jpg",
+		// 			phimChieus: [
+		// 				{
+		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+		// 					hinh: "movie-5.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				}
+		// 			]
+		// 		},
+		// 	]
+		// },
+		// {
+		// 	id: "RapBETA",
+		// 	raps : [
+		// 		{
+		// 			id : "HBT",
+		// 			name: "Hai Bà Trưng",
+		// 			diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
+		// 			hinh: "rap-01.jpg",
+		// 			phimChieus: [
+		// 				{
+		// 					name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
+		// 					hinh: "small-movie-1.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
+		// 					]
+		// 				},
+		// 				{
+		// 					name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
+		// 					hinh: "phim-41.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				},
+		// 				{
+		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+		// 					hinh: "movie-5.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				},
+		// 			]
+		// 		},
+		// 		{
+		// 			id : "BITEXCO",
+		// 			name: "Bitexco",
+		// 			diachi: "L3-Bitexco Icon 68, 2 Hải Triều, Q.1",
+		// 			hinh: "rap-02.jpg",
+		// 			phimChieus: [
+		// 				{
+		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+		// 					hinh: "movie-5.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				}
+		// 			]
+		// 		},
+		// 		{
+		// 			id : "DONGDA",
+		// 			name: "Đống Đa",
+		// 			diachi: "890 Trần Hưng Đạo, Q.5",
+		// 			hinh: "rap-05.jpg",
+		// 			phimChieus: [
+		// 				{
+		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+		// 					hinh: "movie-5.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				}
+		// 			]
+		// 		},
+		// 	]
+		// },
+		// {
+		// 	id: "RapLOTTE",
+		// 	raps : [
+		// 		{
+		// 			id : "HBT",
+		// 			name: "Hai Bà Trưng",
+		// 			diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
+		// 			hinh: "rap-01.jpg",
+		// 			phimChieus: [
+		// 				{
+		// 					name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
+		// 					hinh: "small-movie-1.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
+		// 					]
+		// 				},
+		// 				{
+		// 					name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
+		// 					hinh: "phim-41.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				},
+		// 				{
+		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+		// 					hinh: "movie-5.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				},
+		// 			]
+		// 		},
+		// 		{
+		// 			id : "BITEXCO",
+		// 			name: "Bitexco",
+		// 			diachi: "L3-Bitexco Icon 68, 2 Hải Triều, Q.1",
+		// 			hinh: "rap-02.jpg",
+		// 			phimChieus: [
+		// 				{
+		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+		// 					hinh: "movie-5.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				}
+		// 			]
+		// 		},
+		// 		{
+		// 			id : "DONGDA",
+		// 			name: "Đống Đa",
+		// 			diachi: "890 Trần Hưng Đạo, Q.5",
+		// 			hinh: "rap-05.jpg",
+		// 			phimChieus: [
+		// 				{
+		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
+		// 					hinh: "movie-5.jpg",
+		// 					gioChieu: [
+		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
+		// 					]
+		// 				}
+		// 			]
+		// 		},
+		// 	]
+		// }
 	]
 
 

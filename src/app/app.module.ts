@@ -19,10 +19,6 @@ const appRoutes: Routes = [
         loadChildren: () => HomeModule
     },
     {
-        path: "home",
-        loadChildren: () => HomeModule
-    },
-    {
         path: "admin",
         loadChildren: () => AdminModule 
     }

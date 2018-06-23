@@ -46,10 +46,6 @@ const HomeRoutes: Routes = [
                 component: TrangChuComponent
             },
             {
-                path: "trangchu",//home/trangchu
-                component: TrangChuComponent
-            },
-            {
                 path: "danh-sach-phim",//home/danh-sach-phim
                 component: DanhSachPhimComponent
             },
