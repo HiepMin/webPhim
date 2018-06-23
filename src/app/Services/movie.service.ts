@@ -8,9 +8,9 @@ import "rxjs/add/operator/map";
 @Injectable({ providedIn: "root" })
 export class MovieService {
 
-	private urlListMovie: string = "http://sv.myclass.vn/api/movie/getmovie";
-	private urlDetailMovie: string = "http://sv.myclass.vn/api/movie/GetMovieDetail";
-	private urlDetailMovieByGroup: string = "http://sv.myclass.vn/api/movie/GetMovieDetailByGroup";
+	private urlListMovie: string = "http://sv2.myclass.vn/api/QuanLyPhim/LayDanhSachPhim?MaNhom=GP07 ";
+	// private urlDetailMovie: string = "http://sv.myclass.vn/api/movie/GetMovieDetail";
+	// private urlDetailMovieByGroup: string = "http://sv2.myclass.vn/api/QuanLyPhim/LayChiTietPhim?MaPhim=1";
 
 	private RapChieuPhim: Array<any> = [
 		{
@@ -615,11 +615,6 @@ export class MovieService {
 		// 	]
 		// }
 	]
-
-
-
-
-
 	public DSPhimSapChieu: Array<any> = [
 		{
 			name: "Biệt Đội Cún Cưng",
@@ -681,12 +676,12 @@ export class MovieService {
 		return this._http.get(this.urlListMovie)
 			.map((res: Response) => res.json());
 	}
-	getDetailMovie(maphim: number): Observable<any> {
-		return this._http.get(`${this.urlDetailMovie}?id=${maphim}`)
-			.map((res: Response) => res.json());
-	}
-	getDetailMovieByGroup(id: any, groupId: any) {
-		return this._http.get(`${this.urlDetailMovieByGroup}?id=${id}&groupID=${groupId}`)
+	// getDetailMovie(maphim: number): Observable<any> {
+	// 	return this._http.get(`${this.urlDetailMovie}?id=${maphim}`)
+	// 		.map((res: Response) => res.json());
+	// }
+	getDetailMovieByGroup(id: any) {
+		return this._http.get(`http://sv2.myclass.vn/api/QuanLyPhim/LayChiTietPhim?MaPhim=${id}`)
 			.map((res: Response) => res.json());
 	}
 	layDanhSachPhimSapChieu(): Array<any> {
@@ -704,13 +699,13 @@ export class MovieService {
 
 
 	//quan lí phim
-	private apiCreateMovie: string = `http://sv.myclass.vn/api/movies/createmovie`;
-	private apiUploadFile: string = `http://sv.myclass.vn/api/movies/uploadfile`;
-	private apiEditPhim: string = `http://sv.myclass.vn/api/movies/editmovie`;
+	private apiCreateMovie: string = `http://sv2.myclass.vn/api/QuanLyPhim/ThemPhimMoi`;
+	private apiUploadFile: string = `http://sv2.myclass.vn/api/QuanLyPhim/UploadFile`;
+	private apiEditPhim: string = `http://sv2.myclass.vn/api/QuanLyPhim/CapNhatPhim`;
+	// private apiDeleteMovie:string = `http://sv2.myclass.vn/api/QuanLyPhim/XoaPhim?MaPhim=${id}`;
 
 
 	public createMovie(movie: Movie) {
-		console.log(movie);
 		let header: Headers = new Headers();
 		header.append("Content-Type", "application/json")
 		let obServe: Observable<any> = this._http.post(this.apiCreateMovie, movie, { headers: header }).map((result: Response) => result.json());
@@ -720,8 +715,7 @@ export class MovieService {
 	public uploadFile(Files: any) {
 		let header: Headers = new Headers();
 		let options = new RequestOptions({ headers: header });
-		let obServe: Observable<any> = this._http.post(this.apiUploadFile,
-			Files
+		let obServe: Observable<any> = this._http.post(this.apiUploadFile,Files
 			, options)
 			.map((result: Response) => result.json());
 		return obServe;
@@ -732,7 +726,13 @@ export class MovieService {
 		header.append('Content-Type', 'application/json');
 		header.append('Accept', 'application/json');
 		let options = new RequestOptions({ headers: header });
-		let obServe: Observable<any> = this._http.put(this.apiEditPhim, Files, options).map((result: Response) => result.json());
+		let obServe: Observable<any> = this._http.post(this.apiEditPhim, Files, options).map((result: Response) => result.json());
 		return obServe;
 	}
+
+	public DeleteMovie(id:any):Observable<any>{
+		return 	this._http.delete(`http://sv2.myclass.vn/api/QuanLyPhim/XoaPhim?MaPhim=${id}`)
+				.map((res:Response) => res.json());
+	}
+
 }

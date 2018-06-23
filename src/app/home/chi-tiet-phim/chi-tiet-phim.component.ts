@@ -15,11 +15,11 @@ import * as $ from 'jquery';
 export class ChiTietPhimComponent implements OnInit, OnDestroy {
 
   param1: Subscription;
-  public urlImage:string = "http://sv.myclass.vn/Images/Movies/";
   public MovieDetail:any = {};
   public MovieID:number;
-  public MaNhom:string;
+  // public MaNhom:string;
   public rate:number;
+  public Trailer:string;
 
   constructor(
     private movieDetailSer:MovieService,
@@ -35,13 +35,14 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
     
     this.Activated.queryParams.subscribe(thamso => {
       this.MovieID = parseInt(thamso.id);
-      this.MaNhom = thamso['groupid'];
+      // this.MaNhom = thamso['groupid'];
     })
-    this.movieDetailSer.getDetailMovieByGroup(this.MovieID, this.MaNhom)
+    this.movieDetailSer.getDetailMovieByGroup(this.MovieID)
                                       .subscribe((res:any) => {
                                         this.MovieDetail = res;
                                         console.log(this.MovieDetail);
-                                        const ratings = this.MovieDetail.Rating;
+                                        this.Trailer = (this.MovieDetail.Trailer).replace("watch?v=", "embed/");
+                                        const ratings = this.MovieDetail.DanhGia;
                                         const rateTotal = 5;
                                         const starPercent = (ratings / rateTotal) * 100;
                                         const starPercentRounded = `${Math.round(starPercent / 10) * 10}%`;

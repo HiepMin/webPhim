@@ -7,22 +7,25 @@
         </select>
       </div>
   </div>
-  <div class="col-md-3 col-12" *ngFor="let phim of DanhSachPhimServices | paginate: { itemsPerPage:  entryMovie  , currentPage: p1, id: 'DanhSachPhimDangChieu' }">
+  <div 
+    class="col-md-3 col-12" 
+    *ngFor="let phim of DanhSachPhimServices | paginate: { itemsPerPage:  entryMovie  , currentPage: p1, id: 'DanhSachPhimDangChieu' }"
+    >
     <div class="OneBlockMovie">
       <div class="OneBlockMovie__thumbnail">
-        <img [src]="urlImages + phim.Image" class="img-fluid" alt="">
+        <img [src]="phim.HinhAnh" class="img-fluid" alt="">
       </div>
       <div class="OneBlockMovie__overlay" href="#">
       </div>
 
       <div class="star">
-        <span>{{ phim.Rating | number}}</span>
+        <span>{{ phim.DanhGia | number}}</span>
         <i class="fa fa-star"></i>
       </div>
       <div class="OneBlockMovie__content">
         <div class="header">
           <div class="realeseDate">
-            <h5>{{ phim.ReleaseDate | date}}</h5>
+            <h5>{{ phim.NgayKhoiChieu | date}}</h5>
           </div>
 
         </div>
@@ -30,21 +33,21 @@
         <div class="data">
           <div class="data__text">
             <div class="author">
-              <h5>{{ phim.Director }}</h5>
+              <h5>Jack Sparrow</h5>
             </div>
             <div class="detail">
-              <h2 class="movieName">{{ phim.Title }}</h2>
+              <h2 class="movieName">{{ phim.TenPhim }}</h2>
               <p class="Desc">
-                  {{ phim.Description }}
+                  {{ phim.MoTa }}
               </p>
             </div>
           </div>
         </div>
           <div class="btnLink">
-            <button class="btn-primary btn btnDetail w-100 linkHeading" [routerLink]="['/chi-tiet-phim']" [queryParams]="{id:phim.ID, groupid:'GP07'}">
+            <button class="btn-primary btn btnDetail w-100 linkHeading" [routerLink]="['/chi-tiet-phim']" [queryParams]="{id:phim.MaPhim}">
               <span> Đặt Vé</span>
             </button>
-            <button class="btnTrailer" (click)="showTrailer(phim.TrailerURI)" data-toggle="modal" data-target="#modalTrailer">
+            <button class="btnTrailer" (click)="showTrailer(phim.Trailer)" data-toggle="modal" data-target="#modalTrailer">
               <i class="fa fa-play"></i>
             </button>
           </div>

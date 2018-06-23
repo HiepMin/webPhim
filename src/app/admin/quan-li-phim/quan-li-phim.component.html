@@ -113,46 +113,31 @@
 </div> -->
 
 <div class="container">
-  <form #registerForm="ngForm" (ngSubmit)="CreateMovie(registerForm.value,file.files,date)">
+  <form #registerForm="ngForm" (ngSubmit)="CreateMovie(registerForm.value,file.files,date)" class="text-white">
     <div class="form-group">
-        <label class="control-label">ID</label>
-        <input name="ID" ngModel class="form-control">
+      <label class="control-label">rating</label>
+      <input name="DanhGia" type="number" #DanhGia ngModel class="form-control">
     </div>
     <div class="form-group">
         <label class="control-label">Title</label>
-        <input name="Title" ngModel class="form-control">
+        <input name="TenPhim" ngModel class="form-control">
     </div>
     <div class="form-group">
         <label class="control-label">Description</label>
-        <input name="Description" ngModel class="form-control">
+        <input name="MoTa" ngModel class="form-control">
     </div>
     <div class="form-group">
         <label class="control-label">Image</label>
         <input #file type="file" name="Image" accept=".png, .jpg, .jpeg" ngModel class="form-control">
     </div>
     <div class="form-group">
-        <label class="control-label">GenreName</label>
-        <input name="GenreName" ngModel class="form-control">
-    </div>
-    <div class="form-group">
-        <label class="control-label">Director</label>
-        <input name="Director" ngModel class="form-control">
-    </div>
-    <div class="form-group">
-        <label class="control-label">Writer</label>
-        <input name="Writer" ngModel class="form-control">
-    </div>
-    <div class="form-group">
-        <label class="control-label">Producer</label>
-        <input name="Producer" ngModel class="form-control">
-    </div>
-    <div class="form-group">
         <label class="control-label">ReleaseDate</label>
-        <input type="date" #date name="ReleaseDate" ngModel class="form-control">
+        <input type="date" #date name="NgayKhoiChieu" ngModel class="form-control">
     </div>
-    <div class="form-group">
+    <div
+     class="form-group">
         <label class="control-label">TrailerURI</label>
-        <input name="TrailerURI" ngModel class="form-control">
+        <input name="Trailer" ngModel class="form-control">
     </div>
     <button type="submit">Create</button>
     
@@ -169,9 +154,6 @@
             <th>id</th>
             <th>Title</th>
             <th>Description</th>
-            <th>Director</th>
-            <th>Genre</th>
-            <th>hinh anh</th>
             <th>Rating</th>
             <th>ReleaseDate</th>
             <th>TrailerURI</th>
@@ -179,16 +161,16 @@
         </thead>
 
         <tbody>
-          <tr *ngFor="let phim of DanhSachPhimServices | paginate: { itemsPerPage:  entryMovie  , currentPage: p }">
-            <td>{{ phim.ID }}</td>
-            <td>{{ phim.Title }}</td>
-            <td>{{ phim.Description }}</td>
-            <td>{{ phim.Director }}</td>
-            <td>{{ phim.Genre }}</td>
-            <td><img src="{{'http://sv.myclass.vn/Images/Movies/' + phim.Image }}" alt=""></td>
-            <td>{{ phim.Rating | number}}</td>
-            <td>{{ phim.ReleaseDate | date }}</td>
-            <td>{{ phim.TrailerURI }}</td>
+          <tr *ngFor="let phim of DanhSachPhimServices | paginate: { itemsPerPage:  entryMovie  , currentPage: p }; let i = index">
+            <td>{{ i+1 }}</td>
+            <td>{{ phim.TenPhim }}</td>
+            <td>{{ phim.MoTa }}</td>
+            <td>{{ phim.DanhGia | number}}</td>
+            <td>{{ phim.NgayKhoiChieu | date }}</td>
+            <td>{{ phim.Trailer }}</td>
+            <td>
+              <button class="btn btn-danger" (click)="xoa(phim.MaPhim)">Xoá</button>
+            </td>
           </tr>
         </tbody>
       </table>
