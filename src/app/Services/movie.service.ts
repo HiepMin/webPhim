@@ -8,9 +8,18 @@ import "rxjs/add/operator/map";
 @Injectable({ providedIn: "root" })
 export class MovieService {
 
-	private urlListMovie: string = "http://sv2.myclass.vn/api/QuanLyPhim/LayDanhSachPhim?MaNhom=GP07 ";
+	public MaNhom:string = "GP07";
+
+	//quan lí phim
+	// private apiCreateMovie: string = `http://sv2.myclass.vn/api/QuanLyPhim/ThemPhimMoi`;
+	// private apiUploadFile: string = `http://sv2.myclass.vn/api/QuanLyPhim/UploadFile`;
+	// private apiEditPhim: string = `http://sv2.myclass.vn/api/QuanLyPhim/CapNhatPhim`;
+	// private apiDeleteMovie:string = `http://sv2.myclass.vn/api/QuanLyPhim/XoaPhim?MaPhim=${id}`;
+	// private urlListMovie: string = "http://sv2.myclass.vn/api/QuanLyPhim/LayDanhSachPhim?MaNhom=GP07";
 	// private urlDetailMovie: string = "http://sv.myclass.vn/api/movie/GetMovieDetail";
 	// private urlDetailMovieByGroup: string = "http://sv2.myclass.vn/api/QuanLyPhim/LayChiTietPhim?MaPhim=1";
+
+	public apiURL:string = "http://sv2.myclass.vn/api/QuanLyPhim/";
 
 	private RapChieuPhim: Array<any> = [
 		{
@@ -292,328 +301,6 @@ export class MovieService {
 				},
 			]
 		}
-
-		// {
-		// 	id: "RapDDC",
-		// 	raps : [
-		// 		{
-		// 			id : "HBT",
-		// 			name: "Hai Bà Trưng",
-		// 			diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
-		// 			hinh: "rap-01.jpg",
-		// 			phimChieus: [
-		// 				{
-		// 					name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
-		// 					hinh: "small-movie-1.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
-		// 					]
-		// 				},
-		// 				{
-		// 					name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
-		// 					hinh: "phim-41.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				},
-		// 				{
-		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
-		// 					hinh: "movie-5.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				},
-		// 			]
-		// 		},
-		// 		{
-		// 			id : "BITEXCO",
-		// 			name: "Bitexco",
-		// 			diachi: "L3-Bitexco Icon 68, 2 Hải Triều, Q.1",
-		// 			hinh: "rap-02.jpg",
-		// 			phimChieus: [
-		// 				{
-		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
-		// 					hinh: "movie-5.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				},
-		// 				{
-		// 					name: "Ống Kính Sát Nhân",
-		// 					hinh: "phim-02.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
-		// 					]
-		// 				},
-		// 				{
-		// 					name: "Gia Đình Siêu Nhân 2 - Incredibles 2",
-		// 					hinh: "phim-03.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				}
-		// 			]
-		// 		},
-				
-
-		// 	]
-		// },
-		// {
-		// 	id: "RapCGV",
-		// 	raps : [
-		// 		{
-		// 			id : "HBT",
-		// 			name: "Hai Bà Trưng",
-		// 			diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
-		// 			hinh: "rap-01.jpg",
-		// 			phimChieus: [
-		// 				{
-		// 					name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
-		// 					hinh: "small-movie-1.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
-		// 					]
-		// 				},
-		// 				{
-		// 					name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
-		// 					hinh: "phim-41.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				},
-		// 				{
-		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
-		// 					hinh: "movie-5.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				},
-		// 			]
-		// 		},
-		// 		{
-		// 			id : "BITEXCO",
-		// 			name: "Bitexco",
-		// 			diachi: "L3-Bitexco Icon 68, 2 Hải Triều, Q.1",
-		// 			hinh: "rap-02.jpg",
-		// 			phimChieus: [
-		// 				{
-		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
-		// 					hinh: "movie-5.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				}
-		// 			]
-		// 		},
-		// 		{
-		// 			id : "DONGDA",
-		// 			name: "Đống Đa",
-		// 			diachi: "890 Trần Hưng Đạo, Q.5",
-		// 			hinh: "rap-05.jpg",
-		// 			phimChieus: [
-		// 				{
-		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
-		// 					hinh: "movie-5.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				}
-		// 			]
-		// 		},
-		// 	]
-		// },
-		// {
-		// 	id: "RapCINESTAR",
-		// 	raps : [
-		// 		{
-		// 			id : "HBT",
-		// 			name: "Hai Bà Trưng",
-		// 			diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
-		// 			hinh: "rap-01.jpg",
-		// 			phimChieus: [
-		// 				{
-		// 					name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
-		// 					hinh: "small-movie-1.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
-		// 					]
-		// 				},
-		// 				{
-		// 					name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
-		// 					hinh: "phim-41.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				},
-		// 				{
-		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
-		// 					hinh: "movie-5.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				},
-		// 			]
-		// 		},
-		// 		{
-		// 			id : "BITEXCO",
-		// 			name: "Bitexco",
-		// 			diachi: "L3-Bitexco Icon 68, 2 Hải Triều, Q.1",
-		// 			hinh: "rap-02.jpg",
-		// 			phimChieus: [
-		// 				{
-		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
-		// 					hinh: "movie-5.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				}
-		// 			]
-		// 		},
-		// 		{
-		// 			id : "DONGDA",
-		// 			name: "Đống Đa",
-		// 			diachi: "890 Trần Hưng Đạo, Q.5",
-		// 			hinh: "rap-05.jpg",
-		// 			phimChieus: [
-		// 				{
-		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
-		// 					hinh: "movie-5.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				}
-		// 			]
-		// 		},
-		// 	]
-		// },
-		// {
-		// 	id: "RapBETA",
-		// 	raps : [
-		// 		{
-		// 			id : "HBT",
-		// 			name: "Hai Bà Trưng",
-		// 			diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
-		// 			hinh: "rap-01.jpg",
-		// 			phimChieus: [
-		// 				{
-		// 					name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
-		// 					hinh: "small-movie-1.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
-		// 					]
-		// 				},
-		// 				{
-		// 					name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
-		// 					hinh: "phim-41.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				},
-		// 				{
-		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
-		// 					hinh: "movie-5.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				},
-		// 			]
-		// 		},
-		// 		{
-		// 			id : "BITEXCO",
-		// 			name: "Bitexco",
-		// 			diachi: "L3-Bitexco Icon 68, 2 Hải Triều, Q.1",
-		// 			hinh: "rap-02.jpg",
-		// 			phimChieus: [
-		// 				{
-		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
-		// 					hinh: "movie-5.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				}
-		// 			]
-		// 		},
-		// 		{
-		// 			id : "DONGDA",
-		// 			name: "Đống Đa",
-		// 			diachi: "890 Trần Hưng Đạo, Q.5",
-		// 			hinh: "rap-05.jpg",
-		// 			phimChieus: [
-		// 				{
-		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
-		// 					hinh: "movie-5.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				}
-		// 			]
-		// 		},
-		// 	]
-		// },
-		// {
-		// 	id: "RapLOTTE",
-		// 	raps : [
-		// 		{
-		// 			id : "HBT",
-		// 			name: "Hai Bà Trưng",
-		// 			diachi: "135 Hai Bà Trưng, Bến Nghé, Q.1",
-		// 			hinh: "rap-01.jpg",
-		// 			phimChieus: [
-		// 				{
-		// 					name: "Thế Giới Khủng Long: Vương Quốc Sụp Đổ - Jurassic World: Fallen Kingdom",
-		// 					hinh: "small-movie-1.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40",
-		// 					]
-		// 				},
-		// 				{
-		// 					name: "Băng Cướp Thế Kỷ: Đẳng Cấp Quý Cô - Ocean's 8",
-		// 					hinh: "phim-41.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				},
-		// 				{
-		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
-		// 					hinh: "movie-5.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				},
-		// 			]
-		// 		},
-		// 		{
-		// 			id : "BITEXCO",
-		// 			name: "Bitexco",
-		// 			diachi: "L3-Bitexco Icon 68, 2 Hải Triều, Q.1",
-		// 			hinh: "rap-02.jpg",
-		// 			phimChieus: [
-		// 				{
-		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
-		// 					hinh: "movie-5.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				}
-		// 			]
-		// 		},
-		// 		{
-		// 			id : "DONGDA",
-		// 			name: "Đống Đa",
-		// 			diachi: "890 Trần Hưng Đạo, Q.5",
-		// 			hinh: "rap-05.jpg",
-		// 			phimChieus: [
-		// 				{
-		// 					name: "Peter Pan: Truy Tìm Quyển Sách Ma Thuật",
-		// 					hinh: "movie-5.jpg",
-		// 					gioChieu: [
-		// 						"5:30", "6:40", "5:30", "6:40", "5:30", "6:40", "5:30", "6:40"
-		// 					]
-		// 				}
-		// 			]
-		// 		},
-		// 	]
-		// }
 	]
 	public DSPhimSapChieu: Array<any> = [
 		{
@@ -673,7 +360,7 @@ export class MovieService {
 	];
 	constructor(private _http: Http) { }
 	layDanhSachPhim(): Observable<Movie[]> {
-		return this._http.get(this.urlListMovie)
+		return this._http.get(`${this.apiURL}LayDanhSachPhim?MaNhom=${this.MaNhom}`)
 			.map((res: Response) => res.json());
 	}
 	// getDetailMovie(maphim: number): Observable<any> {
@@ -681,7 +368,7 @@ export class MovieService {
 	// 		.map((res: Response) => res.json());
 	// }
 	getDetailMovieByGroup(id: any) {
-		return this._http.get(`http://sv2.myclass.vn/api/QuanLyPhim/LayChiTietPhim?MaPhim=${id}`)
+		return this._http.get(`${this.apiURL}LayChiTietPhim?MaPhim=${id}`)
 			.map((res: Response) => res.json());
 	}
 	layDanhSachPhimSapChieu(): Array<any> {
@@ -697,41 +384,33 @@ export class MovieService {
 		return this.ChiTietLichChieu;
 	}
 
-
-	//quan lí phim
-	private apiCreateMovie: string = `http://sv2.myclass.vn/api/QuanLyPhim/ThemPhimMoi`;
-	private apiUploadFile: string = `http://sv2.myclass.vn/api/QuanLyPhim/UploadFile`;
-	private apiEditPhim: string = `http://sv2.myclass.vn/api/QuanLyPhim/CapNhatPhim`;
-	// private apiDeleteMovie:string = `http://sv2.myclass.vn/api/QuanLyPhim/XoaPhim?MaPhim=${id}`;
-
-
-	public createMovie(movie: Movie) {
+	createMovie(movie: Movie) {
 		let header: Headers = new Headers();
 		header.append("Content-Type", "application/json")
-		let obServe: Observable<any> = this._http.post(this.apiCreateMovie, movie, { headers: header }).map((result: Response) => result.json());
+		let obServe: Observable<any> = this._http.post(`${this.apiURL}ThemPhimMoi`, movie, { headers: header }).map((result: Response) => result.json());
 		return obServe;
 
 	}
-	public uploadFile(Files: any) {
+	uploadFile(Files: any) {
 		let header: Headers = new Headers();
 		let options = new RequestOptions({ headers: header });
-		let obServe: Observable<any> = this._http.post(this.apiUploadFile,Files
+		let obServe: Observable<any> = this._http.post(`${this.apiURL}UploadFile`,Files
 			, options)
 			.map((result: Response) => result.json());
 		return obServe;
 
 	}
-	public EditPhim(Files: any) {
+	EditPhim(Files: any) {
 		let header: Headers = new Headers();
 		header.append('Content-Type', 'application/json');
 		header.append('Accept', 'application/json');
 		let options = new RequestOptions({ headers: header });
-		let obServe: Observable<any> = this._http.post(this.apiEditPhim, Files, options).map((result: Response) => result.json());
+		let obServe: Observable<any> = this._http.post(`${this.apiURL}CapNhatPhim`, Files, options).map((result: Response) => result.json());
 		return obServe;
 	}
 
-	public DeleteMovie(id:any):Observable<any>{
-		return 	this._http.delete(`http://sv2.myclass.vn/api/QuanLyPhim/XoaPhim?MaPhim=${id}`)
+	DeleteMovie(id:any):Observable<any>{
+		return 	this._http.delete(`${this.apiURL}XoaPhim?MaPhim=${id}`)
 				.map((res:Response) => res.json());
 	}
 

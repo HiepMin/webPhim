@@ -3,6 +3,7 @@
 @import "./../../../assets/scss/base/_reset";
 @import "./../../../assets/scss/base/_typography";
 @import "./../../../assets/scss/component/_heading";
+@import "./_lich-chieu-phim";
 
 .title-divTrailer{
     color: #fff;
@@ -48,23 +49,22 @@
                     font-family: trade-1;
                 }
             }
-            .block-btn-link{
-                .linkHeading{
-                    padding: 6px 16px;
-                    transform: skew(0deg);
-                    span{
-                        transform: skew(0deg);
-                        font-size: 13px;
-                    }
-                }
-            }
+            
         }
         #divTrailer{
             margin: 3rem 0;
         }
     }
 }
-
+.block-btn-link{
+    .linkHeading{
+        transform: skew(0deg);
+        span{
+            transform: skew(0deg);
+            font-size: 13px;
+        }
+    }
+}
 .rating-star{
     .star-outer{
         position: relative;
@@ -95,4 +95,54 @@
         }
     }
 }
+.divLichChieu{
+    padding: 0;
+    background: transparent;
+    .divRapChieu{
+        margin-bottom: 40px;
+    }
+    .thongTinVe{
+    }
+}
+#divDanhGia{
+    margin-top: 50px;
+    .one-block-danh-gia{
+        background: #fff;
+        border-radius: 5px;
+        padding: 22px 40px;
+        margin-bottom: 25px;
+        .info-person{
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            .avatar{
+                margin-right: 15px;
+                img{
+                    width: 50px;
+                }
+            }
+            .name-date{
+                padding-top: 10px;
+                .name{
+                    font-size: 18px;
+                    font-family: lato-reg;
+                }
+                .date{
+                    font-size: 11px;
+                    font-weight: bold;
+                    color: gray;
+                    position: relative;
+                    bottom: 4px;    
+                }
+            }
+        }
+        .comment {
+            color: #696969;
+            font-family: lato-reg;
+            font-size: 13px;
+            line-height: 20px;
+        }
+    }
+}
+
 

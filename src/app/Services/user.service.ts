@@ -12,29 +12,46 @@ import { UserRegister } from "./../Models/UserRegister.class";
   providedIn: 'root'
 })
 export class UserService {
-  
-  private apiURLRegister:string = "http://sv.myclass.vn/api/user/registeruser";
-  private apiURLSignUp:string = "http://sv.myclass.vn/api/user/login";
+  public MaNhom:string = "GP07";
+  public apiHTTP:string = "http://sv2.myclass.vn/api/QuanLyNguoiDung/";
 
+  private apiURLRegister:string = `${this.apiHTTP}ThemNguoiDung`;
+  private apiURLDanhSachND:string =`${this.apiHTTP}LayDanhSachNguoiDung?MaNhom=${this.MaNhom}`;
+  private apiURLLoaiND:string = `${this.apiHTTP}LayDanhSachLoaiNguoiDung`;
   constructor(
     private _http:Http
   ) { }
 
+
+  //đăng kí
   RegisterAccount(user:UserRegister):Observable<UserRegister>{
     let header:Headers = new Headers();
-    header.append("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
-    let body = `data=${JSON.stringify(user)}`;
-    var observe = this._http.post(this.apiURLRegister, body, {headers : header})
+    header.append("Content-Type", "application/json;charset=UTF-8");
+    // let body = `data=${JSON.stringify(user)}`;
+    var observe = this._http.post(this.apiURLRegister, user, {headers : header})
       .map((res:Response) => res.json());
     return observe;
   }
 
-  SignUpAccount(user:UserSignUp):Observable<UserSignUp>{
+  //đăng Nhập
+  SignUpAccount(user:any):Observable<UserSignUp>{
+    const apiURLSignUp:string = `${this.apiHTTP}DangNhap?TaiKhoan=${user.TaiKhoan}&matkhau=${user.MatKhau}`;
     let header = new Headers();
-    header.append("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
-    let body = `data=${JSON.stringify(user)}`;
-    let observe = this._http.post(this.apiURLSignUp, body, {headers:header})
+    header.append("Content-Type", "application/json;charset=UTF-8");
+    // let body = `data=${JSON.stringify(user)}`;
+    let observe = this._http.post(apiURLSignUp, {headers:header})
       .map((res:Response) => res.json());
     return observe;
+  }
+
+  //lấy danh sách người dùng
+  getListUser():Observable<any[]>{
+    return this._http.get(this.apiURLDanhSachND)
+                      .map((res:Response) => res.json());
+  }
+  //lấy loại người dùng
+  getTypeUser():Observable<any[]>{
+    return this._http.get(this.apiURLLoaiND)
+                      .map((res:Response) => res.json());
   }
 }

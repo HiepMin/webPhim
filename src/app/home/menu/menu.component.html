@@ -25,11 +25,21 @@
         </div>
       </div>
       <ul class="nav">
+          <li>
+              <a 
+                [routerLink]="['/']"
+                [ngx-scroll-to]="'#slider'" 
+                [ngx-scroll-to-duration]="DurationScroll"
+                [ngx-scroll-to-easing]="'easeOutCubic'"
+                (click)="onClick()">
+                <span>Trang Chủ</span> 
+              </a>
+            </li>
         <li>
           <a 
             [routerLink]="['/']"
             [ngx-scroll-to]="'#DSPhim'" 
-            [ngx-scroll-to-duration]="1000"
+            [ngx-scroll-to-duration]="DurationScroll"
             [ngx-scroll-to-easing]="'easeOutCubic'"
             (click)="onClick()">
             <span>Phim</span> 
@@ -39,7 +49,7 @@
           <a
             [routerLink]="['/']"
             [ngx-scroll-to]="'#divThongTinChieuPhim'" 
-            [ngx-scroll-to-duration]="1000"
+            [ngx-scroll-to-duration]="DurationScroll"
             [ngx-scroll-to-easing]="'easeOutCubic'"
             (click)="onClick()">
             <span> Lịch Chiếu</span>
@@ -49,7 +59,7 @@
           <a 
             [routerLink]="['/']"
             [ngx-scroll-to]="'#News'" 
-            [ngx-scroll-to-duration]="1000"
+            [ngx-scroll-to-duration]="DurationScroll"
             [ngx-scroll-to-easing]="'easeOutCubic'"
             (click)="onClick()">
             <span>Tin Tức</span>
@@ -57,7 +67,7 @@
         </li>
         <li>
           <a href="#" data-toggle="modal" data-target="#modalTimKiem">
-            <span>Search</span>
+            <span>Tìm Phim</span>
           </a>
         </li>
       </ul>

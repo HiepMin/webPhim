@@ -1,4 +1,8 @@
-<form #SignUpForm="ngForm" class="container formDangNhap formAuth" (ngSubmit)="DangNhap(SignUpForm.value)">
+<form 
+  #SignUpForm="ngForm" 
+  class="container formDangNhap formAuth" 
+  (ngSubmit)="DangNhap(SignUpForm.value, SignUpForm)"
+  >
   <div class="row">
     <div class="col-12 text-center title-form">
       <h3>Đăng Nhập</h3>
@@ -13,10 +17,19 @@
                 <input 
                   placeholder="Tài Khoản"
                   type="text" 
-                  name="UserName"  
-                  #UserName="ngModel" 
+                  name="TaiKhoan"  
+                  #TaiKhoan="ngModel" 
                   class="form-control form-marvel"
+                  required
                   ngModel>
+                  <!-- <span 
+                    class="alert alert-warning" 
+                    *ngIf="TaiKhoan.errors && (TaiKhoan.dirty || TaiKhoan.touched)"
+                    >
+                    <p *ngIf="TaiKhoan.errors.required">
+                      Vui lòng nhập tài khoản
+                    </p>
+                </span> -->
               </div>
           </div>
         </div>
@@ -31,34 +44,37 @@
                 <input 
                   placeholder="Mật Khẩu"
                   type="password" 
-                  name="Password"  
-                  #Password="ngModel" 
-                  class="form-control form-marvel"
+                  name="MatKhau"  
+                  #MatKhau="ngModel" 
+                  required
+                  class="form-control form-marvel formMatKhauDN"
                   ngModel>
+                  <!-- <span 
+                    class="alert alert-warning" 
+                    *ngIf="MatKhau.errors && (MatKhau.dirty || MatKhau.touched)"
+                    >
+                    <p *ngIf="MatKhau.errors.required">
+                      Vui lòng nhập mật khẩu
+                    </p>
+                </span> -->
               </div>
+             
           </div>
         </div>
       </div>
     </div>
-
 
     <div class="col-12">
       <div class="container">
         <div class="row">
-          <div class="col-3">
-              <div class="form-group">
-                <select name="GroupID" #GroupID="ngModel" ngModel>
-                  <option *ngFor="let group of Groups" [value]="group.Id">
-                    {{ group.Name }}
-                  </option>
-                </select>
-              </div>
+          <div class="col-8 mx-auto">
+            <div class="line">
+
+            </div>
           </div>
         </div>
       </div>
     </div>
-
-    
 
 
     <div class="col-12">
@@ -81,18 +97,20 @@
       <span class="Or">Hoặc Bạn Có Thể Đăng Nhập Bằng...</span>
     </div>
 
+
+
     <div class="col-12">
       <div class="container">
         <div class="row">
           <div class="col-8 mx-auto d-flex">
-              <button class="btn btn-primary btn-block rounded-0 py-2 linkHeading btnLogin w-50 btnDNFacebook">
+              <button class="btn btn-primary btn-block rounded-0 py-2 linkHeading btnLogin w-50 btnDNFacebook mr-1">
                 <span>
                     <i class="fa fa-facebook mr-2"></i>
                     Facebook
                 </span>
               </button>
 
-              <button class="btn btn-danger btn-block rounded-0 py-2 linkHeading btnLogin w-50 btnDNGoogle">
+              <button class="btn btn-danger btn-block rounded-0 py-2 linkHeading btnLogin w-50 btnDNGoogle ml-1 mr-0">
                 <span>
                     <i class="fa fa-google-plus mr-2"></i>
                     Google

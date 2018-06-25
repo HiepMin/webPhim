@@ -14,12 +14,16 @@ import * as $ from 'jquery';
 })
 export class ChiTietPhimComponent implements OnInit, OnDestroy {
 
-  param1: Subscription;
+  public param1: Subscription;
+	public RapChieuPhim: Array<any>;
   public MovieDetail:any = {};
   public MovieID:number;
   // public MaNhom:string;
+  public Show:boolean = true;
   public rate:number;
   public Trailer:string;
+  public urlImage:string = "./../../../assets/images/";
+
 
   constructor(
     private movieDetailSer:MovieService,
@@ -29,7 +33,7 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
   ) { 
     
   }
-
+  public divShowing:string = "divDatVe";
 
   ngOnInit() {
     
@@ -52,6 +56,17 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
                                         this.MovieDetail = error;
                                         console.log(this.MovieDetail);
                                       })
+
+    this.RapChieuPhim = this.movieDetailSer.GetRapChieuPhim();
+  }
+
+
+  setShowDiv(btn){
+    event.preventDefault();
+    $(".linkHeading").removeClass("active");
+    $(btn).addClass("active");
+    console.log(btn.getAttribute("data-setShow"));
+    this.divShowing = btn.getAttribute("data-setShow");
   }
 
   ngOnChanges(a): void {

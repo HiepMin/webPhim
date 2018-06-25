@@ -2,7 +2,7 @@
   <div class="overlay"></div>
   <div class="row divFormDangKy">
     <div class="col-12 mx-auto mt-5">
-        <form action="" class="formAuth container formDangKy" #registerForm="ngForm" (ngSubmit)="DangKy(registerForm.value)">
+        <form action="" class="formAuth container formDangKy" #registerForm="ngForm" (ngSubmit)="DangKy(registerForm.value, FirstName.value, LastName.value)">
           <div class="row">
             <div class="col-12 text-center title-form">
               <h3>Đăng Ký</h3>
@@ -19,7 +19,7 @@
                           placeholder="First Name"
                           type="text" 
                           name="FirstName"  
-                          #FirstName="ngModel" 
+                          #FirstName
                           class="form-control  form-marvel"
                           ngModel>
                       </div>
@@ -47,6 +47,25 @@
               </div>
             </div>
 
+            <!-- <div class="col-12">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-md-11 col-10 mx-auto">
+                      <div class="form-group">
+                        <input 
+                          placeholder="Họ Tên"
+                          type="text" 
+                          name="HoTen"  
+                          #TaiKhoan="ngModel" 
+                          class="form-control form-marvel"
+                          ngModel>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
+
+
             <div class="col-12">
               <div class="container">
                 <div class="row">
@@ -55,8 +74,8 @@
                       <input 
                         placeholder="User Name"
                         type="text" 
-                        name="UserName"  
-                        #UserName="ngModel" 
+                        name="TaiKhoan"  
+                        #TaiKhoan="ngModel" 
                         class="form-control form-marvel"
                         ngModel>
                     </div>
@@ -73,8 +92,8 @@
                       <input 
                         placeholder="Password"
                         type="password" 
-                        name="Password"  
-                        #Password="ngModel" 
+                        name="MatKhau"  
+                        #MatKhau="ngModel" 
                         class="form-control form-marvel"
                         ngModel>
                     </div>
@@ -121,15 +140,15 @@
             </div>
             
 
-            <div class="col-12 col-md-6">
+            <div class="col-12">
               <div class="container">
                 <div class="row">
-                  <div class="col-10 mx-auto">
+                  <div class="col-md-11 col-10 mx-auto">
                     <div class="form-group">
                       <input 
                         placeholder="Phone Number"
-                        type="number" 
-                        name="Phone"  
+                        type="text" 
+                        name="SoDT"  
                         #Phone="ngModel" 
                         class="form-control form-marvel" 
                         ngModel>
@@ -139,8 +158,17 @@
               </div>
             </div>
 
+            <!-- <div class="col-12 col-md-6">
+                <div class="container">
+                  <div class="row">
+                    <div class="col-10 mx-auto">
+                      <div class="line"></div>
+                    </div>
+                  </div>
+                </div>
+              </div> -->
 
-            <div class="col-12 col-md-6 d-flex align-items-center ">
+            <!-- <div class="col-12 col-md-6 d-flex align-items-center ">
               <div class="container">
                 <div class="row">
                   <div class="col-10 mx-auto">
@@ -151,9 +179,9 @@
                   </div>
                 </div>
               </div>
-            </div>
+            </div> -->
 
-            <div class="col-12">
+            <!-- <div class="col-12">
                 <div class="container">
                   <div class="row">
                     <div class="col-11 mx-auto">
@@ -167,24 +195,18 @@
                     </div>
                   </div>
                 </div>
-              </div>
+              </div> -->
 
               <div class="col-12">
                 <div class="container">
                   <div class="row">
                     <div class="col-8 mx-auto">
-                      <button class="btn rounded-0 py-2 btnLogin btn-block linkHeading" type="submit">Đăng Ký</button>
+                      <button class="btn rounded-0 py-2 btnLogin btn-block linkHeading mt-5 mx-0" type="submit">Đăng Ký</button>
                     </div>
                   </div>
                 </div>
               </div>
 
-              <div class="col-12 d-flex justify-content-center align-items-center mt-3 divOr">
-                <span class="Or">Bạn Đã Có Tài Khoản?</span>
-                <span>
-                  <button class="btn linkHeading">Đăng Nhập</button>
-                </span>
-              </div>
           </div>
                   
 

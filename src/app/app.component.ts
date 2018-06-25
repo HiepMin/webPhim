@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
-import { Router, NavigationEnd }  from "@angular/router";
+import { 
+  Router, NavigationEnd }  from "@angular/router";
 
 
 
@@ -9,7 +10,8 @@ import { Router, NavigationEnd }  from "@angular/router";
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
-  title = 'app works!';
+  public title = 'app works!';
+  public isShow:boolean = true;
 //   onActivate(event) {
 //     let scrollToTop = window.setInterval(() => {
 //         let pos = window.pageYOffset;
@@ -33,5 +35,20 @@ export class AppComponent {
           behavior: 'smooth' 
         });
     });
+
+    // setTimeout(() => {
+    //   this.isShow = true;
+    //   console.log(this);
+    // }, 1000)
   }
+  
+  ngOnDestroy(): void {
+    //Called once, before the instance is destroyed.
+    //Add 'implements OnDestroy' to the class.
+    // setTimeout(() => {
+    //   this.isShow = true;
+    //   console.log(this);
+    // }, 1000)
+  }
+
 }

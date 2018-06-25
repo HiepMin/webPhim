@@ -8,6 +8,9 @@ import { ScrollToAnimationEasing, ScrollToEvent, ScrollToOffsetMap } from '@nick
 })
 export class MenuComponent implements OnInit {
 
+	public DurationScroll:number = 1500;
+
+
 
 	@ViewChild("sideBar") sideBar:ElementRef;
 	@ViewChild("burgerIcon") burgerIcon:ElementRef;
@@ -20,7 +23,7 @@ export class MenuComponent implements OnInit {
 		event.preventDefault();
 		btn.classList.toggle("active");
 		this.sideBar.nativeElement.classList.toggle("active");
-		console.log(this.sideBar.nativeElement);
+		// console.log(this.sideBar.nativeElement);
 	}
 	onClick(){
 		event.preventDefault();

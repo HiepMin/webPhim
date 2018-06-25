@@ -40,6 +40,11 @@
         font-size: 12px;
     }
 }
+.line{
+    @include size(100%, 1px);
+    background: #545454;
+    margin: 1.5rem 0;
+}
 
 
 

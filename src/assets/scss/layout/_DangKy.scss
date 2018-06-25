@@ -10,6 +10,9 @@
     background: url("./../../images/img-rap-phim.jpeg") no-repeat center center;
     background-size: cover;
     position: relative;
+    .linkHeading{
+        transform: skew(0deg);
+    }
     .overlay{
         @include size(100%, 100%);
         @include posi-top-left(absolute, 0, 0);
@@ -28,30 +31,17 @@
             background: transparent;
             margin: 3rem auto auto;
             .form-marvel{
-                @include tablet{
+                transform: skew(0deg);
+                span{
                     transform: skew(0deg);
-                    span{
-                        transform: skew(0deg);
-                    }
                 }
                 &::placeholder{
                     color: #fff;
-                    transform: skew(11deg);
-                    @include tablet{
-                        // transform: skew(11deg);
-                    }
+                    transform: skew(0deg);
                 }
             }
             
         }
-        
-        // .mydp, .mydp .headertodaybtn{
-        //     background: #000;
-        //     .selectiongroup{
-        //         input.selection{
-        //         }
-        //     }
-        // }
         .divOr{
             button{
                 transform: skew(0);

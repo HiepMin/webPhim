@@ -2,7 +2,11 @@
   <div class="col-md-3 col-12 showEntries">
       <div class="d-flex align-items-center justify-content-end divEntry">
         <h5>Show Entries:</h5>
-        <select [(ngModel)]="entryMovie" #selectEntry class="selecEntry linkHeading mx-4" (change)="showEntries(selectEntry.value)">
+        <select 
+          [(ngModel)]="entryMovie" 
+          #selectEntry 
+          class="selecEntry linkHeading mx-4" 
+          (change)="showEntries(selectEntry.value)">
             <option value="{{ entry.value }}" *ngFor="let entry of entryList">{{ entry.view }}</option>
         </select>
       </div>
@@ -55,11 +59,17 @@
      
     </div>
   </div>
-  <pagination-controls (pageChange)="p1 = $event" class="my-pagination"  id="DanhSachPhimDangChieu" autoHide="{{ hidePagiControl }}"></pagination-controls>
+  <pagination-controls 
+    (pageChange)="p1 = $event" 
+    class="my-pagination"  
+    id="DanhSachPhimDangChieu" 
+    autoHide="{{ hidePagiControl }}">
+  </pagination-controls>
 </div>
 
 <!-- Button trigger modal -->
   <!-- Modal -->
+  <ng-container *ngIf="CallTrailer">
     <div class="modal fade" #modalTrailer id="modalTrailer" tabindex="-1" role="dialog">
       <div class="modal-dialog mx-auto  modal-dialog-centered" style="max-width: 650px;" role="document">
         <div class="modal-content">
@@ -69,3 +79,5 @@
         </div>
       </div>
     </div>
+  </ng-container>
+   

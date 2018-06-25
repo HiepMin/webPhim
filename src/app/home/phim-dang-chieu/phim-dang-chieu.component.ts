@@ -15,9 +15,8 @@ export class PhimDangChieuComponent {
 
   
     private DanhSachPhimServices: Array<Movie>;
-    public urlImages: string = "http://sv.myclass.vn/Images/Movies/";
     public sub1: Subscription;
-    private MaNhom: string = "GP07";
+    // private MaNhom: string = "GP07";
     public entryMovie: number = 4;
     public slMovieDangChieu: number;
     public TrailerURL:SafeResourceUrl;
@@ -48,10 +47,10 @@ export class PhimDangChieuComponent {
         this.sub1 = this.MovieSer.layDanhSachPhim()
             .subscribe((res: Array<Movie>) => {
                 this.DanhSachPhimServices = res;
-                console.log(this.DanhSachPhimServices);
+                // console.log(this.DanhSachPhimServices);
             }, error => {
                 this.DanhSachPhimServices = error;
-                console.log(this.DanhSachPhimServices);
+                // console.log(this.DanhSachPhimServices);
             })
     }
     ngOnDestroy() {

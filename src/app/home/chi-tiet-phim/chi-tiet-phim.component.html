@@ -1,77 +1,171 @@
 <div class="detail-movie">
   <div class="container mx-auto">
-    <div class="col-md-8 mx-auto col-12">
+    <div class="col-md-10 mx-auto col-12">
         <div class="block-detail container">
           <div class="row image-info-movie">
-            <div class="col-md-5 col-12 divImage">
-                <div class="block-image-movie">
-                  <img mat-card-image src="{{ MovieDetail.HinhAnh }}" alt="Photo of a {{ MovieDetail.Title }}">
+
+            <div class="col-md-8 col-12 mx-auto">
+              <div class="container">
+                <div class="row">
+                    <div class="col-md-5 col-12 divImage">
+                        <div class="block-image-movie">
+                          <img mat-card-image src="{{ MovieDetail.HinhAnh }}" alt="Photo of a {{ MovieDetail.Title }}">
+                        </div>
+                    </div>
+                    <div class="col-md-7 col-12 divInfo">
+                      <div class="block-info-movie">
+                        <h5 class="date">{{ MovieDetail.NgayKhoiChieu | date }}</h5>
+                        <h2 class="nameMovie">{{ MovieDetail.TenPhim }}</h2>
+                        <p class="time-type">120 min - 2D/Digital  </p>
+                        
+                        <div class="author info-item">
+                          <strong class="au-title title">Director</strong>
+                          <p class="au-detail">Hiệp Minh</p>
+                        </div>
+                        <div class="writer info-item">
+                          <strong class="writer-title title">Writer</strong>
+                          <p class="writer-detail">Hiệp Minh</p>
+                        </div>
+                        <div class="des info-item">
+                          <strong class="des-title title">Description</strong>
+                          <p class="des-detail">{{ MovieDetail.MoTa }}</p>
+                        </div>
+                      </div>
+                      <div class="rating-star">
+                          <div class="info-item star-outer">
+                            
+                            <div class="stars-inner"></div>
+                            <span class="number-rating">{{ MovieDetail.DanhGia | number }} Star</span>
+                          </div>
+                      </div>
+                    </div>
                 </div>
-            </div>
-            <div class="col-md-7 col-12 divInfo">
-              <div class="block-info-movie">
-                <h5 class="date">{{ MovieDetail.NgayKhoiChieu | date }}</h5>
-                <h2 class="nameMovie">{{ MovieDetail.TenPhim }}</h2>
-                <p class="time-type">120 min - 2D/Digital  </p>
-                
-                <div class="author info-item">
-                  <strong class="au-title title">Director</strong>
-                  <p class="au-detail">Hiệp Minh</p>
-                </div>
-                <div class="writer info-item">
-                  <strong class="writer-title title">Writer</strong>
-                  <p class="writer-detail">Hiệp Minh</p>
-                </div>
-                <div class="des info-item">
-                  <strong class="des-title title">Description</strong>
-                  <p class="des-detail">{{ MovieDetail.MoTa }}</p>
-                </div>
-                
               </div>
-              <div class="block-btn-link d-flex">
-                <button class="linkHeading"
+            </div>
+            
+
+
+            <div class="col-md-8 col-12 mx-auto mt-5">
+              <div class="block-btn-link d-flex justify-content-center">
+                <button 
+                  class="linkHeading active" 
+                  #btnDatVe 
+                  data-setShow="divDatVe"
+                  (click)="setShowDiv(btnDatVe)"
                   [ngx-scroll-to]="'#divDatVe'" 
                   [ngx-scroll-to-duration]="1000"
-                  [ngx-scroll-to-easing]="'easeOutCubic'">
+                  [ngx-scroll-to-easing]="'easeOutCubic'"
+                  >
                   <span>
                       Đặt Vé
-                    <i class="fa fa-ticket"></i>
+                    <i class="fa fa-ticket ml-1"></i>
                   </span>
                 </button>
-                <button class="linkHeading"  
+                <button 
+                  class="linkHeading" 
+                  #btnTrailer
+                  data-setShow="divTrailer"
+                  (click)="setShowDiv(btnTrailer)"
                   [ngx-scroll-to]="'#divTrailer'" 
                   [ngx-scroll-to-duration]="1000"
                   [ngx-scroll-to-easing]="'easeOutCubic'">
                   <span>
                       Trailer
-                      <i class="fa fa-film"> </i>
+                      <i class="fa fa-film ml-1"> </i>
+                  </span>
+                </button>
+                <button 
+                  class="linkHeading" 
+                  #btnDanhGia
+                  data-setShow="divDanhGia"
+                  (click)="setShowDiv(btnDanhGia)"
+                  [ngx-scroll-to]="'#divDanhGia'" 
+                  [ngx-scroll-to-duration]="1000"
+                  [ngx-scroll-to-easing]="'easeOutCubic'">
+                  <span>
+                      Nhận Xét
+                      <i class="fa fa-thumbs-up ml-1"> </i>
                   </span>
                 </button>
               </div>
+            </div>
 
-              <div class="rating-star">
-                  <div class="info-item star-outer">
+
+            <ng-container *ngIf="divShowing == 'divTrailer'">
+              <div class="col-12 " id="divTrailer">
+                  <iframe [src]="DomSanitizer.bypassSecurityTrustResourceUrl(Trailer)" width="100%" height="500" frameborder="2">
+                </iframe>
+              </div>
+            </ng-container>
+            
+            <ng-container *ngIf="divShowing == 'divDatVe'">
+              <div class="col-12" id="divDatVe">
+                  <div class="container divLichChieu" id="divThongTinChieuPhim">
+
+
+                    <div class="row divRapChieu">
+                      <div class="col-md-8 mx-auto col-12 mt-5">
+                          <ul>
+                              <li *ngFor="let rap of RapChieuPhim; let i = index" [ngClass]="i == 0 ? 'active' : ''" #item class="list-item">
+                                  <a class="" id="{{ rap.id }}"  #linkRap>
+                                      <img src="{{ urlImage +  rap.img}}" alt="">
+                                      <span>{{ rap.name }}</span>
+                                  </a>
+                              </li>
+                          </ul>
+                      </div> 
+                    </div>
                     
-                    <div class="stars-inner"></div>
-                    <span class="number-rating">{{ MovieDetail.DanhGia | number }} Star</span>
+                    <div class="row thongTinVe">
+                        <div class="col-md-5 col-12 divRap active" >
+                            <a 
+                                href="#" 
+                                class="one-block-rap active"
+                                >
+                                <div class="img-rap">
+                                    <img src="./../../../assets/images/rap-01.jpg" alt="">
+                                </div>
+                                <div class="info-rap">
+                                    <h4 class="ten-rap">Phú Thọ</h4>
+                                    <div class="dia-chi-rap">L4-Lotte Mart Phú Thọ, Q.11</div>
+                                    <a href="#">Bản Đồ</a>
+                                </div>
+                            </a>
+                          </div>
+                    </div> 
+
+
+
                   </div>
               </div>
-            </div>
+            </ng-container>
 
-            <div class="col-12 " id="divTrailer">
-              <strong class="title-divTrailer">Trailer</strong>
-                <iframe [src]="DomSanitizer.bypassSecurityTrustResourceUrl(Trailer)" width="100%" height="500" frameborder="2">
-              </iframe>
-            </div>
+            <ng-container *ngIf="divShowing == 'divDanhGia'">
+              <div class="col-12" id="divDanhGia">
+                <div class="one-block-danh-gia">
 
-            <div class="col-12" id="divDatVe">
-                <strong class="title-divTrailer">Lịch Chiếu - Đặt Vé</strong>
+                <div class="info-person">
+                  <div class="avatar">
+                    <img src="./../../../assets/images/ava-1.jpg" alt="" class="rounded-circle">
+                  </div>
+                  <div class="name-date">
+                    <strong class="name">Hiep</strong>
+                    <div class="date">1 Ngày Trước</div>
+                  </div>
+                </div>
+                <div class="comment">
+                  <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam placeat quaerat, vitae vel et ut sint doloremque quibusdam amet tenetur quis quas nam harum consequuntur molestiae sit quos debitis minus libero ad, nulla natus alias cumque. Soluta maiores labore nostrum magni unde, expedita molestiae tempora ullam quod. Sed, delectus consequuntur doloribus velit quam dolor ipsa ab at illum repellat pariatur aliquam quia provident iste! Voluptatum facere placeat aspernatur aperiam laudantium autem pariatur quos eaque labore, omnis ea error reprehenderit dolore itaque similique suscipit repudiandae? Modi adipisci assumenda laboriosam nobis aperiam quis. Natus aliquam iste, obcaecati voluptatem nostrum officiis. Dignissimos, alias.</p>
+                </div>
+              </div>
                 
-            </div>
+
+
+
+              </div>
+            </ng-container>
+
+
           </div>
-          
-         
-          
         </div>
     </div>
   </div>

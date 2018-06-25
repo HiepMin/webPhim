@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeLayoutComponent implements OnInit {
 
+  public Show:boolean = false;
+
   constructor() { }
 
   ngOnInit() {
