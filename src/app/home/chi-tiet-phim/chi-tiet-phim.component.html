@@ -1,10 +1,10 @@
 <div class="detail-movie">
   <div class="container mx-auto">
-    <div class="col-md-10 mx-auto col-12">
+    <div class="col-md-8 mx-auto col-12">
         <div class="block-detail container">
           <div class="row image-info-movie">
 
-            <div class="col-md-8 col-12 mx-auto">
+            <div class="col-md-10 col-12 mx-auto">
               <div class="container">
                 <div class="row">
                     <div class="col-md-5 col-12 divImage">
@@ -115,26 +115,91 @@
                           </ul>
                       </div> 
                     </div>
-                    
-                    <div class="row thongTinVe">
-                        <div class="col-md-5 col-12 divRap active" >
-                            <a 
-                                href="#" 
-                                class="one-block-rap active"
-                                >
-                                <div class="img-rap">
-                                    <img src="./../../../assets/images/rap-01.jpg" alt="">
-                                </div>
-                                <div class="info-rap">
-                                    <h4 class="ten-rap">Phú Thọ</h4>
-                                    <div class="dia-chi-rap">L4-Lotte Mart Phú Thọ, Q.11</div>
-                                    <a href="#">Bản Đồ</a>
-                                </div>
-                            </a>
+
+                    <div class="col-12 col-md-10 mx-auto divGioChieu">
+                      <div class="container active">
+                        <div class="row">
+                          <div class="col-12">
+                            <div class="block-ngay-chieu mb-4">
+                                <a 
+                                  #NgayChieu
+                                  id="NgayChieu_{{ link.MaLichChieu }}"
+                                  class="one-block-ngay-chieu"
+                                  *ngFor="let link of MovieDetail.LichChieu; let i = index"
+                                  [ngClass]="i == 0 ? 'active' : ''"
+                                  (click)="chooseDate(NgayChieu, GioChieu)"
+                                  >
+                                  <ng-container *ngIf="i+2 == 8; then ChuNhat else TruocChuNhat"></ng-container>
+                                  <ng-template #ChuNhat>
+                                    <div class="thu" >Chủ Nhật</div>
+                                  </ng-template>
+                                  <ng-template #TruocChuNhat>
+                                    <div class="thu" >Thứ {{ i + 2 }}</div>
+                                  </ng-template>
+                                  <div class="ngay text-center">{{ link.NgayChieuGioChieu | date : 'dd-MM' }}</div>
+                                </a>
+                            </div>
+                            
                           </div>
-                    </div> 
+
+                          <div class="col-12">
+
+                            <div 
+                              #GioChieu
+                              class="one-block-gio-chieu"
+                              *ngFor="let link of MovieDetail.LichChieu; let i = index"
+                              [ngClass]="i == 0 ? 'active' : ''"
+                              id="GioChieu_{{ link.MaLichChieu }}"
+                              >
+                              <div class="info-movie">
+                                  <img src="./../../../assets/images/rap-01.jpg" alt="">
+                                  <div class="info-right">
+                                      <a href="#" class="name">
+                                        Phú Thọ
+                                      </a>
+                                      <p>L3-Lotte Mart NSG, 469 Nguyễn Hữu Thọ, Q.7</p>
+                                  </div>
+                              </div>
+                              <div class="info-gio-chieu">
+                                  <strong class="type">
+                                      2D
+                                  </strong>
+                                  <ul class="gio-chieu">
+                                      <li>
+                                        <ng-container *ngIf="stateDangNhap == false; then ChuaDangNhap else DaDangNhap"></ng-container>
+                                        <ng-template #DaDangNhap>
+                                            <a 
+                                              class="time-item mb-0 "
+                                              [routerLink]="['/dat-ve']"
+                                              [queryParams]="{MaLichChieu:link.MaLichChieu}"
+                                              >
+                                                {{ link.NgayChieuGioChieu | date : 'hh:mm' }}
+                                            </a>
+                                        </ng-template>
+
+                                        <ng-template #ChuaDangNhap>
+                                            <a 
+                                              class="time-item mb-0 disable"
+                                              matTooltip="CLik Để Đăng Nhập!!"
+                                              (click)="triggerDangNhap()"
+                                            >
+                                              {{ link.NgayChieuGioChieu | date : 'hh:mm' }}
+                                          </a>
+                                        </ng-template>
+                                         
+                                      </li>
+                                  </ul>
+                              </div>
+                            </div>
+
+                          </div>
 
 
+
+                        </div>
+                      </div>
+                      
+                    </div>
 
                   </div>
               </div>

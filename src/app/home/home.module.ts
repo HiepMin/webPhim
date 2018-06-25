@@ -35,6 +35,7 @@ import { FooterComponent } from './footer/footer.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { LichChieuComponent } from './lich-chieu/lich-chieu.component';
 import { TimKiemPhimComponent } from './tim-kiem-phim/tim-kiem-phim.component';
+import { ModalTrailerComponent } from './modal-trailer/modal-trailer.component';
 //router
 
 const HomeRoutes: Routes = [
@@ -56,6 +57,10 @@ const HomeRoutes: Routes = [
             {
                 path: "dang-ky",
                 component: DangKyComponent
+            },
+            {
+                path : "dat-ve",
+                component : DatVeComponent
             }
         ]
     }
@@ -63,12 +68,9 @@ const HomeRoutes: Routes = [
 
 @NgModule({
     imports: [
-        // BrowserModule,
         CommonModule,
         FormsModule,
-        // BrowserAnimationsModule,
         NgxPaginationModule,
-        // MatDatepickerModule,
         MatButtonModule,
         MatFormFieldModule,
         MatCardModule,
@@ -83,6 +85,6 @@ const HomeRoutes: Routes = [
         TrangChuComponent, DanhSachPhimComponent, MenuComponent, ChiTietPhimComponent
     ],
     providers: [MovieService],
-    declarations: [TrangChuComponent, DanhSachPhimComponent, MenuComponent, ChiTietPhimComponent, DatVeComponent, HomeLayoutComponent, SliderComponent, DangKyComponent, DangNhapComponent, PhimSapChieuComponent, PhimDangChieuComponent, TinTucComponent, FooterComponent, LichChieuComponent, TimKiemPhimComponent]
+    declarations: [TrangChuComponent, DanhSachPhimComponent, MenuComponent, ChiTietPhimComponent, DatVeComponent, HomeLayoutComponent, SliderComponent, DangKyComponent, DangNhapComponent, PhimSapChieuComponent, PhimDangChieuComponent, TinTucComponent, FooterComponent, LichChieuComponent, TimKiemPhimComponent, ModalTrailerComponent]
 })
 export class HomeModule { }

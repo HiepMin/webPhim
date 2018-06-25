@@ -1,4 +1,15 @@
-import { Component, OnInit, OnDestroy, Output, EventEmitter, ViewChild, ElementRef } from '@angular/core';
+import { 
+    Component, 
+    OnInit, 
+    OnDestroy, 
+    Output, 
+    EventEmitter, 
+    ViewChild, 
+    ElementRef, 
+    OnChanges,
+    AfterViewChecked,
+    AfterContentChecked,
+} from '@angular/core';
 import { Movie } from "./../../Models/Movie.class";
 import { MovieService } from "./../../Services/movie.service";
 import { Subscription } from 'rxjs';
@@ -11,12 +22,11 @@ import * as $ from "jquery";
   templateUrl: './phim-dang-chieu.component.html',
   styleUrls: ['./../../../assets/scss/layout/_danhSachPhim.scss']
 })
-export class PhimDangChieuComponent {
+export class PhimDangChieuComponent implements OnInit, OnDestroy, OnChanges, AfterViewChecked, AfterContentChecked {
 
   
     private DanhSachPhimServices: Array<Movie>;
     public sub1: Subscription;
-    // private MaNhom: string = "GP07";
     public entryMovie: number = 4;
     public slMovieDangChieu: number;
     public TrailerURL:SafeResourceUrl;
@@ -47,14 +57,28 @@ export class PhimDangChieuComponent {
         this.sub1 = this.MovieSer.layDanhSachPhim()
             .subscribe((res: Array<Movie>) => {
                 this.DanhSachPhimServices = res;
-                // console.log(this.DanhSachPhimServices);
             }, error => {
                 this.DanhSachPhimServices = error;
-                // console.log(this.DanhSachPhimServices);
             })
     }
     ngOnDestroy() {
         this.sub1.unsubscribe();
+
+    }
+    ngOnChanges(){
+        
+    }
+    ngAfterViewChecked() {
+        //Called after every check of the component's view. Applies to components only.
+        //Add 'implements AfterViewChecked' to the class.
+        
+    }
+    ngAfterContentChecked() {
+        //Called after every check of the component's or directive's content.
+        //Add 'implements AfterContentChecked' to the class.
+        // $("#modalTrailer").on("hidden.bs.modal", function(){
+        //     $("#modalTrailer iframe").attr("src", "");
+        // });
     }
     showTrailer(e) {
         event.preventDefault();
@@ -72,8 +96,6 @@ export class PhimDangChieuComponent {
             this.hidePagiControl = false;
         }
     }
-    ngOnChanges(){
-        
-    }
+    
 }
 

@@ -1,13 +1,7 @@
-/* You can add global styles to this file, and also import other style files */
 $main-color: #FFA000;
-@import "~bootstrap/dist/css/bootstrap.min.css";
-$fa-font-path: "../node_modules/font-awesome/fonts";
-@import '~font-awesome/scss/font-awesome.scss';
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "./assets/scss/helpers/_variables";
 @import "./assets/scss/helpers/_mixin";
-// @import  "~owl.carousel/dist/assets/owl.carousel.css";
-// @import  "~owl.carousel/dist/assets/owl.theme.default.css";
 body {
   background: #000 url("./assets/images/bg-dot.png") repeat;
   overflow-x: hidden;

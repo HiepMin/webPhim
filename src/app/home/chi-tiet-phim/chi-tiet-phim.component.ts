@@ -3,8 +3,8 @@ import { DomSanitizer, SafeResourceUrl }  from "@angular/platform-browser";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Subscription } from "rxjs";
 import { MovieService } from "./../../Services/movie.service";
-// declare var $:any;
-import * as $ from 'jquery';
+declare var $:any;
+// import * as $ from 'jquery';
 
 
 @Component({
@@ -23,7 +23,7 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
   public rate:number;
   public Trailer:string;
   public urlImage:string = "./../../../assets/images/";
-
+  public stateDangNhap:boolean = false;
 
   constructor(
     private movieDetailSer:MovieService,
@@ -58,6 +58,8 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
                                       })
 
     this.RapChieuPhim = this.movieDetailSer.GetRapChieuPhim();
+
+   
   }
 
 
@@ -69,11 +71,40 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
     this.divShowing = btn.getAttribute("data-setShow");
   }
 
+  chooseDate(date,item){
+    $(".one-block-ngay-chieu").removeClass("active");
+    $(date).addClass("active");
+
+    $(".one-block-gio-chieu").removeClass("active");
+    $(`#GioChieu_${date.id.split("_")[1]}`).addClass("active");
+  }
+  triggerDangNhap(){
+    $("#modalDangNhap").modal("show");
+  }
+
   ngOnChanges(a): void {
+    
   }
   ngOnDestroy(){
+    
   }
   ngAfterViewInit(){
+    
+  }
+  ngAfterContentInit() {
+    //Called after ngOnInit when the component's or directive's content has been initialized.
+    //Add 'implements AfterContentInit' to the class.
+  }
+  ngAfterContentChecked() {
+    //Called after every check of the component's or directive's content.
+    //Add 'implements AfterContentChecked' to the class.
+    let flag = localStorage.getItem("user");
+		if(flag){
+			this.stateDangNhap = true;
+		}
+		else{
+			this.stateDangNhap = false;
+		}
   }
 }
 

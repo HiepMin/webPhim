@@ -1,10 +1,11 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { NgForm } from "@angular/forms";
-
-
 import { UserService } from "./../../Services/user.service";
 import { UserSignUp } from "./../../Models/UserSignUp.class";
 import { Subscription } from 'rxjs';
+
+import swal from 'sweetalert2'
+declare var $: any;
 
 @Component({
   selector: 'app-dang-nhap',
@@ -32,12 +33,33 @@ export class DangNhapComponent implements OnInit, OnDestroy {
       this.unsub = this._UserService.SignUpAccount(user)
       .subscribe((res:any) => {
         if(typeof(res) === "string"){
-          alert(res);
           localStorage.removeItem("user");
+          swal({
+            type: 'error',
+            title: 'Oops...',
+            text: 'Có Gì Đó Sai Sai Ở Đây!!',
+          })
         }
         else{
-          alert("dang nhap thanh cong");
-          localStorage.setItem("user",JSON.stringify(res))
+          swal({
+            type: 'success',
+            title: 'Đăng Nhập Thành Công!!',
+            showConfirmButton: true,
+          }).then((result) => {
+            if(result.value){
+              $("#modalDangNhap").modal("hide");
+              console.log($("#modal"));
+              swal({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 2000,
+                type: 'success',
+                title: `Xin Chào ${res.HoTen}`,
+              })
+              localStorage.setItem("user",JSON.stringify(res))
+            }
+          })
         }
       })
     }

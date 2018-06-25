@@ -1,5 +1,7 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ScrollToAnimationEasing, ScrollToEvent, ScrollToOffsetMap } from '@nicky-lenaers/ngx-scroll-to';
+import { SweetAlertService } from '../../Services/sweet-alert.service';
+import swal from 'sweetalert2';
 
 @Component({
 	selector: 'app-menu',
@@ -9,24 +11,42 @@ import { ScrollToAnimationEasing, ScrollToEvent, ScrollToOffsetMap } from '@nick
 export class MenuComponent implements OnInit {
 
 	public DurationScroll:number = 1500;
+	public DaDangNhap:boolean = false;
+	
 
 
 
 	@ViewChild("sideBar") sideBar:ElementRef;
 	@ViewChild("burgerIcon") burgerIcon:ElementRef;
-	constructor() { }
+	constructor(private AlertService:SweetAlertService) { }
+
+	DangXuat(){
+		this.AlertService.AlertWarning("Bạn Mó Muốn Rời Khỏi Đây", () => {
+			localStorage.removeItem("user");
+			this.AlertService.toastRight("Good Bye Bro!!");
+		})
+	}
+
 
 	ngOnInit() {
+		
 	}
 
 	showSideBar(btn){
 		event.preventDefault();
 		btn.classList.toggle("active");
 		this.sideBar.nativeElement.classList.toggle("active");
-		// console.log(this.sideBar.nativeElement);
 	}
-	onClick(){
-		event.preventDefault();
+	
+	ngAfterContentChecked() {
+		//Called after every check of the component's or directive's content.
+		//Add 'implements AfterContentChecked' to the class.
+		let flag = localStorage.getItem("user");
+		if(flag){
+			this.DaDangNhap = true;
+		}
+		else{
+			this.DaDangNhap = false;
+		}
 	}
-
 }

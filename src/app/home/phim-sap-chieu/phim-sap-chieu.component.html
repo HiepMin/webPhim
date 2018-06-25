@@ -47,7 +47,7 @@
 </div>
 
 <ng-container *ngIf="CallTrailer">
-    <div class="modal fade" #modalTrailerPhimSapchieu id="modalTrailer" tabindex="-1" role="dialog">
+    <!-- <div class="modal fade" #modalTrailerPhimSapchieu id="modalTrailer" tabindex="-1" role="dialog">
       <div class="modal-dialog mx-auto  modal-dialog-centered" style="max-width: 650px;" role="document">
         <div class="modal-content">
           <div class="modal-body" style="background:#000">
@@ -55,6 +55,7 @@
           </div>
         </div>
       </div>
-    </div>
+    </div> -->
+    <app-modal-trailer [trailerURL]="TrailerURL"></app-modal-trailer>
 </ng-container>
   

@@ -14,14 +14,37 @@
       </div>
         
       <div class="social-auth">
+        
         <ul class="social">
           <li><a href="#" class="fa fa-facebook-square"></a></li>
           <li><a href="#" class="fa fa-globe"></a></li>
           <li><a href="#" class="fa fa-youtube-square"></a></li>
         </ul>
         <div class="auth">
-          <a href="#" [routerLink]="['/dang-ky']">Đăng Ký</a>
-          <a href="#" data-toggle="modal" data-target="#modalDangNhap">Đăng Nhập</a>
+          <ng-container *ngIf="DaDangNhap; then User else NoneUser"> </ng-container>
+          <ng-template #User>
+              <div class="info-user">
+                <div class="avatar-user">
+                  <img src="./../../../assets/images/avatar-troll.jpg" alt="">
+                </div>
+                <div class="name">
+                  <span>Minh Hiep</span> 
+                  <i class="fa fa-angle-down"></i>
+                </div>
+                <ul class="DangXuat-ThongTin">
+                  <li>
+                    <a >Thong Tin Ca Nhan</a>
+                  </li>
+                  <li>
+                    <a  class="DangXuat" (click)="DangXuat()">Dang Xuat</a>
+                  </li>
+                </ul>
+              </div>
+          </ng-template>
+          <ng-template #NoneUser>
+              <a href="#" [routerLink]="['/dang-ky']">Đăng Ký</a>
+              <a href="#" data-toggle="modal" data-target="#modalDangNhap">Đăng Nhập</a>
+          </ng-template>
         </div>
       </div>
       <ul class="nav">
@@ -31,7 +54,7 @@
                 [ngx-scroll-to]="'#slider'" 
                 [ngx-scroll-to-duration]="DurationScroll"
                 [ngx-scroll-to-easing]="'easeOutCubic'"
-                (click)="onClick()">
+                >
                 <span>Trang Chủ</span> 
               </a>
             </li>
@@ -41,7 +64,7 @@
             [ngx-scroll-to]="'#DSPhim'" 
             [ngx-scroll-to-duration]="DurationScroll"
             [ngx-scroll-to-easing]="'easeOutCubic'"
-            (click)="onClick()">
+            >
             <span>Phim</span> 
           </a>
         </li>
@@ -51,7 +74,7 @@
             [ngx-scroll-to]="'#divThongTinChieuPhim'" 
             [ngx-scroll-to-duration]="DurationScroll"
             [ngx-scroll-to-easing]="'easeOutCubic'"
-            (click)="onClick()">
+            >
             <span> Lịch Chiếu</span>
           </a>
           </li>
@@ -61,7 +84,7 @@
             [ngx-scroll-to]="'#News'" 
             [ngx-scroll-to-duration]="DurationScroll"
             [ngx-scroll-to-easing]="'easeOutCubic'"
-            (click)="onClick()">
+            >
             <span>Tin Tức</span>
           </a>
         </li>

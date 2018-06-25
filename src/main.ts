@@ -4,8 +4,8 @@ import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 import { AppModule } from './app/app.module';
 import { environment } from './environments/environment';
 
-import * as $ from "jquery";
-import  "bootstrap";
+// import * as $ from "jquery";
+// import  "bootstrap";
 import "hammerjs";
 // import "owl.carousel";
 

@@ -95,13 +95,45 @@
         }
     }
 }
-.divLichChieu{
-    padding: 0;
-    background: transparent;
+
+
+#divThongTinChieuPhim{
+    padding: 0 !important;
+    background: transparent !important;
     .divRapChieu{
         margin-bottom: 40px;
     }
-    .thongTinVe{
+    .divGioChieu{
+        .block-ngay-chieu{
+            display: flex;
+            flex-wrap: nowrap;
+            font-family: lato-reg;
+            .one-block-ngay-chieu{
+                cursor: pointer;  
+                @include model(9px, 13px);  
+                border-radius: 5px;
+                color: #fff;
+                font-size: 13px;
+                &.active{
+                    border: 3px solid #fff;
+                }
+                &:hover{
+                    text-decoration: underline !important;
+                }
+            }
+        }
+       
+        .info-movie{
+            img{
+                height: 50px;
+            }
+            
+        }
+        .info-gio-chieu{
+            .time-item{
+                cursor: pointer;
+            }
+        }
     }
 }
 #divDanhGia{

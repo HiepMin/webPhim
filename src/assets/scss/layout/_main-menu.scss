@@ -83,9 +83,10 @@ $bgNav:#000;
                 }
             }
             .social-auth{
-                @include size(100%, 50%);
+                @include size(100%, 55%);
                 @include flex(space-between, center, row, wrap);
                 border-bottom: 1px solid #3d3d3d;   
+               
                 @include tablet{
                     height: auto;
                     flex-direction: column;
@@ -111,6 +112,58 @@ $bgNav:#000;
                         @include size(100%, 30px);
                         @include flex(center, center, row, wrap);
                     }
+                    .info-user{
+                        display: flex;
+                        align-items: center;
+                        cursor: pointer;
+                        position: relative;
+                        img{
+                            height: 30px;
+                            border-radius: 50%;
+                        }   
+                        .name{
+                            color: #fff;
+                            font-size: 13px;
+                            span{
+                                font-family: monts-reg;
+                                margin: 0 6px 0 11px;
+                            }
+                        }
+                        .DangXuat-ThongTin{
+                            @include posi-top-right(absolute, 50%, 50%);
+                            @include flex(center, center, column, wrap);
+                            width: 11rem;
+                            opacity: 0;
+                            visibility: hidden;
+                            transition: .2s all;
+                            transform: translateX(50%);
+                            background: #a7a4a4de;
+                            border-radius: 0 0 5px 5px;
+                            li{
+                                width: 100%;
+                                a {
+                                    cursor: pointer;
+                                    color: #252525 !important;
+                                    width: 100%;
+                                    margin: 0 !important;
+                                    display: block;
+                                    text-align: center;
+                                    padding: 7px;
+                                }
+                            }
+                            
+                        }
+                        &:hover{
+                            .DangXuat-ThongTin{
+                                top: 112%;
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                        }
+                        &.active{
+                            @extend .info-user:hover;
+                        }
+                    }
                     a{
                         font-size: 11px;
                         color: #ffffff;
@@ -128,7 +181,7 @@ $bgNav:#000;
                 }
             }
             .nav{
-                @include size(100%, 50%);
+                @include size(100%, 45%);
                 @include flex(flex-start, center, row, wrap);
                 @include tablet{
                     margin: 2rem 0;
