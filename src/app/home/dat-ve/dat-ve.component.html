@@ -1,3 +1,35 @@
-<p>
-  dat-ve works!
-</p>
+<div class="phong-ve" id="divPhongVe">
+	<div class="container-fluid phong-ve__content">
+		<div class="row">
+			<div class="col-md-8 col-12 DanhSachGhe">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-10 col-12 mx-auto">
+							<div class="info-rap"></div>
+							<div class="info-day-ghe">
+								<div class="img-screen">
+									<img src="./../../../assets/images/screen.png" class="w-100" alt="">
+								</div>
+								<div class="container">
+									<div class="row day-ghe">
+										<ng-container *ngFor="let ghe of DanhSachGhe; let i = index">
+											<div class="col-1">
+												<app-ghe 
+													[ghe]="ghe"
+													(SendObjectGhe)="ConfirmDatGhe($event)"
+												></app-ghe>
+											</div>
+										</ng-container>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-4 col-12 info-movie-dang-dat">
+				<button (click)="ConfirmDatVe()">Dat Ghe</button>
+			</div>
+		</div>
+	</div>
+</div>

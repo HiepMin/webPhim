@@ -33,29 +33,21 @@
               </div>
             </div>
             <div class="btnLink">
-                <button  class="btn-primary btn btnDetail w-100  linkHeading">
-                  <span> Đặt Vé</span> 
-                </button>
-                <button class="fa fa-play text-primary btnTrailer" data-toggle="modal" data-target="#modalTrailer" (click)="showTrailer(phim.trailer)">
-                  </button>
-              </div>
-          </div>
+                	<button  class="btn-primary btn btnDetail w-100  linkHeading">
+                  		<span> Đặt Vé</span> 
+                	</button>
+                	<button class="fa fa-play text-primary btnTrailer" data-toggle="modal" data-target="#modalTrailer" (click)="showTrailer(phim.trailer)">
+                  	</button>
+              	</div>
+          	</div>
            
-        </div>
-      </div>
-  <pagination-controls (pageChange)="p = $event"  class="my-pagination"></pagination-controls>
+        	</div>
+      	</div>
+  	<pagination-controls (pageChange)="p = $event"  class="my-pagination"></pagination-controls>
 </div>
 
 <ng-container *ngIf="CallTrailer">
-    <!-- <div class="modal fade" #modalTrailerPhimSapchieu id="modalTrailer" tabindex="-1" role="dialog">
-      <div class="modal-dialog mx-auto  modal-dialog-centered" style="max-width: 650px;" role="document">
-        <div class="modal-content">
-          <div class="modal-body" style="background:#000">
-              <iframe class="border-0" width="100%" height="400" [src]="TrailerURL"></iframe>
-          </div>
-        </div>
-      </div>
-    </div> -->
+    
     <app-modal-trailer [trailerURL]="TrailerURL"></app-modal-trailer>
 </ng-container>
   

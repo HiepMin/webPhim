@@ -1,0 +1,39 @@
+@import "./../../../assets/scss/helpers/_variables";
+@import "./../../../assets/scss/helpers/_mixin";
+@import "./../../../assets/scss/base/_reset";
+@import "./../../../assets/scss/base/_typography";
+
+
+#divPhongVe{
+	background: url("./../../images/bg-news.jpg") center center no-repeat fixed;
+	background-size:cover;
+	@include size(100%, auto);
+	padding: 9rem 2rem;
+	@include mobile{
+		padding: 6rem 1rem !important;
+	}
+	.DanhSachGhe{
+		min-height: auto;
+		padding: 3rem 4rem;
+		border-radius: 8px;
+		background-image: linear-gradient(to bottom, #000000d9, #ffffff17);
+		@include mobile{
+			background: transparent;
+			padding: 0 !important;
+		}
+		.img-screen{
+			margin-bottom: 3rem;
+		}
+		
+	}
+	.info-movie-dang-dat{
+		background: lightblue;
+	}
+}
+.day-ghe{
+	text-align: center;
+	overflow-x: auto;
+	// @include flex(center, center,row, wrap);
+}
+
+

@@ -383,7 +383,16 @@ export class MovieService {
 	GetChiTietLichChieu(): Array<any> {
 		return this.ChiTietLichChieu;
 	}
-
+	LayChiTietPhongVe(MaPhongVe:any):Observable<any>{
+		return this._http.get(`${this.apiURL}ChiTietPhongVe?MaLichChieu=${MaPhongVe}`)
+						.map((res:Response) => res.json());
+	}
+	DatVe(ve:any){
+		let header:Headers = new Headers();
+		header.append("Content-Type", "application/json");
+		return this._http.post(`http://sv2.myclass.vn/api/QuanLyDatVe/DatVe`, ve, { headers:header })
+						.map((res:Response) => res.json());
+	}
 	createMovie(movie: Movie) {
 		let header: Headers = new Headers();
 		header.append("Content-Type", "application/json")
