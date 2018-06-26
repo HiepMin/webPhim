@@ -5,6 +5,9 @@
 		#BtnDatVe
 		[ngClass]="TrangThaiGhe ? 'DangDat' : ''"
 		(click)="DatGhe(MotGhe)"
+		[ngx-scroll-to]="'#divDanhSachGhe'" 
+		[ngx-scroll-to-duration]="1000"
+		[ngx-scroll-to-easing]="'easeOutCubic'"
 		>
 		{{ MotGhe.TenGhe }}
 	</button>

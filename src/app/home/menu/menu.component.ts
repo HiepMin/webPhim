@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
 import { ScrollToAnimationEasing, ScrollToEvent, ScrollToOffsetMap } from '@nicky-lenaers/ngx-scroll-to';
 import { SweetAlertService } from '../../Services/sweet-alert.service';
 import swal from 'sweetalert2';
+import { Router } from "@angular/router";
 
 @Component({
 	selector: 'app-menu',
@@ -18,12 +19,16 @@ export class MenuComponent implements OnInit {
 
 	@ViewChild("sideBar") sideBar:ElementRef;
 	@ViewChild("burgerIcon") burgerIcon:ElementRef;
-	constructor(private AlertService:SweetAlertService) { }
+	constructor(
+		private AlertService:SweetAlertService,
+		private router:Router
+	) { }
 
 	DangXuat(){
 		this.AlertService.AlertWarning("Bạn Mó Muốn Rời Khỏi Đây", () => {
 			localStorage.removeItem("user");
 			this.AlertService.toastRight("Good Bye Bro!!");
+			this.router.navigate(['/'])
 		})
 	}
 

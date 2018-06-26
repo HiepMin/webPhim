@@ -47,7 +47,8 @@ export class DangNhapComponent implements OnInit, OnDestroy {
             showConfirmButton: true,
           }).then((result) => {
             if(result.value){
-              $("#modalDangNhap").modal("hide");
+			  $("#modalDangNhap").modal("hide");
+			  $(".formDangNhap input").val("");
               console.log($("#modal"));
               swal({
                 toast: true,

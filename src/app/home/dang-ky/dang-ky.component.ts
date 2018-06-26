@@ -21,17 +21,6 @@ export class DangKyComponent implements OnInit {
 
 
   private UserRegister:UserRegister;
-  public Groups:Array<any> = [
-    {Id : "GP01",Name : "nhom 1"},
-    {Id : "GP02",Name : "nhom 2"},
-    {Id : "GP03",Name : "nhom 3"},
-    {Id : "GP04",Name : "nhom 4"},
-    {Id : "GP05",Name : "nhom 5"},
-    {Id : "GP06",Name : "nhom 6"},
-    {Id : "GP07",Name : "nhom 7"},
-    {Id : "GP08",Name : "nhom 8"},
-    {Id : "GP09",Name : "nhom 9"},
-  ];
   ngOnInit() {
     this._UserService.getListUser()
                       .subscribe((res:Array<any>) => {
@@ -46,8 +35,7 @@ export class DangKyComponent implements OnInit {
   DangKy(user:UserRegister, fn:string, ln:string){
     user.MaNhom = "GP07";
     user.MaLoaiNguoiDung = "KhachHang";
-    user.HoTen = fn + ln;
-    // user.MaLoaiNguoiDung = "GP07";
+    user.HoTen = fn + " " + ln;
     this._UserService.RegisterAccount(user).subscribe((res:UserRegister) => {
       this.UserRegister = res;
       console.log(this.UserRegister);
@@ -55,7 +43,6 @@ export class DangKyComponent implements OnInit {
       this.UserRegister = error;
       console.log(this.UserRegister);//Username already exists
     })
-    console.log(user);
   }
 
   ngOnDestroy(): void {

@@ -10,7 +10,8 @@ import {
     MatCardModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatTooltipModule
+	MatTooltipModule,
+	MatChipsModule
 } from "@angular/material";
 // import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MyDatePickerModule } from "mydatepicker";
@@ -37,6 +38,7 @@ import { LichChieuComponent } from './lich-chieu/lich-chieu.component';
 import { TimKiemPhimComponent } from './tim-kiem-phim/tim-kiem-phim.component';
 import { ModalTrailerComponent } from './modal-trailer/modal-trailer.component';
 import { GheComponent } from './ghe/ghe.component';
+import { ThongTinNguoiDungComponent } from './thong-tin-nguoi-dung/thong-tin-nguoi-dung.component';
 //router
 
 const HomeRoutes: Routes = [
@@ -62,7 +64,11 @@ const HomeRoutes: Routes = [
             {
                 path : "dat-ve",
                 component : DatVeComponent
-            }
+			},
+			{
+				path : "thong-tin-tai-khoan",
+				component : ThongTinNguoiDungComponent
+			}
         ]
     }
 ];
@@ -73,7 +79,8 @@ const HomeRoutes: Routes = [
         FormsModule,
         NgxPaginationModule,
         MatButtonModule,
-        MatFormFieldModule,
+		MatFormFieldModule,
+		MatChipsModule,
         MatCardModule,
         ScrollToModule.forRoot(),
         MatSelectModule,
@@ -86,6 +93,6 @@ const HomeRoutes: Routes = [
         TrangChuComponent, DanhSachPhimComponent, MenuComponent, ChiTietPhimComponent
     ],
     providers: [MovieService],
-    declarations: [TrangChuComponent, DanhSachPhimComponent, MenuComponent, ChiTietPhimComponent, DatVeComponent, HomeLayoutComponent, SliderComponent, DangKyComponent, DangNhapComponent, PhimSapChieuComponent, PhimDangChieuComponent, TinTucComponent, FooterComponent, LichChieuComponent, TimKiemPhimComponent, ModalTrailerComponent, GheComponent]
+    declarations: [TrangChuComponent, DanhSachPhimComponent, MenuComponent, ChiTietPhimComponent, DatVeComponent, HomeLayoutComponent, SliderComponent, DangKyComponent, DangNhapComponent, PhimSapChieuComponent, PhimDangChieuComponent, TinTucComponent, FooterComponent, LichChieuComponent, TimKiemPhimComponent, ModalTrailerComponent, GheComponent, ThongTinNguoiDungComponent]
 })
 export class HomeModule { }

@@ -23,6 +23,7 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
 	public Trailer: string;
 	public urlImage: string = "./../../../assets/images/";
 	public stateDangNhap: boolean = false;
+	public divShowing: string = "divDatVe";
 
 	constructor(
 		private movieDetailSer: MovieService,
@@ -32,7 +33,6 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
 	) {
 
 	}
-	public divShowing: string = "divDatVe";
 
 	ngOnInit() {
 		this.Activated.queryParams.subscribe(thamso => {

@@ -3,7 +3,9 @@ import {
 	OnInit, 
 	Input,
 	EventEmitter,
-	Output
+	Output,
+	AfterContentChecked,
+	SimpleChanges
 } from '@angular/core';
 import { GheDat } from '../../Models/GheDat.class';
 
@@ -29,5 +31,18 @@ export class GheComponent implements OnInit {
 		// console.log(GheDuocDat);
 	}
 
+	ngAfterContentChecked() {
+		//Called after every check of the component's or directive's content.
+		//Add 'implements AfterContentChecked' to the class.
+	}
+
+	ngAfterViewChecked() {
+		//Called after every check of the component's view. Applies to components only.
+		//Add 'implements AfterViewChecked' to the class.
+	}
+	ngOnChanges(changes: SimpleChanges): void {
+		//Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.
+		//Add '${implements OnChanges}' to the class.
+	}
 
 }

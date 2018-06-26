@@ -1,10 +1,13 @@
 <div class="phong-ve" id="divPhongVe">
 	<div class="container-fluid phong-ve__content">
 		<div class="row">
-			<div class="col-md-8 col-12 DanhSachGhe">
+
+			<div class="col-md-8 col-12 DanhSachGhe mx-auto" id="divDanhSachGhe">
 				<div class="container">
 					<div class="row">
-						<div class="col-md-10 col-12 mx-auto">
+
+
+						<div class="col-md-8 col-12 mx-auto ">
 							<div class="info-rap"></div>
 							<div class="info-day-ghe">
 								<div class="img-screen">
@@ -27,9 +30,38 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-md-4 col-12 info-movie-dang-dat">
-				<button (click)="ConfirmDatVe()">Dat Ghe</button>
+
+			<div class="col-md-4 col-12 mx-auto divThongTinVe">
+				<div class="divThongTinVe__content">
+					<div class="info-movie">
+						<div class="divInfo">
+							<div class="img-movie">
+								<img [src]="MovieDetail.HinhAnh" alt="">
+							</div>
+							<div class="main-info">
+								<h3 class="name-movie">{{ MovieDetail.TenPhim }}</h3>
+								<span>120 phút - 2D</span>
+									<p  class="ngay-xem">{{ ThoiGianChieu | date : 'MM-dd-yy, h:mm a'}}</p>
+								<div class="so-ghe">
+									<p>36</p>
+								</div>
+							</div>
+						</div>
+						<div class="divTongTien">
+							<h5>Tổng Tiền: </h5>
+							<div class="text-right">
+								<h3 class="tong-tien">{{ TongTien | number}}</h3>
+								<span>đ</span>
+							</div>
+						</div>	
+					</div>
+					<button class="btnThanhToan blue-gradient" (click)="ConfirmDatVe()">
+						Thanh Toán
+						<i class="fa fa-arrow-right"></i>
+					</button>
+				</div>
 			</div>
 		</div>
+		
 	</div>
 </div>
