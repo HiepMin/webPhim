@@ -18,10 +18,10 @@ export class UserService {
 	private apiURLRegister: string = `${this.apiHTTP}ThemNguoiDung`;
 	private apiURLDanhSachND: string = `${this.apiHTTP}LayDanhSachNguoiDung?MaNhom=${this.MaNhom}`;
 	private apiURLLoaiND: string = `${this.apiHTTP}LayDanhSachLoaiNguoiDung`;
+	private apiURLCapNhatND:string = `${this.apiHTTP}CapNhatThongTin`;
 	constructor(
 		private _http: Http
 	) { }
-
 
 	//đăng kí
 	RegisterAccount(user: UserRegister): Observable<UserRegister> {
@@ -61,5 +61,12 @@ export class UserService {
 		return this._http
 			.post(`http://sv2.myclass.vn/api/QuanLyDatVe/XemLichSuDatVe?TaiKhoan=${taikhoan}`, { headers: header })
 			.map((res:Response) => res.json());
+	}
+	//Cập Nhật Thông Tin Người Dùng
+	CapNhatThongTinNguoiDung(nguoidung:any){
+		let header = new Headers();
+		header.append("Content-Type", "application/json;charset=UTF-8");
+		return this._http.post(this.apiURLCapNhatND,nguoidung, {headers : header})
+						.map((res:Response) => res.json());
 	}
 }

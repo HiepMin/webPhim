@@ -39,6 +39,7 @@ export class GheComponent implements OnInit {
 	ngAfterViewChecked() {
 		//Called after every check of the component's view. Applies to components only.
 		//Add 'implements AfterViewChecked' to the class.
+		// console.log("after view checked");
 	}
 	ngOnChanges(changes: SimpleChanges): void {
 		//Called before any other lifecycle hook. Use it to inject dependencies, but avoid any serious work here.

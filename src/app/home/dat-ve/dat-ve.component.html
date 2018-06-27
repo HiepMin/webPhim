@@ -43,22 +43,45 @@
 								<span>120 phút - 2D</span>
 									<p  class="ngay-xem">{{ ThoiGianChieu | date : 'MM-dd-yy, h:mm a'}}</p>
 								<div class="so-ghe">
-									<p>36</p>
+									<strong>Ghế Số: </strong>
+									<ng-container *ngIf="ListGheNgoi.length > 0; then DaCoSoGhe else ChuaCoSoGhe"></ng-container>
+
+									<ng-template #DaCoSoGhe>
+										<p *ngFor="let ghe of ListGheNgoi">{{ ghe }}</p>
+									</ng-template>
+									<ng-template #ChuaCoSoGhe>
+										<h6>Chưa Có Ghế Nào!!</h6>
+									</ng-template>
 								</div>
 							</div>
 						</div>
 						<div class="divTongTien">
 							<h5>Tổng Tiền: </h5>
 							<div class="text-right">
-								<h3 class="tong-tien">{{ TongTien | number}}</h3>
+								<h3 class="tong-tien" #TienThanhToan>{{ TongTien | number}}</h3>
 								<span>đ</span>
 							</div>
 						</div>	
 					</div>
-					<button class="btnThanhToan blue-gradient" (click)="ConfirmDatVe()">
-						Thanh Toán
-						<i class="fa fa-arrow-right"></i>
-					</button>
+					<ng-container *ngIf="SoLuongGheDangDat > 0; then DuocDat else ChuaDuocDat"></ng-container>
+
+					<ng-template #DuocDat>
+						<button class="btnThanhToan blue-gradient btnDuocDat" (click)="ConfirmDatVe()">
+							Thanh Toán
+							<i class="fa fa-arrow-right"></i>
+						</button>
+					</ng-template>
+					
+					<ng-template #ChuaDuocDat>
+						<button 
+							class="btnThanhToan blue-gradient btnChuaDuocDat" 
+							matTooltip="Xin Chọn Ghế">
+							Thanh Toán
+							<i class="fa fa-arrow-right"></i>
+						</button>
+					</ng-template>
+
+
 				</div>
 			</div>
 		</div>

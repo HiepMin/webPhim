@@ -11,7 +11,8 @@ import {
     MatFormFieldModule,
     MatSelectModule,
 	MatTooltipModule,
-	MatChipsModule
+	MatChipsModule,
+	MatInputModule
 } from "@angular/material";
 // import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MyDatePickerModule } from "mydatepicker";
@@ -81,6 +82,7 @@ const HomeRoutes: Routes = [
         MatButtonModule,
 		MatFormFieldModule,
 		MatChipsModule,
+		MatInputModule,
         MatCardModule,
         ScrollToModule.forRoot(),
         MatSelectModule,
