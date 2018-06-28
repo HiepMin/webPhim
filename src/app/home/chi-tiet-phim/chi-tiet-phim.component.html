@@ -1,18 +1,18 @@
 <div class="detail-movie">
   <div class="container mx-auto">
-    <div class="col-md-8 mx-auto col-12">
+    <div class="col-lg-9 mx-auto col-12">
         <div class="block-detail container">
           <div class="row image-info-movie">
 
-            <div class="col-md-10 col-12 mx-auto">
+            <div class="col-12 mx-auto">
               <div class="container">
                 <div class="row">
-                    <div class="col-md-5 col-12 divImage">
+                    <div class="col-md-5 col-10 mx-auto divImage">
                         <div class="block-image-movie">
                           <img mat-card-image src="{{ MovieDetail.HinhAnh }}" alt="Photo of a {{ MovieDetail.Title }}">
                         </div>
                     </div>
-                    <div class="col-md-7 col-12 divInfo">
+                    <div class="col-md-7 col-10 mx-auto divInfo">
                       <div class="block-info-movie">
                         <h5 class="date">{{ MovieDetail.NgayKhoiChieu | date }}</h5>
                         <h2 class="nameMovie">{{ MovieDetail.TenPhim }}</h2>
@@ -45,8 +45,8 @@
             
 
 
-            <div class="col-md-8 col-12 mx-auto mt-5">
-              <div class="block-btn-link d-flex justify-content-center">
+            <div class="col-12 mx-auto mt-5">
+              <div class="block-btn-link">
                 <button 
                   class="linkHeading active" 
                   #btnDatVe 
@@ -100,11 +100,11 @@
             
             <ng-container *ngIf="divShowing == 'divDatVe'">
               <div class="col-12" id="divDatVe">
-                  <div class="container divLichChieu" id="divThongTinChieuPhim">
+                  <div class="container divLichChieu ChiTietPage">
 
 
                     <div class="row divRapChieu">
-                      <div class="col-md-8 mx-auto col-12 mt-5">
+                      <div class="col-md-10 mx-auto col-12 mt-5">
                           <ul>
                               <li *ngFor="let rap of RapChieuPhim; let i = index" [ngClass]="i == 0 ? 'active' : ''" #item class="list-item">
                                   <a class="" id="{{ rap.id }}"  #linkRap>
@@ -116,8 +116,8 @@
                       </div> 
                     </div>
 
-                    <div class="col-12 col-md-10 mx-auto divGioChieu">
-                      <div class="container active">
+                    <div class="col-12 mx-auto divGioChieu p-0">
+                      <div class="container active  p-0">
                         <div class="row">
                           <div class="col-12">
                             <div class="block-ngay-chieu mb-4">
@@ -142,7 +142,7 @@
                             
                           </div>
 
-                          <div class="col-12">
+                          <div class="col-md-10 col-12 mx-auto mt-5">
 
                             <div 
                               #GioChieu

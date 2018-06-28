@@ -1,7 +1,7 @@
-<div class="row rowPhimDangChieu">
-  <div class="col-md-3 col-12 showEntries">
+<div class="row rowPhimDangChieu mx-auto">
+  <div class="col-md-6 col-12 showEntries">
       <div class="d-flex align-items-center justify-content-end divEntry">
-        <h5>Show Entries:</h5>
+        <h5 class="mb-0">Show Entries:</h5>
         <select 
           [(ngModel)]="entryMovie" 
           #selectEntry 
@@ -12,7 +12,7 @@
       </div>
   </div>
   <div 
-    class="col-md-3 col-12" 
+    class="col-lg-3 col-12 p-lg-0" 
     *ngFor="let phim of DanhSachPhimServices | paginate: { itemsPerPage:  entryMovie  , currentPage: p1, id: 'DanhSachPhimDangChieu' }"
     >
     <div class="OneBlockMovie">
@@ -35,23 +35,26 @@
         </div>
         
         <div class="data">
-          <div class="data__text">
-            <div class="author">
-              <h5>Jack Sparrow</h5>
-            </div>
-            <div class="detail">
-              <h2 class="movieName">{{ phim.TenPhim }}</h2>
-              <p class="Desc">
-                  {{ phim.MoTa }}
-              </p>
-            </div>
-          </div>
+          	<div class="data__text">
+            	<div class="author">
+              		<h5>Jack Sparrow</h5>
+            	</div>
+				<div class="detail">
+					<h2 class="movieName">{{ phim.TenPhim }}</h2>
+					<p class="Desc">
+						{{ phim.MoTa }}
+					</p>
+				</div>
+          	</div>
         </div>
           <div class="btnLink">
-            <button class="btn-primary btn btnDetail w-100 linkHeading" [routerLink]="['/chi-tiet-phim']" [queryParams]="{id:phim.MaPhim}">
+			<button 
+				class="btn btnDetail w-100 linkHeading" 
+				[routerLink]="['/chi-tiet-phim']" 
+				[queryParams]="{id:phim.MaPhim}">
               <span> Đặt Vé</span>
             </button>
-            <button class="btnTrailer" (click)="showTrailer(phim.Trailer)" data-toggle="modal" data-target="#modalTrailer">
+            <button class="btnTrailer linkHeading"  (click)="showTrailer(phim.Trailer)" data-toggle="modal" data-target="#modalTrailer">
               <i class="fa fa-play"></i>
             </button>
           </div>

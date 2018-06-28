@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Routes } from '@angular/router';
 
 @Component({
   selector: 'app-sidebar',
@@ -7,9 +8,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SidebarComponent implements OnInit {
 
-  constructor() { }
+  menuItems: any[];
+  constructor(private routes:Routes) { }
 
   ngOnInit() {
+    // this.menuItems = routes.filter(menuItem => menuItem);
   }
-
+//   isMobileMenu() {
+//       if ( window.innerWidth > 991) {
+//           return false;
+//       }
+//       return true;
+//   };
 }

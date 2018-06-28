@@ -1,13 +1,13 @@
-@import "./../../../assets/scss/helpers/_variables";
-@import "./../../../assets/scss/helpers/_mixin";
-@import "./../../../assets/scss/base/_reset";
-@import "./../../../assets/scss/base/_typography";
-@import "./../../../assets/scss/component/_heading";
-@import "./../../../assets/scss/component/_headingSection";
+// @import "./../../../assets/scss/helpers/_variables";
+// @import "./../../../assets/scss/helpers/_mixin";
+// @import "./../../../assets/scss/base/_reset";
+// @import "./../../../assets/scss/base/_typography";
+// @import "./../../../assets/scss/component/_heading";
+// @import "./../../../assets/scss/component/_headingSection";
 
 .divTinTuc{
     padding: 3rem 0;
-    background: url("./../../images/bg-news.jpg") no-repeat center center fixed;
+    background: url("images/bg-news.jpg") no-repeat center center fixed;
     background-size: cover;
     .blockNews{
         margin: 6rem auto 1rem;
@@ -154,29 +154,6 @@
                     @include size(100%, 100%);
                     background: gray;
                     z-index: -1;
-                }
-                button[mat-fab]/deep/{
-                    @include posi-top-left(absolute, 50%, 50%);
-                    @include flex(center, center, row, wrap);
-                    @include size(40px, 40px);
-                    transform: translate(-50%, -50%) scale(0);
-                    transition: .3s;
-                    z-index: 3;
-                    opacity: 0;
-                    visibility: hidden;
-                    > .mat-button-wrapper{
-                        padding: 0 !important;
-                    }
-                }
-                
-                .overlay{
-                    @include posi-top-left(absolute, 0, 0);
-                    z-index: 2;
-                    @include size(100%,100%);
-                    background: rgba(0,0,0,.6);
-                    transition: .3s all;
-                    opacity: 0;
-                    visibility: hidden;
                 }
                 .bg-behind{
                     transition: .2s;

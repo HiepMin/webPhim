@@ -10,10 +10,10 @@
     </div>
 
     <div id="carouselExampleControls" class="carousel slide row  block-new" data-ride="carousel">
-      <div class="carousel-inner col-md-10 col-11">
-        <div class="carousel-item container" *ngFor="let new of listNews_1; let k = index" [ngClass]="k == 0 ? 'active' : ''">
+      <div class="carousel-inner col-11 p-0">
+        <div class="carousel-item container p-0" *ngFor="let new of listNews_1; let k = index" [ngClass]="k == 0 ? 'active' : ''">
           <div class="row one-block-new w-100">
-            <div class="col-md-7 col-12 one-block-new__content  one-block-new--image">
+            <div class="col-md-7 col-12 one-block-new__content  one-block-new--image p-0">
               <img class="card-img-top img-fluid h-100" [src]="new.image" alt="Card image cap">
               <div class="overlay overlay--news"></div>
               <button mat-fab color="primary" matTooltip="Detail">
@@ -71,10 +71,6 @@
             <img class="card-img-top img-fluid" src="{{ new.image }}" alt="Card image cap">
             <div class="bg-behind"></div>
             <div class="bg-behind-2"></div>
-            <button mat-fab color="primary" matTooltip="Detail">
-              <i class="fa fa-book"></i>
-            </button>
-            <div class="overlay"></div>
           </div>
           <div class="card-body">
             <h3 href="#" class="card-link">{{ new.title }}</h3>

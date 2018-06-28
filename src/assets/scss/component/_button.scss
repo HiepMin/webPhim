@@ -91,14 +91,14 @@
         transition: all .4s;
         background-color: transparent;
     }
-    &:hover {
-        transform: translateY(-3px);
-        box-shadow: 0 1rem 2rem rgba($color-black, .2);
-        &::after {
-            transform: scaleX(1.4) scaleY(1.6);
-            opacity: 0;
-        }
-    }
+    // &:hover {
+    //     transform: translateY(-3px);
+    //     box-shadow: 0 1rem 2rem rgba($color-black, .2);
+    //     &::after {
+    //         transform: scaleX(1.4) scaleY(1.6);
+    //         opacity: 0;
+    //     }
+    // }
     &-outline {
         &-primary {
             color: $primary-color;
@@ -201,70 +201,5 @@
             background: $white-color;
         }
     }
-    .burger-icon {
-        @include size($burger-width, $burger-height);
-        transition: all ease-in-out 0.2s;
-        background: $bg-burger-icon;
-        cursor: pointer;
-        border-width: 2px;
-        border-style: solid;
-        border-color: $border-burger;
-        .burger {
-            @include size(50%, 2px);
-            @include posi-top-left(relative, 50%, 50%);
-            transition: all ease-in-out 0.2s;
-            transform: translate(-50%, -50%);
-            background: $border-burger;
-            &:before {
-                transition: all ease-in-out 0.2s;
-                @include size(100%, 100%);
-                display: block;
-                content: "";
-                background: $border-burger;
-                position: absolute;
-                top: 6px;
-            }
-            // &:after {
-            //     @extend .burger: before;
-            //     top: -6px;
-            // }
-        }
-        &-primary-color {
-            border-color: $primary-color;
-            .burger {
-                background: $primary-color;
-                &:before {
-                    background: $primary-color;
-                }
-                &:after {
-                    background: $primary-color;
-                }
-            }
-        }
-        &-dark-purple-color {
-            border-color: $dark-purple-color;
-            .burger {
-                background: $dark-purple-color;
-                &:before {
-                    background: $dark-purple-color;
-                }
-                &:after {
-                    background: $dark-purple-color;
-                }
-            }
-        }
-        &.active {
-            .burger {
-                background: rgba(0, 0, 0, 0) !important;
-            }
-            .burger:before,
-            .burger:after {
-                transform: rotate(-45deg);
-                top: 0;
-            }
-            .burger:after {
-                transform: rotate(45deg);
-            }
-        }
-    }
+    
 }

@@ -1,9 +1,9 @@
-@import "./../../../assets/scss/helpers/_variables";
-@import "./../../../assets/scss/helpers/_mixin";
-@import "./../../../assets/scss/base/_reset";
-@import "./../../../assets/scss/base/_typography";
-@import "./../../../assets/scss/component/_heading";
-@import "./_lich-chieu-phim";
+// @import "./../../../assets/scss/helpers/_variables";
+// @import "./../../../assets/scss/helpers/_mixin";
+// @import "./../../../assets/scss/base/_reset";
+// @import "./../../../assets/scss/base/_typography";
+// @import "./../../../assets/scss/component/_heading";
+// @import "./_lich-chieu-phim";
 
 .title-divTrailer{
     color: #fff;
@@ -13,12 +13,15 @@
     font-size: 35px;
 }
 .info-item {
-    margin: 22px 0;
+    margin: 17px 0;
 }
 .detail-movie{
     padding: 10rem 0; 
-    background:url("./../../images/bg-news.jpg") no-repeat center center fixed;
-    background-size: cover;
+    background:url("images/bg-news.jpg") no-repeat center center fixed;
+	background-size: cover;
+	@include tablet{
+		padding-top: 6rem;
+	}
     .image-info-movie{
         .divImage{
             img{
@@ -27,8 +30,11 @@
         }
         .divInfo{
             @include flex(flex-start, flex-start, column, wrap);
-            padding: 30px 3rem;
-            color: #fff;
+            padding: 9px 2rem;
+			color: #fff;
+			@include tablet{
+				padding-top: 30px;
+			}
             .block-info-movie{
                 .date{
                     font-size: 15px;
@@ -57,15 +63,26 @@
     }
 }
 .block-btn-link{
+	@include flex(center, center, row, wrap);
     .linkHeading{
-        transform: skew(0deg);
+		transform: skew(0deg);
+		@include mobile{
+			padding: 8px 13px;
+			margin-bottom: 20px;
+		}
         span{
+			@include mobile{
+				font-size: 11px;
+			}
             transform: skew(0deg);
             font-size: 13px;
         }
     }
 }
 .rating-star{
+	@include tablet{
+		margin: auto;
+	}
     .star-outer{
         position: relative;
         @include flex(center, center, column, wrap);
@@ -97,20 +114,32 @@
 }
 
 
-#divThongTinChieuPhim{
-    padding: 0 !important;
-    background: transparent !important;
+.divLichChieu.ChiTietPage{
     .divRapChieu{
-        margin-bottom: 40px;
+		margin-bottom: 40px;
+		img{
+			@include mobile{
+				width: 40px;
+			}
+		}
+		li{
+			margin: .2rem;
+		}
     }
     .divGioChieu{
+		border-left: none;
         .block-ngay-chieu{
-            display: flex;
-            flex-wrap: nowrap;
-            font-family: lato-reg;
-            .one-block-ngay-chieu{
+			@include flex(center, center, row, wrap);
+			font-family: lato-reg;
+			@include tablet{
+				justify-content: space-around;
+			}
+			@include mobile{
+				justify-content: flex-start;
+			}
+            a{
                 cursor: pointer;  
-                @include model(9px, 13px);  
+                @include model(3px,10px);  
                 border-radius: 5px;
                 color: #fff;
                 font-size: 13px;
@@ -119,7 +148,14 @@
                 }
                 &:hover{
                     text-decoration: underline !important;
-                }
+				}
+				@include tablet{
+					margin: 0;
+					padding: 9px;
+					.thu{
+						display: none;
+					}
+				}
             }
         }
        
@@ -130,9 +166,13 @@
             
         }
         .info-gio-chieu{
-            .time-item{
-                cursor: pointer;
-            }
+			.gio-chieu{
+				width:auto;
+				.time-item{
+					cursor: pointer;
+				}
+			}
+            
         }
     }
 }

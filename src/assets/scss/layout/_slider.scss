@@ -1,11 +1,14 @@
-@import "./../../../assets/scss/helpers/_variables";
-@import "./../../../assets/scss/helpers/_mixin";
-@import "./../../../assets/scss/base/_reset";
-@import "./../../../assets/scss/base/_typography";
+// @import "./../../../assets/scss/helpers/_variables";
+// @import "./../../../assets/scss/helpers/_mixin";
+// @import "./../../../assets/scss/base/_reset";
+// @import "./../../../assets/scss/base/_typography";
 
 .slider{
     @include size(100vw, 100%);
-    margin-top: 70px;
+	margin-top: 70px;
+	@include desktop{
+		margin-top: 40px;
+	}
     .carousel-control{
         @include size(5%, 20%);
         background: #fff;

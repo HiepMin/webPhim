@@ -20,7 +20,7 @@ import * as $ from "jquery";
 @Component({
   selector: 'app-phim-dang-chieu',
   templateUrl: './phim-dang-chieu.component.html',
-  styleUrls: ['./../../../assets/scss/layout/_danhSachPhim.scss']
+  styleUrls: []
 })
 export class PhimDangChieuComponent implements OnInit, OnDestroy, OnChanges, AfterViewChecked, AfterContentChecked {
 

@@ -1,9 +1,4 @@
-@import "./../../../assets/scss/helpers/_variables";
-@import "./../../../assets/scss/helpers/_mixin";
-@import "./../../../assets/scss/base/_reset";
-@import "./../../../assets/scss/base/_typography";
-
-button.mot-ghe.btn {
+.mot-ghe {
 	@include size(2rem, 2rem);
     background: transparent;
 	border: 2px solid #fff;
@@ -13,6 +8,9 @@ button.mot-ghe.btn {
 	position: relative;
 	margin: 0  10px 15px 0;
 	font-size: 13px;
+	border-radius: .5em;
+	cursor: pointer;
+	outline: none !important;
 	&::before{
 		@include posi-top-right(absolute, 45%, 2px);
 		font-family: FontAwesome;

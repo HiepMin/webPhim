@@ -4,7 +4,7 @@ import { TintucService } from '../../Services/tintuc.service';
 @Component({
   selector: 'app-tin-tuc',
   templateUrl: './tin-tuc.component.html',
-  styleUrls: ['./../../../assets/scss/layout/_TinTuc.scss']
+  styleUrls: []
 })
 export class TinTucComponent implements OnInit {
   public needMore:boolean = true;

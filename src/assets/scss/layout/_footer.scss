@@ -1,11 +1,11 @@
-@import "./../../../assets/scss/helpers/_variables";
-@import "./../../../assets/scss/helpers/_mixin";
-@import "./../../../assets/scss/base/_reset";
-@import "./../../../assets/scss/base/_typography";
+// @import "./../../../assets/scss/helpers/_variables";
+// @import "./../../../assets/scss/helpers/_mixin";
+// @import "./../../../assets/scss/base/_reset";
+// @import "./../../../assets/scss/base/_typography";
 .footer {
     color: #fff;
     font-weight: 300;
-    background: #151414  url(../../images/footer-img.png) bottom center repeat-x;
+    background: #151414  url(images/footer-img.png) bottom center repeat-x;
     background-size: contain;
     padding-top: 2rem !important;
     &__logo{

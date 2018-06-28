@@ -5,7 +5,7 @@ import { DomSanitizer, SafeResourceUrl  } from '@angular/platform-browser';
 @Component({
     selector: 'app-phim-sap-chieu',
     templateUrl: './phim-sap-chieu.component.html',
-    styleUrls: ['./../../../assets/scss/layout/_danhSachPhim.scss']
+    styleUrls: []
 })
 export class PhimSapChieuComponent implements OnInit {
 

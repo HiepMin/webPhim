@@ -42,7 +42,7 @@
 
 					<thead>
 						<tr>
-							<th>#</th>
+							<th> Mã </th>
 							<th>Tên Phim</th>
 							<th>Ngày Đặt</th>
 							<th>Giá Vé</th>
@@ -50,14 +50,20 @@
 					</thead>
 
 					<tbody>
-						<tr>
-							<th>1</th>
-							<th>Minions</th>
-							<th>1</th>
-							<th>1</th>
+						<tr *ngFor="let item of ThongTinTaiKhoan.DanhSachVeDaDat | paginate: { itemsPerPage:  entriesLSDV  , currentPage: p3, id: 'ListLSDatVe' }; let i = index">
+							<th>{{ item.MaGhe }}</th>
+							<th>{{ item.TenPhim }}</th>
+							<th>{{ item.NgayDat | date : 'dd-MM-yy lúc hh:mm ' }}</th>
+							<th>{{ item.GiaVe | number }}</th>
 						</tr>
 					</tbody>
 				</table>
+				<pagination-controls 
+					(pageChange)="p3 = $event" 
+					class="my-pagination"  
+					id="ListLSDatVe" 
+					autoHide="{{ hidePagiControl }}">
+				</pagination-controls>
 			</div>
 		</div>
 	</div>
@@ -66,7 +72,7 @@
 
       <div class="col-12 mx-auto"  [ngClass]="divShowing == 'FormInfo' ? 'd-block' : 'd-none'">
 		<form  
-		class="formAuth container formDangKy" 
+		class="formAuth container formAuth--infoUser" 
 		id="FormInfo" 
 		#InfoForm="ngForm" 
 		(ngSubmit)="CapNhatThongTin(InfoForm.value)">

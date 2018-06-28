@@ -9,7 +9,7 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-dang-ky',
   templateUrl: './dang-ky.component.html',
-  styleUrls: ['./../../../assets/scss/layout/_DangKy.scss']
+  styleUrls: []
 })
 export class DangKyComponent implements OnInit {
 

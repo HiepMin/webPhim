@@ -1,16 +1,16 @@
-@import "./../../../assets/scss/helpers/_variables";
-@import "./../../../assets/scss/helpers/_mixin";
-@import "./../../../assets/scss/helpers/_placeholder";
+// @import "./../../../assets/scss/helpers/_variables";
+// @import "./../../../assets/scss/helpers/_mixin";
+// @import "./../../../assets/scss/helpers/_placeholder";
 
-@import "./../../../assets/scss/base/_reset";
-@import "./../../../assets/scss/base/_typography";
-@import "./../../../assets/scss/component/_form";
-@import "./../../../assets/scss/component/_sight";
-@import "./../../../assets/scss/component/_heading";
-@import "./../../../assets/scss/component/_overide";
+// @import "./../../../assets/scss/base/_reset";
+// @import "./../../../assets/scss/base/_typography";
+// @import "./../../../assets/scss/component/_form";
+// @import "./../../../assets/scss/component/_sight";
+// @import "./../../../assets/scss/component/_heading";
+// @import "./../../../assets/scss/component/_overide";
 .DangKiPage{
     @include size(100%, 800px);
-    background: url("./../../images/img-rap-phim.jpeg") no-repeat center center;
+    background: url("images/img-rap-phim.jpeg") no-repeat center center;
     background-size: cover;
     position: relative;
     .linkHeading{

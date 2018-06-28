@@ -11,11 +11,9 @@ declare var $: any;
 @Component({
 	selector: 'app-dang-nhap',
 	templateUrl: './dang-nhap.component.html',
-	styleUrls: ['./../../../assets/scss/layout/_DangNhap.scss']
+	styleUrls: []
 })
 export class DangNhapComponent implements OnInit, OnDestroy {
-
-
 
 	private UserSignUp: UserSignUp;
 	private unsub: Subscription;
@@ -36,21 +34,28 @@ export class DangNhapComponent implements OnInit, OnDestroy {
 				.subscribe((res: any) => {
 					if (typeof (res) === "string") {
 						localStorage.removeItem("user");
-						this.alertService.AlertError('Oops...', 'Có Gì Đó Sai Sai Ở Đây!!');
+						this.alertService.AlertError('Oops...', 'Có Gì Đó Sai Sai Ở Đây!!', () => false);
 					}
 					else {
-						swal({
-							type: 'success',
-							title: 'Đăng Nhập Thành Công!!',
-							showConfirmButton: true,
-						}).then((result) => {
-							if (result.value) {
-								$("#modalDangNhap").modal("hide");
-								$(".formDangNhap input").val("");
-								this.alertService.toastRight(`Xin Chào ${res.HoTen}`);
-								localStorage.setItem("user", JSON.stringify(res))
-							}
-						})
+						this.alertService.AlertSuccess("Đăng Nhập Thành Công!!", () => {
+							$("#modalDangNhap").modal("hide");
+							$(".formDangNhap input").val("");
+							this.alertService.toastRight(`Xin Chào ${res.HoTen}`);
+							localStorage.setItem("user", JSON.stringify(res))
+						}, "")
+
+						// swal({
+						// 	type: 'success',
+						// 	title: 'Đăng Nhập Thành Công!!',
+						// 	showConfirmButton: true,
+						// }).then((result) => {
+						// 	if (result.value) {
+						// 		$("#modalDangNhap").modal("hide");
+						// 		$(".formDangNhap input").val("");
+						// 		this.alertService.toastRight(`Xin Chào ${res.HoTen}`);
+						// 		localStorage.setItem("user", JSON.stringify(res))
+						// 	}
+						// })
 					}
 				})
 		}

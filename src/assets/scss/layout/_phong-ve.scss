@@ -1,13 +1,8 @@
-@import "./../../../assets/scss/helpers/_variables";
-@import "./../../../assets/scss/helpers/_mixin";
-@import "./../../../assets/scss/helpers/_placeholder";
-@import "./../../../assets/scss/base/_reset";
-@import "./../../../assets/scss/base/_typography";
-@import "./../../../assets/scss/component/_sight";
 
 
 #divPhongVe{
-	background: url("./../../images/bg-news.jpg") center center no-repeat fixed;
+	// background: url("./../../images/bg-news.jpg") center center no-repeat fixed;
+	background: url("images/bg-news.jpg") center center no-repeat fixed;
 	background-size:cover;
 	@include size(100%, auto);
 	padding: 9rem 2rem;
@@ -19,7 +14,7 @@
 		padding: 3rem 4rem;
 		border-radius: 8px;
 		background-image: linear-gradient(to bottom, #000000d9, #ffffff17);
-		@include mobile{
+		@include tablet{
 			background: transparent;
 			padding: 0 !important;
 		}
@@ -34,10 +29,40 @@
 }
 .day-ghe{
 	text-align: center;
-	overflow-x: auto;
+	@include tablet{
+		overflow-x: auto;
+	}
 }
 
-
+.divGhiChu{
+	@include flex(space-around, center, row, wrap);
+	margin-top: 24px;
+	color: #fff;
+	.one-block-ghi-chu{
+		color: #fff;
+		&.DaDatTruoc{
+			i{
+				color: red;
+			}
+		}
+		&.DangDat{
+			i{
+				color: lightgreen;
+			}
+		}
+		&.CoTheDat{
+			i{
+				color: #fff;
+			}
+		}
+		i{
+			margin-right: 8px;
+		}
+		span{
+			font-size: 11px;
+		}
+	}
+}
 .divThongTinVe{
 	padding: 1rem 2rem;
 	padding-top: 0;

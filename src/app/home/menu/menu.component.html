@@ -89,7 +89,7 @@
           </a>
         </li>
         <li>
-          <a href="#" data-toggle="modal" data-target="#modalTimKiem">
+          <a data-toggle="modal" data-target="#modalTimKiem" [routerLink]="['/']">
             <span>Tìm Phim</span>
           </a>
         </li>
@@ -101,7 +101,7 @@
 <div class="modal fade" id="modalDangNhap" tabindex="-1" role="dialog">
   <div class="modal-dialog mx-auto" role="document">
     <div class="modal-content">
-      <div class="modal-body">
+      <div class="modal-body p-0">
         <app-dang-nhap></app-dang-nhap>
       </div>
     </div>
@@ -111,9 +111,9 @@
 
 <div class="modal fade" id="modalTimKiem" tabindex="-1" role="dialog">
   <div class="modal-dialog mx-auto" role="document">
-    <div class="modal-content" style="background: transparent">
-      <div class="modal-body">
-          <app-tim-kiem-phim></app-tim-kiem-phim>
+    <div class="modal-content border-0" style="background: transparent">
+      <div class="modal-body p-0">
+          <app-tim-kiem-phim #InputTimKiemPhim></app-tim-kiem-phim>
       </div>
     </div>
   </div>

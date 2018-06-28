@@ -10,7 +10,7 @@ declare var $: any;
 @Component({
 	selector: 'app-chi-tiet-phim',
 	templateUrl: './chi-tiet-phim.component.html',
-	styleUrls: ['./../../../assets/scss/layout/_chitietphim.scss']
+	styleUrls: []
 })
 export class ChiTietPhimComponent implements OnInit, OnDestroy {
 
@@ -49,10 +49,7 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
 				const starPercentRounded = `${Math.round(starPercent / 10) * 10}%`;
 				$(".stars-inner").css({ "width": starPercentRounded });
 
-			}, error => {
-				this.MovieDetail = error;
-				console.log(this.MovieDetail);
-			})
+			}, error => console.log(error))
 		this.RapChieuPhim = this.movieDetailSer.GetRapChieuPhim();
 	}
 

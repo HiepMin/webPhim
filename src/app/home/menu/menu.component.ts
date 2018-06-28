@@ -1,13 +1,16 @@
-import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, ElementRef, ViewChildren } from '@angular/core';
 import { ScrollToAnimationEasing, ScrollToEvent, ScrollToOffsetMap } from '@nicky-lenaers/ngx-scroll-to';
 import { SweetAlertService } from '../../Services/sweet-alert.service';
 import swal from 'sweetalert2';
 import { Router } from "@angular/router";
+import { TimKiemPhimComponent } from '../tim-kiem-phim/tim-kiem-phim.component';
+
+declare let $:any;
 
 @Component({
 	selector: 'app-menu',
 	templateUrl: './menu.component.html',
-	styleUrls: ['./../../../assets/scss/layout/_main-menu.scss']
+	styleUrls: []
 })
 export class MenuComponent implements OnInit {
 
@@ -19,6 +22,8 @@ export class MenuComponent implements OnInit {
 
 	@ViewChild("sideBar") sideBar:ElementRef;
 	@ViewChild("burgerIcon") burgerIcon:ElementRef;
+	@ViewChild(TimKiemPhimComponent) TimKiemPhim;
+	@ViewChild("InputTimKiemPhim") InputTimKiemPhim:ElementRef;
 	constructor(
 		private AlertService:SweetAlertService,
 		private router:Router
@@ -29,7 +34,7 @@ export class MenuComponent implements OnInit {
 			localStorage.removeItem("user");
 			this.AlertService.toastRight("Good Bye Bro!!");
 			this.router.navigate(['/'])
-		})
+		}, "")
 	}
 
 
@@ -53,5 +58,9 @@ export class MenuComponent implements OnInit {
 		else{
 			this.DaDangNhap = false;
 		}
+		
+	}
+	ngAfterViewChecked(){
+		
 	}
 }

@@ -1,6 +1,3 @@
-@import "./_DangKy";
-@import "./_input-tim-kiem-phim";
-@import "./_chitietphim";
 .form-marvel{
 	margin: 6px 0 1.4rem;
 	&.disabled{
@@ -27,17 +24,24 @@ a[data-target='#modalXacNhanMK'] {
 	z-index: 3;
 	margin-top: 6rem;
 }
-.formAuth{
+.formAuth--infoUser{
 	margin-top: 9rem !important;
 }
 
 .tableLichSuDatVe{
+	border-radius: .5em;
+    overflow: hidden;
+
 	td, th{
 		padding: .8rem 2.3rem;
+		font-size: 13px;
 	}
 	thead{
 		color:#fff;
 		background: #2096ff;
+	}
+	tbody{
+		background: #eee;
 	}
 	
 }

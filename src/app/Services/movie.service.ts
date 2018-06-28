@@ -383,6 +383,15 @@ export class MovieService {
 	GetChiTietLichChieu(): Array<any> {
 		return this.ChiTietLichChieu;
 	}
+	TimPhimTheoTen(DSPhim:Array<any>,DSPhimCanTim:Array<any> ,key:string, ){
+		for(let i in DSPhim){
+			let phimCanTim = DSPhim[i];
+			if(phimCanTim.TenPhim.toLowerCase().trim().search(key) !== -1){
+				DSPhimCanTim.push(phimCanTim);
+			}
+		}
+		return DSPhimCanTim;
+	}
 	LayChiTietPhongVe(MaPhongVe:any):Observable<any>{
 		return this._http.get(`${this.apiURL}ChiTietPhongVe?MaLichChieu=${MaPhongVe}`)
 						.map((res:Response) => res.json());

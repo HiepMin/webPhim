@@ -1,9 +1,8 @@
-@import "./../../../assets/scss/helpers/_variables";
-@import "./../../../assets/scss/helpers/_mixin";
-@import "./../../../assets/scss/base/_reset";
-@import "./../../../assets/scss/base/_typography";
+// @import "./../../../assets/scss/helpers/_variables";
+// @import "./../../../assets/scss/helpers/_mixin";
+// @import "./../../../assets/scss/base/_reset";
+// @import "./../../../assets/scss/base/_typography";
 @import "./../../../assets/scss/component/_button";
-
 
 $bgNav:#000;
 .main-menu{
@@ -11,14 +10,14 @@ $bgNav:#000;
     @include posi-top-left(fixed, 0, 0);
     z-index: $z_index_nav;
     background: $bgNav;
-    @include tablet{
+    @include desktop{
         height: 45px;
     }
     &__content{
         @include size(70%, 100%);
         @include flex(space-between, center, row, wrap);
         margin: auto;
-        @include tablet{
+        @include desktop{
             width: 100%;
             margin: 0;
             max-width: unset;
@@ -40,7 +39,7 @@ $bgNav:#000;
                     }
                 }
             }
-            @include tablet{
+            @include desktop{
                 display: block;
             }
         }
@@ -57,7 +56,7 @@ $bgNav:#000;
         .content-right{
             @include size(75%, 100%);
             @include flex(center, center, column, wrap);
-            @include tablet{
+            @include desktop{
                 @include posi-top-right(fixed, 45px, -17rem);
                 @include size(17rem, 100%);
                 background: #000;
@@ -74,7 +73,7 @@ $bgNav:#000;
             }
             .logo-res{
                 display:none;
-                @include tablet{
+                @include desktop{
                     display: block;
                     text-align: center;
                     img{
@@ -87,7 +86,7 @@ $bgNav:#000;
                 @include flex(space-between, center, row, wrap);
                 border-bottom: 1px solid #3d3d3d;   
                
-                @include tablet{
+                @include desktop{
                     height: auto;
                     flex-direction: column;
                     justify-content: flex-start;
@@ -102,12 +101,12 @@ $bgNav:#000;
                         font-size: 17px;
                         margin-right: 12px;
                     }
-                    @include tablet{
+                    @include desktop{
                         order: 2;   
                     }
                 }
                 .auth{
-                    @include tablet{
+                    @include desktop{
                         margin-bottom: 1rem;
                         @include size(100%, 30px);
                         @include flex(center, center, row, wrap);
@@ -171,7 +170,7 @@ $bgNav:#000;
                         transition: .15s all;
                         text-transform: uppercase;
                         margin-left: 20px;
-                        @include tablet{
+                        @include desktop{
                             border: 2px solid #fff;
                             height: 100%;
                             padding: 0 12px;
@@ -183,7 +182,7 @@ $bgNav:#000;
             .nav{
                 @include size(100%, 45%);
                 @include flex(flex-start, center, row, wrap);
-                @include tablet{
+                @include desktop{
                     margin: 2rem 0;
                     flex-direction: column;
                     justify-content: flex-start;
@@ -191,7 +190,7 @@ $bgNav:#000;
                 }
                 li{
                     margin-right: 20px;
-                    @include tablet{
+                    @include desktop{
                         margin-right: 0;
                         border-bottom: 1px solid #3d3d3d;   
                         width: 100%;
@@ -203,7 +202,7 @@ $bgNav:#000;
                         transition: color .15s ease-in-out;
                         text-transform: uppercase;
                         transition: .3s all;
-                        @include tablet{
+                        @include desktop{
                             color: #eee;
                             display: block;
                             padding: 15px 20px;

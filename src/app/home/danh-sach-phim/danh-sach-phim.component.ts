@@ -10,7 +10,7 @@ declare var $: any;
 @Component({
     selector: 'app-danh-sach-phim',
     templateUrl: './danh-sach-phim.component.html',
-    styleUrls: ['./../../../assets/scss/layout/_danhSachPhim.scss']
+    styleUrls: []
 })
 export class DanhSachPhimComponent implements OnInit,AfterViewInit{
 

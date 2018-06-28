@@ -12,29 +12,34 @@ export class SweetAlertService {
 
 	constructor() { }
 
-	AlertError(...title){
+	AlertError(title, text, callback){
 		swal({
 			type: 'error',
 			title: `${title}`,
-			text: `${title}`,
+			text: `${text}`,
+		}).then((result) => {
+			if(result.value){
+				callback();
+			}
 		})
 	}
 
-	AlertSuccess(title, callback){
+	AlertSuccess(title, callback, text){
 		swal({
 			title: `${title}`,
 			type: 'success',
-			showCancelButton: true,
+			text : `${text}`
 		}).then((result) => {
 			if (result.value) {
 				callback();
 			}
 		})
 	}
-	AlertWarning(title, callback) {
+	AlertWarning(title, callback,text) {
 		swal({
 			title: `${title}`,
 			type: 'question',
+			text : `${text}`,
 			showCancelButton: true,
 			confirmButtonColor: '#3085d6',
 			cancelButtonColor: '#d33',

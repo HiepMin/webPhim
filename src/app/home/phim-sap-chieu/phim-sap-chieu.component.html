@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-md-3 col-12" *ngFor="let phim of DSPhimSapChieu | paginate: { itemsPerPage: 4, currentPage: p }">
+    <div class="col-md-3 col-12 p-lg-0" *ngFor="let phim of DSPhimSapChieu | paginate: { itemsPerPage: 4, currentPage: p }">
       <div class="OneBlockMovie">
           <div class="OneBlockMovie__thumbnail">
             <img [src]="phim.image" class="img-fluid" alt="">
@@ -33,10 +33,10 @@
               </div>
             </div>
             <div class="btnLink">
-                	<button  class="btn-primary btn btnDetail w-100  linkHeading">
+                	<button  class="btnDetail w-100  linkHeading">
                   		<span> Đặt Vé</span> 
                 	</button>
-                	<button class="fa fa-play text-primary btnTrailer" data-toggle="modal" data-target="#modalTrailer" (click)="showTrailer(phim.trailer)">
+                	<button class="fa fa-play btnTrailer  linkHeading" data-toggle="modal" data-target="#modalTrailer" (click)="showTrailer(phim.trailer)">
                   	</button>
               	</div>
           	</div>

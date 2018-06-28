@@ -9,13 +9,14 @@ declare let $:any;
 @Component({
 	selector: 'app-thong-tin-nguoi-dung',
 	templateUrl: './thong-tin-nguoi-dung.component.html',
-	styleUrls: ['./../../../assets/scss/layout/_thong-tin-nguoi-dung.scss']
+	styleUrls: []
 })
 export class ThongTinNguoiDungComponent implements OnInit {
 	private ThongTinTaiKhoan:any = {};
 	private XacNhanMatKhauCu:boolean = true;
 	private unsub_1:Subscription;
 	public divShowing: string = "FormInfo";
+	public entriesLSDV:number = 4;
 
 	constructor(
 		private UserService:UserService,

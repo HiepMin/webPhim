@@ -1,10 +1,3 @@
-@import "./../../../assets/scss/helpers/_variables";
-@import "./../../../assets/scss/helpers/_mixin";
-@import "./../../../assets/scss/base/_reset";
-@import "./../../../assets/scss/base/_typography";
-@import "./../../../assets/scss/component/_heading";
-@import "./../../../assets/scss/component/_headingSection";
-
 .danhSachPhimContent{
     margin: 2rem auto 1rem;
     padding: 80px 0;
@@ -69,31 +62,39 @@
     cursor: pointer;
     margin: 0 auto 40px;
     transition: .2s all;
-    @include tablet{
+    @include desktop{
         @include size(100%, auto);
         margin: 0;
         margin-bottom: 30px;
         display: flex;
-        align-items: center;
+		align-items: center;
+		padding: 13px;
+		background: linear-gradient(to right, #24282b2b 0%, #38484e 100%);
+		border-radius: .5em;
+		.linkHeading, .linkHeading.btnTrailer{
+			background: transparent !important;
+			&:hover{
+				color: #fff !important;
+			}
+		}
     }
-    @include mobile{
+    @include tablet{
         flex-direction: column;
     }
     &:hover{
-        box-shadow: 3px 1px 5px 2px #0000004d;
         .OneBlockMovie__overlay{
             background: rgba(0,0,0,.6);
         }
     }
     &__thumbnail{
         @include size(100%, 100%);
-        @include tablet{
+        @include desktop{
             width: auto;
         }
         img{
             min-width: 100%;
             height: 100%;
-            @include tablet{
+            @include desktop{
                 min-width: auto;
                 height: auto;
             }
@@ -105,7 +106,7 @@
         transition: .3s all;
         z-index: 1;
         background: linear-gradient(to bottom, #fff0, 60%, #000000eb);
-        @include tablet{
+        @include desktop{
             display: none;
         }
     }
@@ -116,7 +117,10 @@
         background: #000;
         border: 2px solid #fff;
         color: #eee;
-        z-index: 5;
+		z-index: 5;
+		@include desktop{
+			background: transparent;
+		}
         .fa{
             font-size: 8px;
             position: relative;
@@ -138,10 +142,10 @@
         @include flex(flex-end, flex-start, column, wrap);
         padding: 12px;
         z-index: 2;
-        @include tablet{
+        @include desktop{
             position: static;
         }
-        @include mobile{
+        @include tablet{
             align-items: center;
         }
         .header{
@@ -167,7 +171,7 @@
                     margin-bottom: 30px;
                     h2{
                         font-size: 23px;
-                        @include mobile{
+                        @include tablet{
                             margin-bottom:20px;
                         }
                     }
@@ -175,7 +179,7 @@
                         font-family: lato-reg;
                         font-size: 14px;
                         display: none;
-                        @include tablet{
+                        @include desktop{
                             display: block;
                         }
                     }
@@ -191,7 +195,7 @@
         z-index:  4;
         display: flex;
         transform: translateX(-50%);
-        @include tablet{
+        @include desktop{
             position: static;
             width: auto;
             transform: translateX(0);
@@ -206,7 +210,7 @@
             transform: skew(0deg);
             transition: .3s all;
             margin: 0;
-            @include tablet{
+            @include desktop{
                 width: auto !important;
             }
             span{
@@ -230,7 +234,7 @@
             border-style: solid;
             border-color: #fff;
             border-width: 2px 2px 2px 0;
-            @include tablet{
+            @include desktop{
                 position: static;
                 background: #000;
                 color: #fff!important;
@@ -249,67 +253,5 @@
 
 
 
-
-.my-pagination /deep/ {
-    @include flex(center, center, row, wrap);
-    width: 100%;
-    margin-top: 30px;
-    .ngx-pagination {
-        display: flex;
-        li{
-            @include size(30px, 30px);
-            @include flex(center, center, row, wrap);
-            border: 2px solid #fff;
-            margin: 0 5px;
-            text-indent: 0!important;
-            transform: skew(-25deg);
-            background: #000;
-            color: #fff;
-            transition: .1s all;
-            &:hover{
-                a{
-                    text-decoration: none;
-                }
-                span{
-                    color: #000;
-                }
-            }
-            span{
-                font-family: trade-bold;
-                transform: skew(25deg);
-                color: #fff;
-            }
-            &.current{
-                background: #fff;
-                transform: translateY(-15px) skew(-25deg);
-                span{
-                    color: #000;
-                }
-            }
-            &.pagination-previous, &.pagination-next{
-                width: 120px;   
-                overflow: hidden;
-                a{
-                    width: 100%;
-                    color: #fff;
-                    text-align:center;  
-                }
-                &:hover{
-                    a{
-                        color: #000;
-                    }
-                }
-            }
-            &.disabled{
-                &:hover{
-                    span{
-                        color: #fff;
-                    }
-                }
-            }
-        }
-    }
-    
-}
 
 

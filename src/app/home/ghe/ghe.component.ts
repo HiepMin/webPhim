@@ -12,7 +12,7 @@ import { GheDat } from '../../Models/GheDat.class';
 @Component({
 	selector: 'app-ghe',
 	templateUrl: './ghe.component.html',
-	styleUrls: ['./../../../assets/scss/layout/_ghe.scss']
+	styleUrls: []
 })
 export class GheComponent implements OnInit {
 

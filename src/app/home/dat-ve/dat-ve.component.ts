@@ -10,16 +10,17 @@ import {
 	ElementRef
 } from '@angular/core';
 import { Subscription } from "rxjs";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { MovieService } from '../../Services/movie.service';
 import { GheDat } from '../../Models/GheDat.class';
 import { Movie } from '../../Models/Movie.class';
+import { SweetAlertService } from '../../Services/sweet-alert.service';
 
 
 @Component({
 	selector: 'app-dat-ve',
 	templateUrl: './dat-ve.component.html',
-	styleUrls: ['./../../../assets/scss/layout/_phong-ve.scss']
+	styleUrls: []
 })
 export class DatVeComponent implements OnInit, OnDestroy, AfterContentChecked, AfterViewChecked, OnChanges {
 	private MaLichChieu: number;
@@ -35,10 +36,28 @@ export class DatVeComponent implements OnInit, OnDestroy, AfterContentChecked, A
 	private DanhSachGheDat:Array<GheDat> = [];
 	private apiURLDatVe:string = `http://sv2.myclass.vn/api/QuanLyDatVe/DatVe`;
 	private SoLuongGheDangDat:number;
-
+	private GhiChu:Array<any> = [
+		{
+			ClassName : "DaDatTruoc",
+			icon : "times",
+			text : "Ghế Đã Được Đặt Trước"
+		},
+		{
+			ClassName : "DangDat",
+			icon : "check",
+			text : "Ghế Đang Được Đặt"
+		},
+		{
+			ClassName : "CoTheDat",
+			icon : "square-o",
+			text : "Ghế Có Thể Đặt"
+		},
+	]
 	constructor(
 		private ActivedRoute: ActivatedRoute,
-		private MovieService: MovieService
+		private MovieService: MovieService,
+		private alertService: SweetAlertService,
+		private router:Router
 	) { }
 	@ViewChild("TienThanhToan") SoTien:ElementRef;
 
@@ -73,10 +92,7 @@ export class DatVeComponent implements OnInit, OnDestroy, AfterContentChecked, A
 		this.tinhTien(this.DanhSachGheDat);
 		this.TimSoGhe(this.DanhSachGheDat);
 		this.SoLuongGheDangDat = this.DanhSachGheDat.length;
-		console.log(this.SoTien);
-		console.log(this.SoLuongGheDangDat);
 		console.log(this.ListGheNgoi);
-		console.log(this.DanhSachGheDat);
 	}
 	tinhTien(ds){
 		this.TongTien = 0;
@@ -92,18 +108,22 @@ export class DatVeComponent implements OnInit, OnDestroy, AfterContentChecked, A
 	}
 	ConfirmDatVe(){
 		if(localStorage.getItem("user")){
-			let user = 	JSON.parse(localStorage.getItem("user"));
-			let ve = {
-				MaLichChieu: this.MaLichChieu,
-				TaiKhoanNguoiDung : user.TaiKhoan,	
-				DanhSachVe : this.DanhSachGheDat
-			}
-			this.MovieService.DatVe(ve)
-							.subscribe((res) => {
-								console.log(res);
-							}, err => {
-								console.log(err);
-							})
+			this.alertService.AlertWarning("Bạn Có Chăc??", () => {
+				let user = 	JSON.parse(localStorage.getItem("user"));
+				let ve = {
+					MaLichChieu: this.MaLichChieu,
+					TaiKhoanNguoiDung : user.TaiKhoan,	
+					DanhSachVe : this.DanhSachGheDat
+				}
+				this.MovieService.DatVe(ve)
+								.subscribe((res) => {
+									this.alertService.AlertSuccess("Đặt Vé Thành Công!!", () => {
+										this.router.navigate(['/']);
+									}, "Chúc Bạn Xem Phim Vui Vẻ!!");
+								}, err => {
+									this.alertService.AlertError("Không Thể Đặt Vé!!"," Xin Kiểm Tra Lại!!", () => false);
+								})
+			}, "Vé Không Thể Hoàn Trả...")
 		}
 		else{
 			return false;
@@ -115,6 +135,7 @@ export class DatVeComponent implements OnInit, OnDestroy, AfterContentChecked, A
 		this.unsub_4.unsubscribe();
 	}
 	ngAfterContentChecked() {}
-	ngAfterViewChecked() {}
+	ngAfterViewChecked() {
+	}
 	ngOnChanges(changes: SimpleChanges): void {}
 }

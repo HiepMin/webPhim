@@ -13,7 +13,7 @@ import * as $ from "jquery";
 @Component({
   selector: 'app-modal-trailer',
   templateUrl: './modal-trailer.component.html',
-  styleUrls: ['./../../../assets/scss/layout/_modalTrailer.scss']
+  styleUrls: []
 })
 export class ModalTrailerComponent implements OnInit, OnDestroy, OnChanges {
 

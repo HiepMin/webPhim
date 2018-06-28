@@ -1,15 +1,15 @@
-@import "./../../../assets/scss/helpers/_variables";
-@import "./../../../assets/scss/helpers/_mixin";
-@import "./../../../assets/scss/base/_reset";
-@import "./../../../assets/scss/base/_typography";
-@import "./../../../assets/scss/component/_heading";
-@import "./../../../assets/scss/component/_headingSection";
+// @import "./../../../assets/scss/helpers/_variables";
+// @import "./../../../assets/scss/helpers/_mixin";
+// @import "./../../../assets/scss/base/_reset";
+// @import "./../../../assets/scss/base/_typography";
+// @import "./../../../assets/scss/component/_heading";
+// @import "./../../../assets/scss/component/_headingSection";
 
 
 
 #divThongTinChieuPhim{
-    padding: 80px 0;   
-    background: #000000;   
+    padding: 80px 0 !important;   
+    background: #000000 !important;   
 }
 .divLichChieu{
     .container  {
@@ -89,7 +89,6 @@
     .one-block-rap {
         @include flex(flex-start, center, row, wrap);
         color: #fff;
-        padding-left: 15px;
         transition: .3s all;
         margin-bottom: 1rem;
         .img-rap{
@@ -106,7 +105,7 @@
         }
         .info-rap{
             text-align: left;
-            padding: 0 1rem;
+            padding: 3px .4rem;
             h4.ten-rap {
                 font-size: 14px;
                 font-family: monts-reg;

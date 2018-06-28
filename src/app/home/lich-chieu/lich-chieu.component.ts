@@ -6,7 +6,7 @@ import * as $ from 'jquery';
 @Component({
 	selector: 'app-lich-chieu',
 	templateUrl: './lich-chieu.component.html',
-	styleUrls: ['./../../../assets/scss/layout/_lich-chieu-phim.scss']
+	styleUrls: []
 })
 export class LichChieuComponent implements OnInit {
 
