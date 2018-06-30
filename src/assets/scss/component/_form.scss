@@ -3,7 +3,19 @@
 // @import "./../../../assets/scss/base/_reset";
 // @import "./../../../assets/scss/base/_typography";
 // @import "./../../../assets/scss/component/_heading";
-
+.example-form {
+	min-width: 150px;
+	max-width: 500px;
+	width: 100%;
+}
+.mat-input-element {
+	color: #000 !important;
+	font-size: 13px!important;
+	letter-spacing: 1px;
+}
+.example-full-width {
+width: 100%;
+}
 .form-marvel{
     background: transparent;
     color: #fff;

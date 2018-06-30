@@ -418,12 +418,12 @@ export class MovieService {
 		return obServe;
 
 	}
-	EditPhim(Files: any) {
+	EditPhim(movieEdit: any) {
 		let header: Headers = new Headers();
 		header.append('Content-Type', 'application/json');
 		header.append('Accept', 'application/json');
 		let options = new RequestOptions({ headers: header });
-		let obServe: Observable<any> = this._http.post(`${this.apiURL}CapNhatPhim`, Files, options).map((result: Response) => result.json());
+		let obServe: Observable<any> = this._http.post(`${this.apiURL}CapNhatPhim`, movieEdit, options).map((result: Response) => result.json());
 		return obServe;
 	}
 
