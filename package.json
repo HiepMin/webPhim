@@ -24,6 +24,7 @@
     "@angular/router": "^6.0.3",
     "@nicky-lenaers/ngx-scroll-to": "^1.0.0",
     "@toverux/ngx-sweetalert2": "^4.0.0",
+    "animate.css": "^3.6.1",
     "bootstrap": "^4.1.1",
     "core-js": "^2.5.4",
     "font-awesome": "^4.7.0",

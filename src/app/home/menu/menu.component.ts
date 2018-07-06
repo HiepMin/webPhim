@@ -7,6 +7,7 @@ import { TimKiemPhimComponent } from '../tim-kiem-phim/tim-kiem-phim.component';
 
 declare let $:any;
 
+
 @Component({
 	selector: 'app-menu',
 	templateUrl: './menu.component.html',
@@ -16,7 +17,25 @@ export class MenuComponent implements OnInit {
 
 	public DurationScroll:number = 1500;
 	public DaDangNhap:boolean = false;
+	public links:Array<any> = [
+		{
+			ScrollLocation : "#slider",
+			text : "Trang Chủ"
+		},
+		{
+			ScrollLocation : "#DSPhim",
+			text : "Phim"
+		},
+		{
+			ScrollLocation : "#divThongTinChieuPhim",
+			text : " Lịch Chiếu"
+		},
+		{
+			ScrollLocation : "#News",
+			text : "Tin Tức"
+		},
 	
+	]
 
 
 

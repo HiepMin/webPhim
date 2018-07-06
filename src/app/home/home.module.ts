@@ -3,12 +3,7 @@ import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from "@angular/router";
 import { FormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
-// import { PopupModule} from "ng2-opd-popup";
-
-// import {MatDatepickerModule} from '@angular/material/datepicker';
 import { MyDatePickerModule } from "mydatepicker";
-//components
 import { TrangChuComponent } from './trang-chu/trang-chu.component';
 import { DanhSachPhimComponent } from './danh-sach-phim/danh-sach-phim.component';
 import { MovieService } from "./../Services/movie.service";
@@ -29,9 +24,10 @@ import { FooterComponent } from './footer/footer.component';
 import { ScrollToModule } from '@nicky-lenaers/ngx-scroll-to';
 import { LichChieuComponent } from './lich-chieu/lich-chieu.component';
 import { TimKiemPhimComponent } from './tim-kiem-phim/tim-kiem-phim.component';
-import { ModalTrailerComponent } from './modal-trailer/modal-trailer.component';
 import { GheComponent } from './ghe/ghe.component';
 import { ThongTinNguoiDungComponent } from './thong-tin-nguoi-dung/thong-tin-nguoi-dung.component';
+import { MatButtonModule, MatFormFieldModule, MatChipsModule, MatInputModule, MatCardModule, MatSelectModule, MatTooltipModule } from '@angular/material';
+import { LoadingComponent } from './loading/loading.component';
 //router
 
 const HomeRoutes: Routes = [
@@ -71,17 +67,16 @@ const HomeRoutes: Routes = [
         CommonModule,
         FormsModule,
         NgxPaginationModule,
-        // MatButtonModule,
-		// MatFormFieldModule,
-		// MatChipsModule,
-		// MatInputModule,
-        // MatCardModule,
+        MatButtonModule,
+		MatFormFieldModule,
+		MatChipsModule,
+		MatInputModule,
+		MatCardModule,
         ScrollToModule.forRoot(),
-        // MatSelectModule,
-        // MatTooltipModule,
+        MatSelectModule,
+        MatTooltipModule,
         MyDatePickerModule,
-        RouterModule.forChild(HomeRoutes),
-
+		RouterModule.forChild(HomeRoutes),
     ],
     exports: [
 		TrangChuComponent, 
@@ -106,9 +101,8 @@ const HomeRoutes: Routes = [
 		FooterComponent, 
 		LichChieuComponent, 
 		TimKiemPhimComponent, 
-		ModalTrailerComponent, 
 		GheComponent, 
-		ThongTinNguoiDungComponent
+		ThongTinNguoiDungComponent, LoadingComponent,
 	]
 })
 export class HomeModule { }

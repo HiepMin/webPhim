@@ -37,70 +37,71 @@ $main-color: #FFA000;
 //admin
 
 @import "./scss/component/_overide";
+@import "./scss/component/_loading";
 
 
 
 
 body {
   background: #000 url("./images/bg-dot.png") repeat;
-  overflow-x: hidden;
-}
-$color: #1976D2;
-$size: 12px;
-$time: 1;
+  overflow-x: hidden;}
+// 
+// $color: #1976D2;
+// $size: 12px;
+// $time: 1;
 
-th,td{
-	text-align: center;
-}
+// th,td{
+// 	text-align: center;
+// }
 
-main {
-   width: 100vw;
-   height: 100vh;
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   background:  #090707;
-}
+// main {
+//    width: 100vw;
+//    height: 100vh;
+//    display: flex;
+//    justify-content: center;
+//    align-items: center;
+//    background:  #090707;
+// }
 
-.dank-ass-loader {
-   display: flex;
-   flex-direction: column;
-   align-items: center;
+// .dank-ass-loader {
+//    display: flex;
+//    flex-direction: column;
+//    align-items: center;
    
-   .row {
-      display: flex;
-   }
-}
+//    .row {
+//       display: flex;
+//    }
+// }
 
-.arrow {
-   width: 0; 
-   height: 0;
-   margin: 0 (-$size / 2);
-   border-left: $size solid transparent;
-   border-right: $size solid transparent;
-   border-bottom: ($size * 1.8) solid $color;
-   animation: blink $time + s infinite;
-   filter: drop-shadow(0 0 ($size * 1.5) $color);
+// .arrow {
+//    width: 0; 
+//    height: 0;
+//    margin: 0 (-$size / 2);
+//    border-left: $size solid transparent;
+//    border-right: $size solid transparent;
+//    border-bottom: ($size * 1.8) solid $color;
+//    animation: blink $time + s infinite;
+//    filter: drop-shadow(0 0 ($size * 1.5) $color);
     
-   &.down {
-      transform: rotate(180deg);
-   }
+//    &.down {
+//       transform: rotate(180deg);
+//    }
    
-   @for $i from 1 through 18 {
-      &.outer-#{$i} {
-         animation-delay: -($time / 18) * $i + s;
-      }  
-   }
+//    @for $i from 1 through 18 {
+//       &.outer-#{$i} {
+//          animation-delay: -($time / 18) * $i + s;
+//       }  
+//    }
 
-   @for $i from 1 through 6 {
-      &.inner-#{$i} {
-         animation-delay: -($time / 6) * $i + s;
-      }  
-   }  
-}
+//    @for $i from 1 through 6 {
+//       &.inner-#{$i} {
+//          animation-delay: -($time / 6) * $i + s;
+//       }  
+//    }  
+// }
 
-@keyframes blink {
-  0% { opacity: 0.1; }
-  30% { opacity: 1; }
-  100% { opacity: 0.1; }
-}
+// @keyframes blink {
+//   0% { opacity: 0.1; }
+//   30% { opacity: 1; }
+//   100% { opacity: 0.1; }
+// }

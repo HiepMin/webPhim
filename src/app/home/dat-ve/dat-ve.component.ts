@@ -7,7 +7,8 @@ import {
 	SimpleChanges,
 	OnChanges,
 	ViewChild,
-	ElementRef
+	ElementRef,
+	Renderer2
 } from '@angular/core';
 import { Subscription } from "rxjs";
 import { ActivatedRoute, Router } from "@angular/router";
@@ -36,6 +37,10 @@ export class DatVeComponent implements OnInit, OnDestroy, AfterContentChecked, A
 	private DanhSachGheDat:Array<GheDat> = [];
 	private apiURLDatVe:string = `http://sv2.myclass.vn/api/QuanLyDatVe/DatVe`;
 	private SoLuongGheDangDat:number;
+	
+	public State_loadDSGhe:boolean = false;
+
+
 	private GhiChu:Array<any> = [
 		{
 			ClassName : "DaDatTruoc",
@@ -57,26 +62,29 @@ export class DatVeComponent implements OnInit, OnDestroy, AfterContentChecked, A
 		private ActivedRoute: ActivatedRoute,
 		private MovieService: MovieService,
 		private alertService: SweetAlertService,
-		private router:Router
+		private router:Router,
+		private Render:Renderer2
 	) { }
 	@ViewChild("TienThanhToan") SoTien:ElementRef;
-
+	@ViewChild("DaCoSoGhe") SoGheNgoi:ElementRef;
 	ngOnInit() {
 		this.unsub_1 = this.ActivedRoute.queryParams.subscribe(thamso => {
 			this.MaLichChieu = thamso.MaLichChieu;
 			this.MaPhim = Number(thamso.MaPhim);
 			this.ThoiGianChieu = thamso.thoiGianChieu;
-		}, err => console.log(err))
+		})
 		this.unsub_2 = this.MovieService.LayChiTietPhongVe(this.MaLichChieu)
 			.subscribe((phongve: any) => {
 				this.DanhSachGhe = phongve.DanhSachGhe;
 				this.MaLichChieu = phongve.MaLichChieu;
-			}, err => console.log(err));
+				this.State_loadDSGhe = true;
+			});
 		this.unsub_4 = this.MovieService.getDetailMovieByGroup(this.MaPhim)
 										.subscribe((res) => {
 											this.MovieDetail = res;
-											console.log(this.MovieDetail);
-										}, err => console.log(err));
+										});
+
+										
 	}
 
 	ConfirmDatGhe(GheDat:GheDat){
@@ -92,7 +100,15 @@ export class DatVeComponent implements OnInit, OnDestroy, AfterContentChecked, A
 		this.tinhTien(this.DanhSachGheDat);
 		this.TimSoGhe(this.DanhSachGheDat);
 		this.SoLuongGheDangDat = this.DanhSachGheDat.length;
-		console.log(this.ListGheNgoi);
+
+
+		this.Render.setStyle(this.SoTien.nativeElement, "animation-duration", ".5s");
+		this.Render.addClass(this.SoTien.nativeElement, "animated");
+		this.Render.addClass(this.SoTien.nativeElement, "rubberBand");
+		setTimeout(() => {
+			this.Render.removeClass(this.SoTien.nativeElement, "animated");
+			this.Render.removeClass(this.SoTien.nativeElement, "rubberBand");
+		}, 500)
 	}
 	tinhTien(ds){
 		this.TongTien = 0;
@@ -136,6 +152,10 @@ export class DatVeComponent implements OnInit, OnDestroy, AfterContentChecked, A
 	}
 	ngAfterContentChecked() {}
 	ngAfterViewChecked() {
+	}
+	ngAfterViewInit() {
+		//Called after ngAfterContentInit when the component's view has been initialized. Applies to components only.
+		//Add 'implements AfterViewInit' to the class.
 	}
 	ngOnChanges(changes: SimpleChanges): void {}
 }

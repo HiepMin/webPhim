@@ -48,51 +48,21 @@
         </div>
       </div>
       <ul class="nav">
-          <li>
-              <a 
-                [routerLink]="['/']"
-                [ngx-scroll-to]="'#slider'" 
-                [ngx-scroll-to-duration]="DurationScroll"
-                [ngx-scroll-to-easing]="'easeOutCubic'"
-                >
-                <span>Trang Chủ</span> 
-              </a>
-            </li>
-        <li>
-          <a 
-            [routerLink]="['/']"
-            [ngx-scroll-to]="'#DSPhim'" 
-            [ngx-scroll-to-duration]="DurationScroll"
-            [ngx-scroll-to-easing]="'easeOutCubic'"
-            >
-            <span>Phim</span> 
-          </a>
-        </li>
-        <li>
-          <a
-            [routerLink]="['/']"
-            [ngx-scroll-to]="'#divThongTinChieuPhim'" 
-            [ngx-scroll-to-duration]="DurationScroll"
-            [ngx-scroll-to-easing]="'easeOutCubic'"
-            >
-            <span> Lịch Chiếu</span>
-          </a>
-          </li>
-        <li>
-          <a 
-            [routerLink]="['/']"
-            [ngx-scroll-to]="'#News'" 
-            [ngx-scroll-to-duration]="DurationScroll"
-            [ngx-scroll-to-easing]="'easeOutCubic'"
-            >
-            <span>Tin Tức</span>
-          </a>
-        </li>
-        <li>
-          <a data-toggle="modal" data-target="#modalTimKiem" [routerLink]="['/']">
-            <span>Tìm Phim</span>
-          </a>
-        </li>
+		<li *ngFor="let link of links">
+			<a 
+				[routerLink]="['/']"
+				[ngx-scroll-to]="link.ScrollLocation" 
+				[ngx-scroll-to-duration]="DurationScroll"
+				[ngx-scroll-to-easing]="'easeOutCubic'"
+				>
+				<span>{{ link.text }}</span>
+			</a>
+		</li>
+		<li>
+			<a data-toggle="modal" data-target="#modalTimKiem" [routerLink]="['/']">
+				<span>Tìm Phim</span>
+			</a>
+		</li>
       </ul>
     </div>
   </div>

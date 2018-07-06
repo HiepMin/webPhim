@@ -1,17 +1,21 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-home-layout',
-  templateUrl: './home-layout.component.html',
-  styleUrls: []
+	selector: 'app-home-layout',
+	templateUrl: './home-layout.component.html',
+	styleUrls: []
 })
 export class HomeLayoutComponent implements OnInit {
 
-  public Show:boolean = false;
+	public StateLoading: boolean = false;
 
-  constructor() { }
+	constructor() { }
 
-  ngOnInit() {
-  }
+	ngOnInit() {
+		setTimeout(() => {
+			this.StateLoading = true;
+		}, 1000)
+	}
+	
 
 }

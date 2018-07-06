@@ -83,7 +83,8 @@ export class PhimDangChieuComponent implements OnInit, OnDestroy, OnChanges, Aft
     showTrailer(e) {
         event.preventDefault();
         this.CallTrailer = true;
-        this.TrailerURL = this.sanitizer.bypassSecurityTrustResourceUrl(e.replace("watch?v=", "embed/") + "?autoplay=1");
+		this.TrailerURL = this.sanitizer.bypassSecurityTrustResourceUrl(e.replace("watch?v=", "embed/") + "?autoplay=1");
+		console.log(this.TrailerURL);
     }
 
     showEntries(e) {

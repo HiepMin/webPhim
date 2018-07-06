@@ -25,6 +25,7 @@ import { AdminModule } from './admin/admin.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoadingComponent } from './loading/loading.component';
 import { NgxPaginationModule } from "ngx-pagination";
+import { NotFoundComponent } from './not-found/not-found.component';
 
 // import { AuthGuard } from './Services/auth.guard';
 const appRoutes: Routes = [
@@ -35,7 +36,11 @@ const appRoutes: Routes = [
     {
         path: "admin",
         loadChildren: () => AdminModule 
-    }
+	},
+	// {
+	// 	path : "**",
+	// 	component : NotFoundComponent
+	// }
 ]
 
 
@@ -45,7 +50,7 @@ const appRoutes: Routes = [
 @NgModule({
     declarations: [
         AppComponent,
-        LoadingComponent,
+        NotFoundComponent,
     ],
     imports: [
         BrowserModule,
@@ -63,8 +68,9 @@ const appRoutes: Routes = [
 		MatInputModule,
 		MatTableModule,		
 		MatCheckboxModule,
-        RouterModule.forRoot(appRoutes)
-    ],
+		RouterModule.forRoot(appRoutes),
+		
+	],
     providers: [],
     bootstrap: [AppComponent]
 })

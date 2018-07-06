@@ -13,9 +13,9 @@ declare var $: any;
 	styleUrls: []
 })
 export class ChiTietPhimComponent implements OnInit, OnDestroy {
-
 	public param1: Subscription;
 	public RapChieuPhim: Array<any>;
+	public StateLichChieu:boolean;
 	public MovieDetail: any = {};
 	public MovieID: number;
 	public Show: boolean = true;
@@ -24,6 +24,7 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
 	public urlImage: string = "./../../../assets/images/";
 	public stateDangNhap: boolean = false;
 	public divShowing: string = "divDatVe";
+	public LoadingService:boolean = false;
 
 	constructor(
 		private movieDetailSer: MovieService,
@@ -33,7 +34,7 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
 	) {
 
 	}
-
+	
 	ngOnInit() {
 		this.Activated.queryParams.subscribe(thamso => {
 			this.MovieID = parseInt(thamso.id);
@@ -41,14 +42,14 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
 		this.movieDetailSer.getDetailMovieByGroup(this.MovieID)
 			.subscribe((res: any) => {
 				this.MovieDetail = res;
-				console.log(this.MovieDetail);
 				this.Trailer = (this.MovieDetail.Trailer).replace("watch?v=", "embed/");
 				const ratings = this.MovieDetail.DanhGia;
 				const rateTotal = 5;
 				const starPercent = (ratings / rateTotal) * 100;
 				const starPercentRounded = `${Math.round(starPercent / 10) * 10}%`;
 				$(".stars-inner").css({ "width": starPercentRounded });
-
+				this.StateLichChieu = (this.MovieDetail.LichChieu.length !== 0) ? true : false;
+				this.LoadingService = true;
 			}, error => console.log(error))
 		this.RapChieuPhim = this.movieDetailSer.GetRapChieuPhim();
 	}
@@ -76,7 +77,8 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
 
 	}
 	ngOnDestroy() {
-
+		
+		
 	}
 	ngAfterViewInit() {
 

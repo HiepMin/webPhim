@@ -69,4 +69,9 @@ export class UserService {
 		return this._http.post(this.apiURLCapNhatND,nguoidung, {headers : header})
 						.map((res:Response) => res.json());
 	}
+	//xoá Người Dùng
+	XoaNguoiDungService(taikhoan){
+		return this._http.delete(`${this.apiHTTP}XoaNguoiDung?TaiKhoan=${taikhoan}`)
+						.map((res) => res.json());
+	}
 }
