@@ -12,7 +12,7 @@ declare var $: any;
 	templateUrl: './chi-tiet-phim.component.html',
 	styleUrls: []
 })
-export class ChiTietPhimComponent implements OnInit, OnDestroy {
+export class ChiTietPhimComponent implements OnInit {
 	public param1: Subscription;
 	public RapChieuPhim: Array<any>;
 	public StateLichChieu:boolean;
@@ -72,24 +72,7 @@ export class ChiTietPhimComponent implements OnInit, OnDestroy {
 	triggerDangNhap() {
 		$("#modalDangNhap").modal("show");
 	}
-
-	ngOnChanges(a): void {
-
-	}
-	ngOnDestroy() {
-		
-		
-	}
-	ngAfterViewInit() {
-
-	}
-	ngAfterContentInit() {
-		//Called after ngOnInit when the component's or directive's content has been initialized.
-		//Add 'implements AfterContentInit' to the class.
-	}
 	ngAfterContentChecked() {
-		//Called after every check of the component's or directive's content.
-		//Add 'implements AfterContentChecked' to the class.
 		let flag = localStorage.getItem("user");
 		if (flag) {
 			this.stateDangNhap = true;

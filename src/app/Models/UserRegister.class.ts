@@ -1,14 +1,4 @@
 export class UserRegister{
-    // public FirstName:string;
-    // public LastName:string;
-    // public Email:string;
-    // public DateOfBirth:Date;
-    // public Phone:string;
-    // public DateRegister:Date;
-    // public UserName:string;
-    // public PassWord:string;
-    // public GroupID:string;
-
     TaiKhoan:string;
     MatKhau:string;
     Email:string;
@@ -16,9 +6,6 @@ export class UserRegister{
     MaNhom:string;
     MaLoaiNguoiDung:string;
     HoTen:string;
-    
-    // TenLoaiNguoiDung:string;
-    
     constructor(
         TaiKhoan:string,
         MatKhau:string,

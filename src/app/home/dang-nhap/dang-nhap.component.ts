@@ -43,19 +43,6 @@ export class DangNhapComponent implements OnInit, OnDestroy {
 							this.alertService.toastRight(`Xin Chào ${res.HoTen}`);
 							localStorage.setItem("user", JSON.stringify(res))
 						}, "")
-
-						// swal({
-						// 	type: 'success',
-						// 	title: 'Đăng Nhập Thành Công!!',
-						// 	showConfirmButton: true,
-						// }).then((result) => {
-						// 	if (result.value) {
-						// 		$("#modalDangNhap").modal("hide");
-						// 		$(".formDangNhap input").val("");
-						// 		this.alertService.toastRight(`Xin Chào ${res.HoTen}`);
-						// 		localStorage.setItem("user", JSON.stringify(res))
-						// 	}
-						// })
 					}
 				})
 		}

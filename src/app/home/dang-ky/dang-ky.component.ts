@@ -44,10 +44,4 @@ export class DangKyComponent implements OnInit {
       console.log(this.UserRegister);//Username already exists
     })
   }
-
-  ngOnDestroy(): void {
-    //Called once, before the instance is destroyed.
-    //Add 'implements OnDestroy' to the class.
-    // this.unsub_1.unsubscribe();
-  }
 }
